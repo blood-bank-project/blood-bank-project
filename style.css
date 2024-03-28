@@ -1,0 +1,71 @@
+body {
+  overflow-x: hidden;
+}
+#navbar .dropdown:hover .dropdown-content {
+  display: block;
+}
+#navbar .logo {
+  color: red;
+}
+
+#body1 img {
+  height: 500px;
+  width: 100%;
+}
+
+#body2 .title {
+  text-align: center;
+  font-size: 2em;
+  margin: 20px;
+  color: red;
+}
+#body2 .about-btn {
+  border-radius: 50px;
+  height: 40px;
+  width: 100px;
+}
+#body2 .about-btn:hover {
+  color: white;
+}
+
+#body3 .title1 {
+  text-align: center;
+  font-size: 2em;
+  margin: 20px;
+  color: red;
+}
+#body3 tbody td:first-child {
+  color: red;
+}
+
+#body4 {
+  background-color: lightgray;
+  margin: auto;
+  border: 1px solid gray;
+  box-shadow: 2px lightgray;
+}
+#body4 .title2 {
+  text-align: center;
+  font-size: 2em;
+  margin: 20px;
+  color: red;
+}
+
+#body4 .btn-about {
+  margin: 0 0 20px 20px;
+}
+#body4 .donation-details {
+  margin-top: 40px;
+}
+#body4 .detail {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#body5 .title3 {
+  text-align: center;
+  font-size: 2em;
+  margin: 20px;
+  color: red;
+}
