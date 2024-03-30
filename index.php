@@ -103,7 +103,7 @@
                   >
                 </li>
                 <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
-                    <a class="dropdown-item" href="#">Login</a>
+                      <a class="dropdown-item" href="#">Login</a>
                   </li>
               </div>
             </ul>
@@ -299,13 +299,23 @@
           lives depending on the number of components separated from your blood.
         </p>
       </div>
-      <div class="donation-details">
-        <div class="btn-group btn-about" role="group">
-          <button id="redbloodbtn">Packed Red Blood Cells</button>
-          <button id="plasmabtn">Plasma</button>
-          <button id="plateletbtn">Platelet</button>
-        </div>
-        <div class="row content" id="about-whole-blood">
+      
+      <div class="card donation-details">
+        
+        <div class="card-header mb-3 c-po" role="tab">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="true"  id="redbloodbtn">Packed Red Blood Cells</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="plasmabtn">plasma</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link "  id="plateletbtn">Platelet</a>
+      </li>
+    </ul>
+  </div>
+        <div class="row content card-body ml-2" id="about-whole-blood">
           <div class="col-md-4 detail">
             <h6>What is it?</h6>
             <p>
@@ -340,7 +350,7 @@
             </p>
           </div>
         </div>
-        <div class="row content" id="about-plasma">
+        <div class="row content card-body" id="about-plasma">
           <div class="col-md-4 detail">
             <h6>What is it?</h6>
             <p>
@@ -383,7 +393,7 @@
             </p>
           </div>
         </div>
-        <div class="row content" id="about-platelet">
+        <div class="row content card-body" id="about-platelet">
           <div class="col-md-4 detail">
             <h6>What is it?</h6>
             <p>
@@ -437,8 +447,8 @@
     </section>
 
     <section id="footer1">
-      <div class="container">
-        <footer class="py-5">
+      <div class="container-fluid">
+        <footer >
           <div class="row">
             <div class="col-6 col-md-2 mb-3">
               <h5>Section</h5>
@@ -522,7 +532,7 @@
           </div>
 
           <div
-            class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top"
+            class="d-flex flex-column flex-sm-row justify-content-between py-4  border-top"
           >
             <p>© 2024 Company, Inc. All rights reserved.</p>
             <ul class="list-unstyled d-flex">

@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   overflow-x: hidden;
 }
@@ -39,7 +44,6 @@ body {
 }
 
 #body4 {
-  background-color: lightgray;
   margin: auto;
   border: 1px solid gray;
   box-shadow: 2px lightgray;
@@ -51,8 +55,8 @@ body {
   color: red;
 }
 
-#body4 .btn-about {
-  margin: 0 0 20px 20px;
+#body4 .card-header a {
+  cursor: pointer;
 }
 #body4 .donation-details {
   margin-top: 40px;

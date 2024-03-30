@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+.loading {
+  display: none;
+}
+
+#navbar .logo {
+  color: red;
+}
+#navbar .profile:hover .profile-content {
+  display: block;
+}
+#navbar .profile {
+  margin-right: 80px;
+}
+
+#body1 .title {
+  font-size: 2.5rem;
+  color: red;
+  margin-left: 20px;
+}
+#body1 .stock-detail {
+  height: 100px;
+  width: 150px;
+  margin: 20px;
+  color: white;
+  background-color: rgb(146, 5, 5);
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+#body1 .stock-detail:hover {
+  box-shadow: 10px 10px 5px rgb(94, 43, 43);
+  animation: glow 1s infinite alternate;
+}
+@keyframes glow {
+  0% {
+    filter: brightness(90%);
+  }
+  50% {
+    filter: brightness(110%);
+  }
+  100% {
+    filter: brightness(150%);
+  }
+}
+#body1 .stock-detail h4 {
+  text-align: center;
+  font-size: 1rem;
+  padding-top: 5px;
+}
+
+#body2 .title1 {
+  font-size: 2.5rem;
+  color: red;
+  margin-left: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#body2 .form-title {
+  text-align: center;
+  font-size: 1.5rem;
+}
+#body2 .form-container {
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+}
+#body2 .form-group {
+  display: flex;
+  flex-direction: column;
+}
+#body2 label {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+#body2 input[type="text"],
+input[type="integer"],
+select,
+textarea {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  outline: none;
+}
