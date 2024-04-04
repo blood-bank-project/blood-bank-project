@@ -73,3 +73,110 @@ body {
   margin: 20px;
   color: red;
 }
+
+#login-body {
+  background-color: #172394;
+  background: linear-gradient(to right, #172394, #505183);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+#login {
+  background-color: #fff;
+  width: 60%;
+  padding: 40px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  max-width: 50%;
+  max-height: 600px;
+}
+#login .form-container h2 {
+  font-size: 2rem;
+}
+#login .form-container a {
+  color: #333;
+  text-decoration: none;
+}
+#login .form-container span {
+  font-size: 20px;
+  word-spacing: 2px;
+}
+#login .form-container form {
+  display: flex;
+  flex-direction: column;
+}
+#login .form-container input {
+  padding: 8px;
+  margin: 10px 0;
+  background-color: rgb(238, 234, 234);
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  color: black;
+  width: 45%;
+}
+#login .form-container button,
+.signin-container button {
+  background-color: #0c46e7;
+  color: white;
+  padding: 10px 45px;
+  border: none;
+  border-radius: 8px;
+  width: 25%;
+  margin: 10px 0 10px 60px;
+  cursor: pointer;
+}
+#login .signin-container {
+  background-color: rgb(71, 71, 145);
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  color: white;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#login .signin-container button {
+  width: 25%;
+  margin: 0 0 0 80px;
+}
+#login .signin-container p {
+  font-size: 22px;
+  margin: 0 0 20px 50px;
+}
+#login .signin-container a {
+  color: #fff;
+  text-decoration: none;
+}
+#login .social-media {
+  margin: 10px 0 0 0;
+}
+#login .social-media a {
+  font-size: 20px;
+  display: flex;
+  text-decoration: none;
+}
+#login .social-media button {
+  padding: 10px;
+  width: 40%;
+  margin: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 18px;
+  color: white;
+}
+#login .social-media .btn1{
+  background-color: #3b5998;
+}
+#login .social-media .btn2{
+  background-color: #da5276;
+}
+#login .social-media i{
+  margin-right: 10px;
+}
