@@ -33,7 +33,7 @@
                                 <div class="form-group">
                                     <label for="blood-group">Blood Group</label>
                                     <select name="blood-group">
-                                        <option value="">Select blood group:</option>
+                                        <option value="">Select blood group</option>
                                         <option value="A+">A+ve</option>
                                         <option value="B+">B+ve</option>
                                         <option value="AB+">AB+ve</option>
