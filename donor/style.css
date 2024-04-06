@@ -30,25 +30,10 @@ body {
   width: 150px;
   margin: 20px;
   color: white;
-  background-color: rgb(146, 5, 5);
+  background-color: rgb(218, 16, 16);
   border-radius: 10px;
   transition: box-shadow 0.3s ease;
   cursor: pointer;
-}
-#body1 .stock-detail:hover {
-  box-shadow: 10px 10px 5px rgb(94, 43, 43);
-  animation: glow 1s infinite alternate;
-}
-@keyframes glow {
-  0% {
-    filter: brightness(90%);
-  }
-  50% {
-    filter: brightness(110%);
-  }
-  100% {
-    filter: brightness(150%);
-  }
 }
 #body1 .stock-detail h4 {
   text-align: center;
@@ -57,11 +42,24 @@ body {
 }
 
 #body2 .title1 {
-  font-size: 2.5rem;
-  color: red;
-  margin-left: 20px;
+  color: white;
+  background-color: rgb(179, 46, 46);
   text-align: center;
-  margin-bottom: 20px;
+  padding: 5px;
+}
+#body2 .title1 h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+#body2 .title1 p {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+#body2 .title1 span {
+  font-size: 1rem;
 }
 #body2 .form-title {
   text-align: center;

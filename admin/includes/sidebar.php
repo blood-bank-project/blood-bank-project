@@ -5,7 +5,7 @@
           <span class="brand-text font-weight-light">BloodVault</span>
       </a>
       <div class="sidebar">
-          
+
           <nav class="mt-2">
               <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                   data-accordion="false">
@@ -35,7 +35,7 @@
                   </li>
                   <li class="nav-item">
                       <a href="#" onclick="loadContent('donation-section',this)" class="nav-link">
-                          <i class="nav-icon fa-solid fa-hand-holding-droplet"></i>
+                          <i class="nav-icon fa-solid fa-hand-holding-heart"></i>
                           <p>
                               Donations
                           </p>
@@ -43,7 +43,7 @@
                   </li>
                   <li class="nav-item">
                       <a href="#" onclick="loadContent('request-section',this)" class="nav-link">
-                          <i class="nav-icon fas fa-th"></i>
+                          <i class="nav-icon fa-solid fa-arrows-rotate"></i>
                           <p>
                               Blood Requests
                           </p>
@@ -51,7 +51,7 @@
                   </li>
                   <li class="nav-item">
                       <a href="#" onclick="loadContent('history-section',this)" class="nav-link">
-                          <i class="nav-icon fas fa-th"></i>
+                          <i class="nav-icon fa-solid fa-clock-rotate-left"></i>
                           <p>
                               Request History
                           </p>
@@ -59,7 +59,7 @@
                   </li>
                   <li class="nav-item">
                       <a href="#" onclick="loadContent('stock-section',this)" class="nav-link">
-                          <i class="nav-icon fas fa-th"></i>
+                          <i class="nav-icon fa-solid fa-hand-holding-droplet"></i>
                           <p>
                               Blood Stock
                           </p>

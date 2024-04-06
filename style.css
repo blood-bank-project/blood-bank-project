@@ -75,8 +75,7 @@ body {
 }
 
 #login-body {
-  background-color: #172394;
-  background: linear-gradient(to right, #172394, #505183);
+  background: linear-gradient(to right, #704446, #5f4045);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -171,12 +170,12 @@ body {
   font-size: 18px;
   color: white;
 }
-#login .social-media .btn1{
+#login .social-media .btn1 {
   background-color: #3b5998;
 }
-#login .social-media .btn2{
+#login .social-media .btn2 {
   background-color: #da5276;
 }
-#login .social-media i{
+#login .social-media i {
   margin-right: 10px;
 }

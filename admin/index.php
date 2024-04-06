@@ -7,12 +7,19 @@ include('includes/topbar.php');
 
     <section class="content" id="main-section">
         <div class="container-fluid">
-            <h1>Blood Stock</h1>
+            <h1>Dashboard</h1>
             <div class="row">
+                <?php
+                    require_once "backend/connect.php";
+                    $sql = "SELECT * FROM blood";
+                    $row = $conn -> query($sql);
+                    $data = mysqli_fetch_array($row);
+
+                ?>
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3><?php echo $data['A+']; ?></h3>
                             <p>A+ (Units in ml)</p>
                         </div>
                         <div class="icon">
@@ -23,7 +30,7 @@ include('includes/topbar.php');
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3><?php echo $data['A-']; ?></h3>
                             <p>A- (Units in ml)</p>
                         </div>
                         <div class="icon">
@@ -34,7 +41,7 @@ include('includes/topbar.php');
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3><?php echo $data['B+']; ?></h3>
                             <p>B+ (Units in ml)</p>
                         </div>
                         <div class="icon">
@@ -45,7 +52,7 @@ include('includes/topbar.php');
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3><?php echo $data['B-']; ?></h3>
                             <p>B- (Units in ml)</p>
                         </div>
                         <div class="icon">
@@ -56,7 +63,7 @@ include('includes/topbar.php');
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3><?php echo $data['AB+']; ?></h3>
                             <p>AB+ (Units in ml)</p>
                         </div>
                         <div class="icon">
@@ -67,7 +74,7 @@ include('includes/topbar.php');
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3><?php echo $data['AB-']; ?></h3>
                             <p>AB- (Units in ml)</p>
                         </div>
                         <div class="icon">
@@ -78,7 +85,7 @@ include('includes/topbar.php');
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3><?php echo $data['O+']; ?></h3>
                             <p>O+ (Units in ml)</p>
                         </div>
                         <div class="icon">
@@ -89,7 +96,7 @@ include('includes/topbar.php');
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3><?php echo $data['O-']; ?></h3>
                             <p>O- (Units in ml)</p>
                         </div>
                         <div class="icon">
@@ -133,9 +140,16 @@ include('includes/topbar.php');
                     </div>
                 </div>
                 <div class="col-lg-3 col-6">
+                    <?php
+                    require_once "backend/connect.php";
+                    $sql = "SELECT (`A+`+`A-`+`B+`+`B-`+`AB+`+`AB-`+`O+`+`O-`) AS total_sum FROM blood";
+                    $row = $conn -> query($sql);
+                    $data = mysqli_fetch_array($row);
+
+                ?>
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3><?php echo $data['total_sum']; ?></h3>
 
                             <p>Total Blood Unit(in ml)</p>
                         </div>
@@ -165,7 +179,10 @@ include('includes/topbar.php');
                         <td>hii</td>
                         <td>hii</td>
                         <td>hii</td>
-                        <td>hii</td>
+                        <td>
+                            <a href=""> <button class="btn btn-primary">Edit</button></a>
+                            <a href=""><button class="btn btn-danger">Delete</button></a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -283,22 +300,123 @@ include('includes/topbar.php');
 
     <section class="content" id="stock-section" style="display: none;">
         <div class="container-fluid">
+            <h1>Blood Stock</h1>
+            <div class="row">
+                <?php
+                    require_once "backend/connect.php";
+                    $sql = "SELECT * FROM blood";
+                    $row = $conn -> query($sql);
+                    $data = mysqli_fetch_array($row);
+
+                ?>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3><?php echo $data['A+']; ?></h3>
+                            <p>A+ (Units in ml)</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3><?php echo $data['A-']; ?></h3>
+                            <p>A- (Units in ml)</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3><?php echo $data['B+']; ?></h3>
+                            <p>B+ (Units in ml)</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3><?php echo $data['B-']; ?></h3>
+                            <p>B- (Units in ml)</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3><?php echo $data['AB+']; ?></h3>
+                            <p>AB+ (Units in ml)</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3><?php echo $data['AB-']; ?></h3>
+                            <p>AB- (Units in ml)</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3><?php echo $data['O+']; ?></h3>
+                            <p>O+ (Units in ml)</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3><?php echo $data['O-']; ?></h3>
+                            <p>O- (Units in ml)</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
             <h2 class="stock-head">Update blood unit</h2>
             <div class="form-group">
-                <select name="blood-group" id="bloodType">
-                    <option value="">Select blood type</option>
-                    <option value="A-">A-</option>
-                    <option value="A+">A+</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B-">B-</option>
-                    <option value="AB+">AB+</option>
-                    <option value="AB-">AB-</option>
-                    <option value="O+">O+</option>
-                    <option value="O-">O-</option>
-                </select>
-                <input type="integer" placeholder="Quantity (in ml)" id="quantityInput">
-                <button class="btn btn-success">Update</button>
+                <form action="backend/updateblood.php" method="post">
+                    <select name="blood-group" id="bloodType">
+                        <option value="">Select blood type</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                    <input type="integer" name="bloodquantity" placeholder="Quantity (in ml)" id="quantityInput">
+                    <button class="btn btn-success" name="submit" type="submit">Update</button>
+                </form>
             </div>
     </section>
 </div>

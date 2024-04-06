@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/b8f6f13c30.js" crossorigin="anonymous"></script>
-</head>
+</head> 
 
 <body>
     <section id="navbar">
@@ -41,11 +41,9 @@
                     <div class="dropdown text-end profile">
                         <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32"
-                                class="rounded-circle" />
+                            <img src="" alt="mdo" width="32" height="32" class="rounded-circle" />
                         </a>
                         <ul class="dropdown-menu text-small profile-content">
-                            <li><a class="dropdown-item" href="#">New project...</a></li>
                             <li><a class="dropdown-item" href="#">Settings</a></li>
                             <li><a class="dropdown-item" href="#">Profile</a></li>
                             <li>
@@ -59,65 +57,158 @@
         </nav>
     </section>
 
-    <div id="main-content">
-        <section id="body1">
+    <section id="body1">
+        <div id="main-content">
             <div class="container">
                 <h2 class="title">Blood Stock</h2>
                 <div class="row ">
-                    <div class="col-1 border border-dark stock-detail">
+                    <div class="col-1 stock-detail">
                         <h4>A+</h4>
                         <p>Available: <span class=stock-quantity></span> ml</P>
                     </div>
-                    <div class="col-1 border border-dark stock-detail">
+                    <div class="col-1 stock-detail">
                         <h4>A-</h4>
                         <p>Available: <span class=stock-quantity></span> ml</P>
                     </div>
-                    <div class="col-1 border border-dark stock-detail">
+                    <div class="col-1 stock-detail">
                         <h4>B+</h4>
                         <p>Available: <span class=stock-quantity></span> ml</P>
                     </div>
-                    <div class="col-1 border border-dark stock-detail">
+                    <div class="col-1 stock-detail">
                         <h4>B-</h4>
                         <p>Available: <span class=stock-quantity></span> ml</P>
                     </div>
-                    <div class="col-1 border border-dark stock-detail">
+                    <div class="col-1 stock-detail">
                         <h4>AB+</h4>
                         <p>Available: <span class=stock-quantity></span> ml</P>
                     </div>
-                    <div class="col-1 border border-dark stock-detail">
+                    <div class="col-1 stock-detail">
                         <h4>AB-</h4>
                         <p>Available: <span class=stock-quantity></span> ml</P>
                     </div>
-                    <div class="col-1 border border-dark stock-detail">
+                    <div class="col-1 stock-detail">
                         <h4>O+</h4>
                         <p>Available: <span class=stock-quantity></span> ml</P>
                     </div>
-                    <div class="col-1 border border-dark stock-detail">
+                    <div class="col-1 stock-detail">
                         <h4>O-</h4>
                         <p>Available: <span class=stock-quantity></span> ml</P>
                     </div>
-                    <div class="col-1 border border-dark stock-detail">
+                    <div class="col-1 stock-detail">
                         <h4>White Blood Cell</h4>
                         <p>Available: <span class=stock-quantity></span> ml</P>
                     </div>
-                    <div class="col-1 border border-dark stock-detail">
+                    <div class="col-1 stock-detail">
                         <h4>Red Blood Cell</h4>
                         <p>Available: <span class=stock-quantity></span> ml</P>
                     </div>
-                    <div class="col-1 border border-dark stock-detail">
+                    <div class="col-1 stock-detail">
                         <h4>Plasma</h4>
                         <p>Available: <span class=stock-quantity></span> ml</P>
                     </div>
-                    <div class="col-1 border border-dark stock-detail">
+                    <div class="col-1 stock-detail">
                         <h4>Platelet</h4>
                         <p>Available: <span class=stock-quantity></span> ml</P>
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
     </section>
-    </div>
 
+    <section id="body2">
+        <div class="container-fluid">
+            <div class="title1">
+                <h2>Want to donate Blood?</h2>
+                <p>give blood, <span>save life</span></p>
+            </div>
+            <div class="row donation m-4 ">
+                <div class="col-md-6">
+                    <div class="container border border-black form-container">
+                        <h2 class="form-title">Donation form</h2>
+                        <hr />
+                        <div class="form container">
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <label for="name">Firstname</label>
+                                    <input type="text" id="fname" name="fname">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Lastname</label>
+                                    <input type="text" id="lname" name="lname">
+                                </div>
+                                <div class="form-group">
+                                    <label for="unit">No. of Units</label>
+                                    <input type="integer" id="unit" name="unit" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="blood-group">Blood Group</label>
+                                    <select name="blood-group">
+                                        <option value="">Select blood group</option>
+                                        <option value="A+">A+ve</option>
+                                        <option value="B+">B+ve</option>
+                                        <option value="AB+">AB+ve</option>
+                                        <option value="O+">O+ve</option>
+                                        <option value="A-">A-ve</option>
+                                        <option value="B-">B-ve</option>
+                                        <option value="AB-">AB-ve</option>
+                                        <option value="O-">O-ve</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="blood-component">No. of Units:</label>
+                                    <select name="blood-component">
+                                        <option value="">Select blood component</option>
+                                        <option value="WBC">White Blood Cell</option>
+                                        <option value="RBC">Red Blood Cell</option>
+                                        <option value="Plasma">Plasma</option>
+                                        <option value="Platelet">Platelet</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Disease(if any):</label>
+                                    <textarea id="message" name="message" rows="4"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <input type="button" value="submit" class="btn btn-success mt-4 ">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <p>if you are in emergency then contact us directly or contact other blood bank.
+                        Here is the contact details. <a href="">Click me.</a>
+                    </p>
+                    <div>
+                        <button>Request for blood</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="body3">
+        <div class="container">
+            <h2>Your Donation Details</h2>
+            <table class="table">
+                <thead>
+                    <td>S.No</td>
+                    <td>Donation Id</td>
+                    <td>Units(in ml)</td>
+                    <td>Status</td>
+                    <td>Action</td>
+                </thead>
+                <tbody>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tbody>
+            </table>
+    </section>
+
+    <section id="body4"></section>
 
     <section id="footer1">
         <div class="container-fluid">

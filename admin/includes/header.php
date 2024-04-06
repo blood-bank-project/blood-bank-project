@@ -18,6 +18,13 @@
     <link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css">
     <link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css">
 
+    <?php
+    session_start();
+    if($_SESSION['loginstatus']!='Active')
+    {
+        header('Location:login.php');
+    }
+    ?>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
