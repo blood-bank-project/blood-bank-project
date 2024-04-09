@@ -5,6 +5,7 @@
 }
 body {
   overflow-x: hidden;
+  background-color: #fafafa;
 }
 #navbar .dropdown:hover .dropdown-content {
   display: block;
@@ -74,40 +75,52 @@ body {
   color: red;
 }
 
-#login-body {
-  background: linear-gradient(to right, #704446, #5f4045);
+.login {
+  background-color: #b89696;
+  width: 25%;
+  padding: 40px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1000;
 }
-#login {
-  background-color: #fff;
-  width: 60%;
-  padding: 40px;
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
-  max-width: 50%;
-  max-height: 600px;
+.login .head {
+  display: flex;
 }
-#login .form-container h2 {
+.login .form-container h2 {
   font-size: 2rem;
+  text-align: center;
+  flex: 4;
 }
-#login .form-container a {
+.login .form-container i {
+  flex: 1;
+  cursor: pointer;
+  margin-left: 40px;
+}
+.login .form-container a {
   color: #333;
   text-decoration: none;
 }
-#login .form-container span {
+.login .form-container span {
   font-size: 20px;
   word-spacing: 2px;
 }
-#login .form-container form {
+.login .form-container form {
   display: flex;
   flex-direction: column;
 }
-#login .form-container input {
+.login .form-container input {
   padding: 8px;
   margin: 10px 0;
   background-color: rgb(238, 234, 234);
@@ -115,67 +128,129 @@ body {
   border-radius: 8px;
   outline: none;
   color: black;
-  width: 45%;
+  width: 100%;
 }
-#login .form-container button,
-.signin-container button {
+.login .form-container button {
   background-color: #0c46e7;
   color: white;
   padding: 10px 45px;
   border: none;
   border-radius: 8px;
-  width: 25%;
+  width: 55%;
   margin: 10px 0 10px 60px;
   cursor: pointer;
 }
-#login .signin-container {
-  background-color: rgb(71, 71, 145);
-  position: absolute;
-  left: 50%;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  color: white;
-  border-radius: 40px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-#login .signin-container button {
-  width: 25%;
-  margin: 0 0 0 80px;
-}
-#login .signin-container p {
-  font-size: 22px;
-  margin: 0 0 20px 50px;
-}
-#login .signin-container a {
-  color: #fff;
-  text-decoration: none;
-}
-#login .social-media {
+
+.login .social-media {
   margin: 10px 0 0 0;
 }
-#login .social-media a {
+.login .social-media a {
   font-size: 20px;
   display: flex;
   text-decoration: none;
 }
-#login .social-media button {
+.login .social-media button {
   padding: 10px;
-  width: 40%;
+  width: 100%;
   margin: 10px;
   border-radius: 8px;
   border: none;
   font-size: 18px;
   color: white;
 }
-#login .social-media .btn1 {
+.login .social-media .btn1 {
   background-color: #3b5998;
 }
-#login .social-media .btn2 {
+.login .social-media .btn2 {
   background-color: #da5276;
 }
-#login .social-media i {
+.login .social-media i {
   margin-right: 10px;
+}
+
+.body5 {
+  position: relative;
+  min-height: 100vh;
+  padding: 50px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(255, 245, 245);
+  margin-top: 20px;
+}
+.body5 .contact {
+  max-width: 800px;
+  text-align: center;
+}
+.body5 .contact h4 {
+  font-size: 36px;
+  font-weight: 500;
+  color: rgb(6, 0, 0);
+}
+.body5 .contact p {
+  color: rgb(0, 0, 0);
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.main .info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.main .info .box {
+  position: relative;
+  padding: 20px 0;
+  display: flex;
+}
+.main .info .box .icon {
+  min-width: 60px;
+  height: 60px;
+  background: #fffefe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50;
+  font-size: 22px;
+}
+.main .info .box .text {
+  display: flex;
+  margin-left: 20px;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  flex-direction: column;
+  font-weight: 300;
+}
+
+.form {
+  width: 40%;
+  padding: 40px;
+  background: #fff;
+}
+.form h2 {
+  font-size: 30px;
+  color: #333;
+  font-weight: 500;
+}
+.form .inputBox {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+.form .inputBox input,
+.form .inputBox textarea {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #333;
+  outline: none;
+  resize: none;
 }

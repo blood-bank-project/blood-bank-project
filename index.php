@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>blood bank</title>
+    <title>BloodVault blood bank</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
@@ -46,9 +46,9 @@
                                     href="">Looking for blood?</a>
                             </li>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
-                                <li><a class="dropdown-item" href="#">Register as Patient</a></li>
+                                <li><a class="dropdown-item" href="patient/signin.php">Register as Patient</a></li>
                                 <li>
-                                    <a class="dropdown-item" href="login.php">Login</a>
+                                    <a class="dropdown-item" id="patientlogin">Login</a>
                                 </li>
                             </ul>
                         </div>
@@ -58,9 +58,9 @@
                                     href="">Want to donate blood?</a>
                             </li>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
-                                <li><a class="dropdown-item" href="#">Register as Donar</a></li>
+                                <li><a class="dropdown-item" href="donor/signin.php">Register as Donar</a></li>
                                 <li>
-                                    <a class="dropdown-item" href="login.php">Login</a>
+                                    <a class="dropdown-item" id="donorlogin">Login</a>
                                 </li>
                         </div>
                         <div class="dropdown">
@@ -69,17 +69,89 @@
                                     href="">Admin</a>
                             </li>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
-                                <a class="dropdown-item" href="#">Login</a>
+                                <a class="dropdown-item" id="adminlogin">Login</a>
                                 </li>
                         </div>
                     </ul>
-                    <button class="btn btn-outline-danger me-2">Login</button>
-                    <button class="btn btn-danger">Sign-in</button>
+                    <!-- <button class="btn btn-outline-danger me-2">Login</button>
+                    <button class="btn btn-danger">Sign-in</button> -->
                 </div>
             </div>
         </nav>
     </section>
 
+    <div class="login" id="donorloginpopup">
+        <div class="form-container">
+            <div class="head">
+                <h2>Donor Login</h2>
+                <i class="fa-solid fa-xmark" id="closebutton1"></i>
+            </div>
+            <form action="donor/backend/donorlogincheck.php" method="post">
+                <input type="email" name="email" placeholder="Username" />
+                <input type="password" name="password" placeholder="Password" />
+                <a href="">Forgot password?</a>
+                <button type="submit" name="submit">Log In</button>
+            </form>
+            <span>Or login with social account</span>
+        </div>
+        <div class="social-media">
+            <a href=""><button class="btn1">
+                    <i class="fa-brands fa-facebook"></i>Facebook
+                </button>
+            </a>
+            <a href=""><button class="btn2">
+                    <i class="fa-brands fa-google"></i>Google
+                </button></a>
+        </div>
+    </div>
+    <div class="login" id="adminloginpopup">
+        <div class="form-container">
+            <div class="head">
+                <h2>Admin Login</h2>
+                <i class="fa-solid fa-xmark" id="closebutton2"></i>
+            </div>
+            <form action="admin/backend/adminlogincheck.php" method="post">
+                <input type="email" name="email" placeholder="Username" />
+                <input type="password" name="password" placeholder="Password" />
+                <a href="">Forgot password?</a>
+                <button type="submit" name="submit">Log In</button>
+            </form>
+            <span>Or login with social account</span>
+        </div>
+        <div class="social-media">
+            <a href=""><button class="btn1">
+                    <i class="fa-brands fa-facebook"></i>Facebook
+                </button>
+            </a>
+            <a href=""><button class="btn2">
+                    <i class="fa-brands fa-google"></i>Google
+                </button></a>
+        </div>
+    </div>
+    <div class="login" id="patientloginpopup">
+        <div class="form-container">
+            <div class="head">
+                <h2>Patient Login</h2>
+                <i class="fa-solid fa-xmark" id="closebutton3"></i>
+            </div>
+            <form action="patient/backend/patientlogincheck.php" method="post">
+                <input type="email" name="email" placeholder="Username" />
+                <input type="password" name="password" placeholder="Password" />
+                <a href="">Forgot password?</a>
+                <button type="submit" name="submit">Log In</button>
+            </form>
+            <span>Or login with social account</span>
+        </div>
+        <div class="social-media">
+            <a href=""><button class="btn1">
+                    <i class="fa-brands fa-facebook"></i>Facebook
+                </button>
+            </a>
+            <a href=""><button class="btn2">
+                    <i class="fa-brands fa-google"></i>Google
+                </button></a>
+        </div>
+    </div>
 
     <section id="body1">
         <div id="carouselExampleCaptions" class="carousel slide">
@@ -156,7 +228,7 @@
     </section>
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
         <section id="body3">
             <h4 class="title1">Learn About Donation</h4>
             <div class="row featurette" style="padding: 0 4rem">
@@ -386,103 +458,83 @@
         </section>
     </div>
 
-    <div class="container">
-        <section id="body5">
-            <h4 class="title3">Contact Us</h4>
-        </section>
-    </div>
+    <section class="body5">
+        <div class="container-fluid">
+            <div class="contact">
+                <h4>Contact Us</h4>
+                <!-- <p>asdabdkjdahdajksdhksajdhasjkdhsjkadhsakjdhsadhsakdhsakdha
+                    adlksadlkadasjdsajkdhasjkhsakjhajkhaskjhaskhakjsdhsa.
+                </p> -->
+            </div>
+            <div class="main">
+                <div class="info">
+                    <div class="box">
+                        <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="text">
+                            <h3>Address</h3>
+                            <p>new road ,<br>kathmandu,<br>Nepal.</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="text">
+                            <h3>Phone</h3>
+                            <p>9876543210</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="text">
+                            <h3>Email</h3>
+                            <p>bloodbank@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form">
+                    <form>
+                        <h2>Send Message</h2>
+                        <div class="inputBox">
+                            <input type="text" name="" required="required">
+                            <span>Full Name</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name="" required="required">
+                            <span>Email</span>
+                        </div>
+                        <div class="inputBox">
+                            <textarea required="required"></textarea>
+                            <span>Type your Message...</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="submit" name="submit" value="Send">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="footer1">
         <div class="container-fluid">
             <footer>
-                <div class="row">
-                    <div class="col-6 col-md-2 mb-3">
-                        <h5>Section</h5>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2">
-                                <a href="#" class="nav-link p-0 text-body-secondary">Home</a>
-                            </li>
-                            <li class="nav-item mb-2">
-                                <a href="#" class="nav-link p-0 text-body-secondary">Features</a>
-                            </li>
-                            <li class="nav-item mb-2">
-                                <a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
-                            </li>
-                            <li class="nav-item mb-2">
-                                <a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
-                            </li>
-                            <li class="nav-item mb-2">
-                                <a href="#" class="nav-link p-0 text-body-secondary">About</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-6 col-md-2 mb-3">
-                        <h5>Section</h5>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2">
-                                <a href="#" class="nav-link p-0 text-body-secondary">Home</a>
-                            </li>
-                            <li class="nav-item mb-2">
-                                <a href="#" class="nav-link p-0 text-body-secondary">Features</a>
-                            </li>
-                            <li class="nav-item mb-2">
-                                <a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
-                            </li>
-                            <li class="nav-item mb-2">
-                                <a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
-                            </li>
-                            <li class="nav-item mb-2">
-                                <a href="#" class="nav-link p-0 text-body-secondary">About</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-6 col-md-2 mb-3">
-                        <h5>Section</h5>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2">
-                                <a href="#" class="nav-link p-0 text-body-secondary">Home</a>
-                            </li>
-                            <li class="nav-item mb-2">
-                                <a href="#" class="nav-link p-0 text-body-secondary">Features</a>
-                            </li>
-                            <li class="nav-item mb-2">
-                                <a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
-                            </li>
-                            <li class="nav-item mb-2">
-                                <a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
-                            </li>
-                            <li class="nav-item mb-2">
-                                <a href="#" class="nav-link p-0 text-body-secondary">About</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-5 offset-md-1 mb-3">
-                    </div>
-                    </form>
+                <div class="d-flex flex-column flex-sm-row justify-content-between py-4  border-top">
+                    <p>© 2024 BloodVault. All rights reserved.</p>
+                    <ul class="list-unstyled d-flex">
+                        <li class="ms-3">
+                            <a class="link-body-emphasis" href="#"><i class="fa-brands fa-facebook"></i></a>
+                        </li>
+                        <li class="ms-3">
+                            <a class="link-body-emphasis" href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li class="ms-3">
+                            <a class="link-body-emphasis" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        </li>
+                        <li class="ms-3">
+                            <a class="link-body-emphasis" href="#"><i class="fa-brands fa-viber"></i></a>
+                        </li>
+                    </ul>
                 </div>
-        </div>
-
-        <div class="d-flex flex-column flex-sm-row justify-content-between py-4  border-top">
-            <p>© 2024 Company, Inc. All rights reserved.</p>
-            <ul class="list-unstyled d-flex">
-                <li class="ms-3">
-                    <a class="link-body-emphasis" href="#"><i class="fa-brands fa-facebook"></i></a>
-                </li>
-                <li class="ms-3">
-                    <a class="link-body-emphasis" href="#"><i class="fa-brands fa-instagram"></i></a>
-                </li>
-                <li class="ms-3">
-                    <a class="link-body-emphasis" href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                </li>
-                <li class="ms-3">
-                    <a class="link-body-emphasis" href="#"><i class="fa-brands fa-viber"></i></a>
-                </li>
-            </ul>
-        </div>
-        </footer>
+            </footer>
         </div>
     </section>
 

@@ -1,145 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include("includes/header.php");
+include("includes/navbar.php");
+?>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Donor Page | BloodVault</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-    <script src="https://kit.fontawesome.com/b8f6f13c30.js" crossorigin="anonymous"></script>
-</head> 
+<section id="body1" class="content">
+    <div class="container-fluid">
+        <h2 class="title">Dashboard</h2>
+        <?php
+                    require_once "backend/connect.php";
+$sql = "SELECT * FROM blood";
+$row = $conn -> query($sql);
+$data = mysqli_fetch_array($row);
 
-<body>
-    <section id="navbar">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-light" data-bs-theme="light">
-            <div class="container-fluid">
-                <a class="navbar-brand logo" href="#">BloodVault</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#" onclick="loadContent('donor.php')"
-                                id="home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="loadContent('donate.php')" id="donate">Donate</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="loadContent('request.php')" id="request">Request</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="loadContent('certificate.php')"
-                                id="certificate">Certificate</a>
-                        </li>
-                    </ul>
-                    <div class="dropdown text-end profile">
-                        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="" alt="mdo" width="32" height="32" class="rounded-circle" />
-                        </a>
-                        <ul class="dropdown-menu text-small profile-content">
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li>
-                                <hr class="dropdown-divider" />
-                            </li>
-                            <li><a class="dropdown-item" href="#">Sign out</a></li>
-                        </ul>
-                    </div>
-                </div>
+?>
+        <div class="row ">
+            <div class="col-1 stock-detail bg-danger">
+                <h2><?php echo $data['A+']; ?></h2>
+                <p>A+ (unit in ml)</p>
             </div>
-        </nav>
-    </section>
+            <div class="col-1 stock-detail bg-danger">
+                <h2><?php echo $data['A-']; ?></h2>
+                <p>A- (unit in ml)</p>
 
-    <section id="body1">
-        <div id="main-content">
-            <div class="container">
-                <h2 class="title">Blood Stock</h2>
-                <div class="row ">
-                    <div class="col-1 stock-detail">
-                        <h4>A+</h4>
-                        <p>Available: <span class=stock-quantity></span> ml</P>
-                    </div>
-                    <div class="col-1 stock-detail">
-                        <h4>A-</h4>
-                        <p>Available: <span class=stock-quantity></span> ml</P>
-                    </div>
-                    <div class="col-1 stock-detail">
-                        <h4>B+</h4>
-                        <p>Available: <span class=stock-quantity></span> ml</P>
-                    </div>
-                    <div class="col-1 stock-detail">
-                        <h4>B-</h4>
-                        <p>Available: <span class=stock-quantity></span> ml</P>
-                    </div>
-                    <div class="col-1 stock-detail">
-                        <h4>AB+</h4>
-                        <p>Available: <span class=stock-quantity></span> ml</P>
-                    </div>
-                    <div class="col-1 stock-detail">
-                        <h4>AB-</h4>
-                        <p>Available: <span class=stock-quantity></span> ml</P>
-                    </div>
-                    <div class="col-1 stock-detail">
-                        <h4>O+</h4>
-                        <p>Available: <span class=stock-quantity></span> ml</P>
-                    </div>
-                    <div class="col-1 stock-detail">
-                        <h4>O-</h4>
-                        <p>Available: <span class=stock-quantity></span> ml</P>
-                    </div>
-                    <div class="col-1 stock-detail">
-                        <h4>White Blood Cell</h4>
-                        <p>Available: <span class=stock-quantity></span> ml</P>
-                    </div>
-                    <div class="col-1 stock-detail">
-                        <h4>Red Blood Cell</h4>
-                        <p>Available: <span class=stock-quantity></span> ml</P>
-                    </div>
-                    <div class="col-1 stock-detail">
-                        <h4>Plasma</h4>
-                        <p>Available: <span class=stock-quantity></span> ml</P>
-                    </div>
-                    <div class="col-1 stock-detail">
-                        <h4>Platelet</h4>
-                        <p>Available: <span class=stock-quantity></span> ml</P>
-                    </div>
-                </div>
+            </div>
+            <div class="col-1 stock-detail bg-danger">
+                <h2><?php echo $data['B+']; ?></h2>
+                <p>B+ (unit in ml)</p>
+            </div>
+            <div class="col-1 stock-detail bg bg-danger">
+                <h2><?php echo $data['B-']; ?></h2>
+                <p>B- (unit in ml)</p>
+            </div>
+            <div class="col-1 stock-detail bg bg-danger">
+                <h2><?php echo $data['AB+']; ?></h2>
+                <p>AB+ (unit in ml)</p>
+
+            </div>
+            <div class="col-1 stock-detail bg bg-danger">
+                <h2><?php echo $data['AB-']; ?></h2>
+                <p>AB- (unit in ml)</p>
+            </div>
+            <div class="col-1 stock-detail bg bg-danger">
+                <h2><?php echo $data['O+']; ?></h2>
+                <p>O+ (unit in ml)</p>
+            </div>
+            <div class="col-1 stock-detail bg bg-danger">
+                <h2><?php echo $data['O-']; ?></h2>
+                <p>O- (unit in ml)</p>
             </div>
         </div>
-    </section>
-
-    <section id="body2">
-        <div class="container-fluid">
-            <div class="title1">
-                <h2>Want to donate Blood?</h2>
-                <p>give blood, <span>save life</span></p>
+        <hr />
+        <div class="row ">
+            <?php
+                     require_once "backend/connect.php";
+$sql = "SELECT count(id) as totaldonation FROM donation";
+$row = $conn->query($sql);
+$data = mysqli_fetch_array($row);
+?>
+            <div class="col-1 donor-detail">
+                <h2><?php echo $data['totaldonation'];?></h2>
+                <p>Total Donation</p>
             </div>
-            <div class="row donation m-4 ">
-                <div class="col-md-6">
-                    <div class="container border border-black form-container">
-                        <h2 class="form-title">Donation form</h2>
-                        <hr />
-                        <div class="form container">
-                            <form action="" method="post">
-                                <div class="form-group">
-                                    <label for="name">Firstname</label>
-                                    <input type="text" id="fname" name="fname">
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Lastname</label>
-                                    <input type="text" id="lname" name="lname">
-                                </div>
-                                <div class="form-group">
-                                    <label for="unit">No. of Units</label>
-                                    <input type="integer" id="unit" name="unit" required>
-                                </div>
+            <div class="col-1 donor-detail">
+                <?php
+                     require_once "backend/connect.php";
+$sql = "SELECT count(id) as totalpending FROM donation  WHERE status='0' ";
+$row = $conn->query($sql);
+$data = mysqli_fetch_array($row);
+?>
+                <h2><?php echo $data['totalpending'];?></h2>
+                <p>Pending Request</p>
+
+            </div>
+            <div class="col-1 donor-detail">
+                <?php
+                     require_once "backend/connect.php";
+$sql = "SELECT count(id) as totalaccept FROM donation  WHERE status='1' ";
+$row = $conn->query($sql);
+$data = mysqli_fetch_array($row);
+?>
+
+                <h2><?php echo $data['totalaccept'];?></h2>
+                <p>Approved Request</p>
+            </div>
+            <div class="col-1 donor-detail">
+                <?php
+                     require_once "backend/connect.php";
+$sql = "SELECT count(id) as totalreject FROM donation  WHERE status='-1' ";
+$row = $conn->query($sql);
+$data = mysqli_fetch_array($row);
+?>
+
+                <h2><?php echo $data['totalreject'];?></h2>
+                <p>Rejected Request
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="body2" class="content" style="display:none;">
+    <div class="title1">
+        <h2>Want to donate Blood?</h2>
+        <p>give blood, <span>save life</span></p>
+    </div>
+    <div class="container-fluid">
+        <div class="row donation m-4 ">
+            <div class="col-md-6">
+                <div class="container form-container">
+                    <h2 class="form-title">Donation form</h2>
+                    <hr />
+                    <div class="form container">
+                        <form action="backend/donationregister.php" method="post">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="fname">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="integer" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" id="address" name="address">
+                            </div>
+                            <div class="form-group">
+                                <label for="unit">No. of Units</label>
+                                <input type="integer" id="unit" name="unit" required>
+                            </div>
+                            <div class="option">
                                 <div class="form-group">
                                     <label for="blood-group">Blood Group</label>
                                     <select name="blood-group">
@@ -155,95 +148,200 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="blood-component">No. of Units:</label>
-                                    <select name="blood-component">
-                                        <option value="">Select blood component</option>
-                                        <option value="WBC">White Blood Cell</option>
-                                        <option value="RBC">Red Blood Cell</option>
-                                        <option value="Plasma">Plasma</option>
-                                        <option value="Platelet">Platelet</option>
+                                    <label for="gender">Gender</label>
+                                    <select name="gender">
+                                        <option value="">Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
                                     </select>
                                 </div>
-                                <div class="form-group">
-                                    <label for="message">Disease(if any):</label>
-                                    <textarea id="message" name="message" rows="4"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <input type="button" value="submit" class="btn btn-success mt-4 ">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <p>if you are in emergency then contact us directly or contact other blood bank.
-                        Here is the contact details. <a href="">Click me.</a>
-                    </p>
-                    <div>
-                        <button>Request for blood</button>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Disease(if any):</label>
+                                <textarea id="message" name="message" rows="4"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="submit" name="submit" class="btn btn-danger mt-4 ">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
+            <div class="col-md-6">
+                <!-- <p>if you are in emergency then contact us directly or contact other blood bank.
+                        Here is the contact details. <a href="">Click Here.</a>
+                    </p>
+                    <div>
+                        <button>Request for blood</button>
+                    </div> -->
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="body3">
-        <div class="container">
-            <h2>Your Donation Details</h2>
-            <table class="table">
-                <thead>
-                    <td>S.No</td>
-                    <td>Donation Id</td>
-                    <td>Units(in ml)</td>
-                    <td>Status</td>
-                    <td>Action</td>
-                </thead>
-                <tbody>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tbody>
-            </table>
-    </section>
+<section id="body3" class="content" style="display:none;">
+    <div class="container">
+        <h2>Your Donation Details</h2>
+        <table class="table">
+            <?php 
+                require_once "backend/connect.php";
+$sql = "select * from donation";
+$rows = $conn -> query($sql);
+if($rows -> num_rows > 0) {
+    ?>
 
-    <section id="body4"></section>
+            <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Blood unit</th>
+                <th>Blood group</th>
+                <th>Gender</th>
+                <th>Disease</th>
+                <th>status</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                <?php
+                $i = 0;
+    while($data = mysqli_fetch_array($rows)) {
+        ?>
+                <tr>
+                    <td><?php echo ++$i;?></td>
+                    <td><?php echo $data['name']; ?></td>
+                    <td><?php echo $data['phone'] ;?></td>
+                    <td><?php echo $data['email'] ;?></td>
+                    <td><?php echo $data['address'] ;?></td>
+                    <td><?php echo $data['bloodunit'] . ' Unit' ;?></td>
+                    <td><?php echo $data['bloodgroup'] ;?></td>
+                    <td><?php echo $data['gender'];?>
+                    </td>
+                    <td><?php echo $data['disease'] ;?></td>
+                    <td><?php if($data['status'] === '0' ){
+                        echo  "<span class='bg-warning text-light p-1'>Pending..</span>";
+                    }
+                        else if($data['status'] === '1'){
+                            echo  "<span class='bg-success text-light p-1'>Approved</span>";
+                        }
+                        else if($data['status'] === '-1'){
+                            echo "<span class='bg-danger text-light p-1'>Rejected</span>";
+                        }
 
-    <section id="footer1">
-        <div class="container-fluid">
-            <footer>
-                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 border-top">
-                    <p>© 2024 Blood Bank, Nep. All rights reserved.</p>
-                    <ul class="list-unstyled d-flex">
-                        <li class="ms-3">
-                            <a class="link-body-emphasis" href="#"><i class="fa-brands fa-facebook"></i></a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="link-body-emphasis" href="#"><i class="fa-brands fa-instagram"></i></a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="link-body-emphasis" href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="link-body-emphasis" href="#"><i class="fa-brands fa-viber"></i></a>
-                        </li>
-                    </ul>
+                    ?></td>
+                    <td>
+                        <?php
+                        if($data['status'] != '1' && $data['status'] != '-1'){
+                        ?>
+                        <a href="backend/?id=<?php echo $data['id']; ?>"> <button class="btn btn-info">Edit</button></a>
+                        <a href="href=backend/deletedonationhistory.php?id=<?php echo $data['id'];?>"><button
+                                class="btn btn-danger">Delete</button></a>
+                        <?php } ?>
+                    </td>
+                </tr>
+                <?php  } ?>
+                <?php
+
+} else {
+    echo "Record not found.";
+}
+?>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section id="body4" class="content" style="display:none;">
+    <div class="title">
+        <h1 class="text-center m-4">Want Blood?</h1>
+    </div>
+    <div class="row request m-4 ">
+        <div class="col-md-6">
+            <div class="container form-container">
+                <h2 class="form-title">Donation form</h2>
+                <hr />
+                <div class="form container">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="fname" name="fname">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Phone</label>
+                            <input type="integer" id="lname" name="lname">
+                        </div>
+                        <div class="form-group">
+                            <label for="unit">No. of Units (in ml)</label>
+                            <input type="integer" id="unit" name="unit" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="blood-group">Blood Group</label>
+                            <select name="blood-group">
+                                <option value="">Select blood group</option>
+                                <option value="A+">A+ve</option>
+                                <option value="B+">B+ve</option>
+                                <option value="AB+">AB+ve</option>
+                                <option value="O+">O+ve</option>
+                                <option value="A-">A-ve</option>
+                                <option value="B-">B-ve</option>
+                                <option value="AB-">AB-ve</option>
+                                <option value="O-">O-ve</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="blood-component">No. of Units:</label>
+                            <select name="blood-component">
+                                <option value="">Select blood component</option>
+                                <option value="WBC">White Blood Cell</option>
+                                <option value="RBC">Red Blood Cell</option>
+                                <option value="Plasma">Plasma</option>
+                                <option value="Platelet">Platelet</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message (In Brief)</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="button" value="submit" class="btn btn-danger mt-4 ">
+                        </div>
+                    </form>
                 </div>
-            </footer>
+            </div>
         </div>
+        <div class="col-md-6 request-text">
+            <p>if you are in emergency then contact us directly or contact other blood bank.
+                Here is the contact details. <a href="">Click Here.</a>
+            </p>
         </div>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
-    </script>
-    <script src="script.js"></script>
-</body>
+    </div>
+</section>
 
-</html>
+<section id="body5" class="content" style="display:none;">
+    <div class="container">
+        <h1 class="text-center">Request History</h1>
+        <table class="table ">
+            <thead class="bg bg-danger">
+                <td>S.No</td>
+                <td>Donation Id</td>
+                <td>Units(in ml)</td>
+                <td>Status</td>
+                <td>Action</td>
+            </thead>
+            <tbody>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section id="body6" class="content" style="display:none;"></section>
+<?php
+include("includes/footer.php");
+?>
