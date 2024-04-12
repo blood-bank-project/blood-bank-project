@@ -15,8 +15,7 @@ if(isset($_POST['submit']))
 		$_SESSION['username']=$data->firstname;
 		header('Location:../index.php');
 	}else{
-		echo "<script>alert('Email or Password Incorrect')</script>";
-	    echo "<script>window.location='../login.php'</script>";
+	    echo "<script>window.location='../index.php'</script>";
 	}
 }
 ?>

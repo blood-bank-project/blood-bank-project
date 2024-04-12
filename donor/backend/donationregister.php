@@ -15,7 +15,7 @@ $message=$_POST['message'];
 $sql = "INSERT INTO donation (id,name,phone,email,address,bloodunit,bloodgroup,gender,disease) VALUES ('','$name','$phone','$email','$address','$unit','$bloodgroup','$gender','$message')";
 
     if($conn->query($sql)==TRUE){
-            echo "<script>window.location='../donor.php'</script>";
+            echo "<script>window.location='../donation.php'</script>";
     }
         else {
      echo  "Error: " . $sql . "<br>" . $conn->error;

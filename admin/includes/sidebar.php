@@ -10,7 +10,7 @@
               <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                   data-accordion="false">
                   <li class="nav-item menu-open">
-                      <a onclick="loadContent('main-section',this)" class="nav-link active">
+                      <a href="index.php" class="nav-link active">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
                           <p>
                               Dashboard</i>
@@ -18,7 +18,7 @@
                       </a>
                   </li>
                   <li class="nav-item">
-                      <a onclick="loadContent('donor-section',this)" class="nav-link">
+                      <a href="donor.php" class="nav-link">
                           <i class="nav-icon fa-solid fa-user"></i>
                           <p>
                               Donor
@@ -26,7 +26,7 @@
                       </a>
                   </li>
                   <li class="nav-item">
-                      <a onclick="loadContent('patient-section',this)" class="nav-link">
+                      <a href="patient.php" class="nav-link">
                           <i class="nav-icon fa-solid fa-bed"></i>
                           <p>
                               Patient
@@ -34,7 +34,7 @@
                       </a>
                   </li>
                   <li class="nav-item">
-                      <a onclick="loadContent('donation-section',this)" class="nav-link">
+                      <a href="donation.php" class="nav-link">
                           <i class="nav-icon fa-solid fa-hand-holding-heart"></i>
                           <p>
                               Donations
@@ -42,7 +42,7 @@
                       </a>
                   </li>
                   <li class="nav-item">
-                      <a href="#" onclick="loadContent('request-section',this)" class="nav-link">
+                      <a href="request.php" class="nav-link">
                           <i class="nav-icon fa-solid fa-arrows-rotate"></i>
                           <p>
                               Blood Requests
@@ -50,7 +50,7 @@
                       </a>
                   </li>
                   <li class="nav-item">
-                      <a onclick="loadContent('history-section',this)" class="nav-link">
+                      <a href="history.php" class="nav-link">
                           <i class="nav-icon fa-solid fa-clock-rotate-left"></i>
                           <p>
                               Request History
@@ -58,7 +58,7 @@
                       </a>
                   </li>
                   <li class="nav-item">
-                      <a onclick="loadContent('stock-section',this)" class="nav-link">
+                      <a href="bloodstock.php" class="nav-link">
                           <i class="nav-icon fa-solid fa-hand-holding-droplet"></i>
                           <p>
                               Blood Stock

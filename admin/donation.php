@@ -10,7 +10,7 @@ include('includes/topbar.php');
             <table class="table table-secondary table-bordered border-light text-center">
                 <?php 
                 require_once "backend/connect.php";
-$sql = "select * from donation where status = 'pending...'";
+$sql = "select * from donation where status = '0'";
 $rows = $conn -> query($sql);
     ?>
 

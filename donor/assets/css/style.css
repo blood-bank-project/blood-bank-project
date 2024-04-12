@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f1f1f145 !important;
+  font-family: "Merriweather", serif;
+  overflow-x: hidden;
+}
+
+.loading {
+  display: none;
+}
+
+#navbar .logo {
+  color: red;
+}
+#navbar .profile:hover .profile-content {
+  display: block;
+}
+#navbar .profile {
+  margin-right: 120px;
+}
+#navbar ul li a {
+  cursor: pointer;
+}
+
+#body1 .title {
+  font-size: 2.5rem;
+  color: red;
+  margin-left: 20px;
+}
+#body1 .stock-detail {
+  height: 120px;
+  width: 23%;
+  margin: 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#body1 .donor-detail {
+  height: 150px;
+  width: 23%;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#body1 .donor-detail p,
+.stock-detail p {
+  font-size: 20px;
+}
+
+#body2 .title1 {
+  color: white;
+  text-align: center;
+  padding: 5px;
+  height: 200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#body2 .title1 h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+#body2 .title1 button {
+  border: 1px solid black;
+  padding: 7px;
+  border-radius: 20px;
+  outline: none;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+#body2 .title1 span {
+  font-size: 1rem;
+}
+#donationForm {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+#body4 .form-title,
+#body2 .form-title {
+  text-align: center;
+  font-size: 1.5rem;
+}
+#body4 .form-container,
+#body2 .form-container {
+  width: 40%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #d8c7c7;
+  overflow: hidden;
+}
+#body4 .form-group,
+#body2 .form-group {
+  display: flex;
+}
+#body4 label,
+#body2 label {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+#body4 input[type="text"],
+input[type="integer"],
+input[type="email"],
+select,
+textarea,
+#body2 input[type="text"],
+input[type="integer"],
+input[type="email"],
+select,
+textarea {
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+#unit {
+  width: 85%;
+}
+#body2 .field {
+  margin-right: 20px;
+}
+select {
+  height: 35px;
+}
+#body2 .field,
+.form-group1,
+.form-group2 {
+  display: flex;
+  flex-direction: column;
+}
+#donationForm i {
+  position: absolute;
+  right: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#body3 .donationstat {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#body3 .donationstat #body1,
+#body2,
+#body3,
+#body4,
+#body5,
+#body6 {
+  flex: 1;
+}
+
+#body4 .title {
+  background-color: rgb(168, 17, 17);
+  height: 200px;
+  padding: 50px;
+}
+#body4 .title h1 {
+  color: white;
+}
+
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #000;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+  border-radius: 4px;
+}
+
+.pagination a.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.table-search {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+#search-input {
+  outline: none;
+  padding: 5px;
+  border: none;
+  background-color: #d8c7c7;
+  border-radius: 5px;
+}
+/* .search-container {
+  position: relative;
+}
+
+.search-container input[type="text"] {
+  padding-left: 25px;
+}
+
+.search-container::before {
+  content: url("image/xamrk.jpg");
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+} */

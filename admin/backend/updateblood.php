@@ -13,7 +13,6 @@
         $sql_update = "UPDATE blood SET `$bloodgroup` = $new_quantity WHERE s_n = 1"; 
 
         if($conn->query($sql_update) === TRUE){
-            echo "<script>alert('Blood updated successfully!')</script>"; 
             echo "<script>window.location='../index.php'</script>";
         } else{
             echo "<script>alert('Error updating record: ".$conn->error."')</script>";

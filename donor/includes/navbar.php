@@ -14,12 +14,8 @@
                              onclick="loadContent('donor.php')" id="home">Home</a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link" href="donor.php" onclick="loadContent('donate.php')" id="donate">Donate</a>
-                     </li>
-                     <li class="nav-item">
-                         <a class="nav-link" href="donationhistory.php" onclick="loadContent('request.php')"
-                             id="request">Donation
-                             History</a>
+                         <a class="nav-link" href="donation.php" onclick="loadContent('request.php')"
+                             id="request">Donation</a>
                      </li>
                      <li class="nav-item">
                          <a class="nav-link" href="certificate.php" onclick="loadContent('certificate.php')"
@@ -32,8 +28,7 @@
                      </li>
                      <li class="nav-item">
                          <a class="nav-link" href="requesthistory.php" onclick="loadContent('certificate.php')"
-                             id="certificate">Request
-                             History</a>
+                             id="certificate">Request Status</a>
                      </li>
                  </ul>
                  <div class="dropdown text-end profile">

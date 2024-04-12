@@ -1,18 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>BloodVault blood bank</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Web App Landing Page Website Tempalte | Smarteyeapps.com</title>
+    <link rel="shortcut icon" href="assets/images/fav.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/images/fav.jpg">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawsom-all.min.css">
+    <link rel="stylesheet" href="assets/plugins/grid-gallery/css/grid-gallery.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <script src="https://kit.fontawesome.com/b8f6f13c30.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <!--navbar-->
     <section id="navbar">
         <nav class="navbar navbar-expand-lg bg-body-tertiary bg-light" data-bs-theme="light">
             <div class="container-fluid">
@@ -30,12 +33,15 @@
                                     href="">Home</a>
                             </li>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
-                                <li><a class="dropdown-item" href="#">About</a></li>
+                                <li><a class="dropdown-item" href="#">About us</a></li>
                                 <li>
-                                    <a class="dropdown-item" href="#">Why donate?</a>
+                                    <a class="dropdown-item" href="#">Gallary</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">Type of donation</a>
+                                    <a class="dropdown-item" href="#">Process</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Blog</a>
                                 </li>
                                 <li><a class="dropdown-item" href="#">Contact us</a></li>
                             </ul>
@@ -69,17 +75,21 @@
                                     href="">Admin</a>
                             </li>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
-                                <a class="dropdown-item" id="adminlogin">Login</a>
+                                <li><a class="dropdown-item" href="donor/signin.php">Register as Donar</a></li>
+                                <li>
+                                    <a class="dropdown-item" id="adminlogin">Login</a>
                                 </li>
+                            </ul>
                         </div>
                     </ul>
-                    <!-- <button class="btn btn-outline-danger me-2">Login</button>
-                    <button class="btn btn-danger">Sign-in</button> -->
+                    <div class="button">
+                        <a href="signin.php"><button class="btn btn-outline-danger m-2">Donate Now</button></a>
+                        <a href="request.php"><button class="btn btn-danger">Request Blood</button></a>
+                    </div>
                 </div>
             </div>
         </nav>
     </section>
-
     <div class="login" id="donorloginpopup">
         <div class="form-container">
             <div class="head">
@@ -153,402 +163,405 @@
         </div>
     </div>
 
-    <section id="body1">
-        <div id="carouselExampleCaptions" class="carousel slide">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
+
+    <!-- ################# Slider Starts Here#######################--->
+
+    <div class="slider-detail">
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+
+            </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="image/1.jpg" class="d-block w-100 img-fluid" />
+                    <img class="d-block w-100" src="assets/images/slider/slide-02.jpg" alt="First slide">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Why donate blood?</h5>
-                        <p>
-                            Some representative placeholder content for the first slide.
-                        </p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="image/2.jpg" class="d-block w-100 img-fluid" />
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>
-                            Some representative placeholder content for the second slide.
-                        </p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="image/3.jpg" class="d-block w-100 img-fluid" />
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>
-                            Some representative placeholder content for the third slide.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </section>
+                        <h5 class=" bounceInDown">Donate Blood & Save a Life</h5>
+                        <p class=" bounceInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo
+                            neque, <br>
+                            aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis <br>
+                            sed sagittis at, sagittis quis neque. Praesent.</p>
 
-    <section id="body2">
-        <h4 class="title">About us</h4>
-        <div class="row featurette m-2">
-            <div class="col-md-7">
-                <h2 class="featurette-heading fw-normal lh-1">
-                    Who we are?
-                    <span class="text-body-secondary">It’ll blow your mind.</span>
-                </h2>
-                <p class="lead">
-                    Some great placeholder content for the first featurette here.
-                    Imagine some exciting prose here.
-                </p>
-                <button type="button" class="btn btn-outline-danger about-btn">
-                    More..
-                </button>
+                        <div class=" vbh">
+                            <div class="btn btn-success  bounceInUp"> Contact US </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="assets/images/slider/slide-03.jpg" alt="Third slide">
+                    <div class="carousel-caption vdg-cur d-none d-md-block">
+                        <h5 class=" bounceInDown">Donate Blood & Save a Life</h5>
+                        <p class=" bounceInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo
+                            neque, <br>
+                            aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis <br>
+                            sed sagittis at, sagittis quis neque. Praesent.</p>
+
+                    </div>
+                </div>
+
             </div>
-            <div class="col-md-5">
-                <img class="img-fluid mx-auto" src="image/about.jpg" class="img-fluid" width="500" height="500" />
-            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-    </section>
+
+
     </div>
 
-    <div class="container-fluid">
-        <section id="body3">
-            <h4 class="title1">Learn About Donation</h4>
-            <div class="row featurette" style="padding: 0 4rem">
-                <div class="col-md-7 mx-auto">
-                    <h3 class="featurette-heading fw-normal lh-1">Why donate blood?</h3>
-                    <p class="lead">
-                        You can save lives by giving blood. Blood is a vital part of our
-                        body and every day, thousands of people need it. Blood is life,
-                        people need it to survive. But there's always more demand than
-                        supply. That means when you donate blood we can match up the supply
-                        with demand.
+    <!--*************** About Us Starts Here ***************-->
+    <section id="about" class="contianer-fluid about-us">
+        <div class="container">
+            <div class="row session-title">
+                <div class="col-md-6">
+                    <h2>About Blood Doners</h2>
+                    <p>Welcome to Blood Vault, where innovation meets compassion.
+                        <br>
+                        We are a team of dedicated professionals committed to revolutionizing the way blood banks
+                        operate
+                        and serve their
+                        communities. Our mission is to streamline the blood donation process, ensuring that every
+                        drop
+                        counts and reaches those
+                        in need swiftly and efficiently.
+                        <br>
+                        At Blood Vault, we understand the critical role that blood banks play in healthcare systems
+                        worldwide. Our comprehensive software solution is designed with the needs of blood banks,
+                        hospitals,
+                        donors, and
+                        recipients in mind.
+                        <br>
+                        With our user-friendly interface and advanced features, we empower blood banks to manage
+                        their
+                        inventory effectively,
+                        track donations in real-time, and connect with donors seamlessly. Our goal is to enhance
+                        operational
+                        efficiency, reduce
+                        wastage, and ultimately save more lives.
+                        <br>
+                        Driven by a passion for innovation and a commitment to making a difference, our team
+                        continually
+                        strives to improve and
+                        evolve our platform. We work closely with blood banks and healthcare professionals to
+                        incorporate
+                        feedback and stay
+                        ahead of industry trends.
+                        <br>
+                        Join us in our mission to make blood donation and distribution safer, smarter, and more
+                        accessible
+                        for everyone.
+                        Together, we can make a positive impact and help ensure that no one ever faces a shortage of
+                        life-saving blood.
+                        <br>
+                        Thank you for choosing Blood Vault. Let's save lives, one donation at a time.
                     </p>
                 </div>
-                <div class="col-md-5 mx-auto">
-                    <h5 class="container bg-danger" style="padding: 10px">
-                        Compatible blood type donors
-                    </h5>
-                    <table class="table">
-                        <thead>
-                            <td><b>Blood Type</b></td>
-                            <td><b>Donate Blood To</b></td>
-                            <td><b>Receive Blood From</b></td>
-                        </thead>
-                        <tbody>
-                            <td>A+</td>
-                            <td>A+ AB+</td>
-                            <td>A+ A- O+ O-</td>
-                        </tbody>
-                        <tbody>
-                            <td>A-</td>
-                            <td>A+ A- AB+ AB-</td>
-                            <td>A- o-</td>
-                        </tbody>
-                        <tbody>
-                            <td>B+</td>
-                            <td>B+ AB+</td>
-                            <td>B+ B- O+ O-</td>
-                        </tbody>
-                        <tbody>
-                            <td>B-</td>
-                            <td>B+ B- AB+ AB-</td>
-                            <td>B- O-</td>
-                        </tbody>
-                        <tbody>
-                            <td>AB+</td>
-                            <td>AB+</td>
-                            <td>Everyone</td>
-                        </tbody>
-                        <tbody>
-                            <td>AB-</td>
-                            <td>AB+ AB-</td>
-                            <td>AB- A- B- O-</td>
-                        </tbody>
-                        <tbody>
-                            <td>O+</td>
-                            <td>O+ A+ B+ AB+</td>
-                            <td>O+ O-</td>
-                        </tbody>
-                        <tbody>
-                            <td>O-</td>
-                            <td>Everyone</td>
-                            <td>O-</td>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-    </div>
 
-    <div class="container">
-        <section id="body4">
-            <div class="contianer">
-                <h4 class="title2">Types of Donation</h4>
-                <p class="text-center">
-                    The average human body contains about five liters of blood, which is
-                    made of several celluar and non-cellular components such as
-                    <b>Red blood cell</b>, <b>Platelete</b>, and <b>Plasma</b>.
-                </p>
-                <p class="text-center">
-                    Each type of component has its unique properties and can be used for
-                    different indications. The donated blood is separated into these
-                    components by the blood centre and one donated unit can save upto four
-                    lives depending on the number of components separated from your blood.
-                </p>
-            </div>
-
-            <div class="card donation-details">
-
-                <div class="card-header mb-3 c-po" role="tab">
-                    <ul class="nav nav-tabs card-header-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="true" id="redbloodbtn">Packed Red Blood Cells</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="plasmabtn">plasma</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " id="plateletbtn">Platelet</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="row content card-body ml-2" id="about-whole-blood">
-                    <div class="col-md-4 detail">
-                        <h6>What is it?</h6>
-                        <p>
-                            Blood Collected straight from the donor into a blood bag and mixed
-                            with an anticoagulant is called as whole blood. This collected
-                            whole blood is then centrifuged and red cell, platelets and plasma
-                            are separated. The separated Red cells are mixed with a
-                            preservative to be called as packed red blood cells.
-                        </p>
-                        <h6>Who can donate?</h6>
-                        <p>
-                            You need to be 18-65 years old, weight 45kg or more and be fit and
-                            healthy.
-                        </p>
-                    </div>
-                    <div class="col-md-4 detail">
-                        <h6>Used For?</h6>
-                        <p>
-                            Correction of severe anemia in a number of conditions and blood
-                            loss in case of child birth, surgery or trauma settings.
-                        </p>
-                        <h6>Lasts For?</h6>
-                        <p>Red cells can be stored for 42 days at 2-6 degree celsius.</p>
-                    </div>
-                    <div class="col-md-4 detail">
-                        <h6>How long does it take to donate?</h6>
-                        <p>15-30 minutes to donate including the pre-donation check-up.</p>
-                        <h6>How often can I donate?</h6>
-                        <p>
-                            Male donors can donate again after 90 days and female donors can
-                            donate again after 120 days.
-                        </p>
-                    </div>
-                </div>
-                <div class="row content card-body" id="about-plasma">
-                    <div class="col-md-4 detail">
-                        <h6>What is it?</h6>
-                        <p>
-                            The straw-coloured liquid in which red blood cells, white blood
-                            cells, and platelets float in is called plasma.Contains special
-                            nutrients which can be used to create 18 different type of medical
-                            products to treat many different medical conditions. Plasma can be
-                            obtained from the collected whole blood after red blood cells and
-                            platelets have been separated. Additionally, it can also be
-                            collected using an apheresis equipment where other components are
-                            returned to the donor. The former is a common method of plasma
-                            preparation in our country.
-                        </p>
-                        <h6>Who can donate?</h6>
-                        <p>
-                            The donation criteria is similar to that of red blood cell.
-                            However, for apheresis plasma collection minimum weight is 50 kgs.
-                        </p>
-                    </div>
-                    <div class="col-md-4 detail">
-                        <h6>Used For?</h6>
-                        <p>
-                            Used for bleeding patients with coagulation factor deficiency such
-                            as hemophilia A and B, von willibrand disease etc. also used in
-                            cases of blood loss due to trauma.
-                        </p>
-                        <h6>Lasts For?</h6>
-                        <p>
-                            Plasma after separation if frozen below -30 degrees can be stored
-                            up to one year.
-                        </p>
-                    </div>
-                    <div class="col-md-4 detail">
-                        <h6>How long does it take to donate?</h6>
-                        <p>15-30 minutes to donate including the pre-donation check-up.</p>
-                        <h6>How often can I donate?</h6>
-                        <p>
-                            Male donors can donate again after 90 days and female donors can
-                            donate again after 120 days.
-                        </p>
-                    </div>
-                </div>
-                <div class="row content card-body" id="about-platelet">
-                    <div class="col-md-4 detail">
-                        <h6>What is it?</h6>
-                        <p>
-                            Blood Collected straight from the donor into a blood bag and These
-                            are cellular elements in blood which wedge together to help to
-                            clot and reduce bleeding. Always in high demand, Vital for people
-                            with low platelet count, like hematology and cancer patients.
-                        </p>
-                        <h6>Who can donate?</h6>
-                        <p>
-                            One can donate whole blood from which the blood centre will
-                            separate platelets from other components. Criteria similar to
-                            whole blood donation apply. Alternatively, one can donate using
-                            apheresis equipment where only platelets are collected and rest
-                            components are returned back to donate. One need to satisfy whole
-                            blood criteria and pre- donation screening which include negative
-                            infectious markers and platelet count >1,50,000 per microlitre of
-                            blood. Weight should be >50kgs.
-                        </p>
-                    </div>
-                    <div class="col-md-4 detail">
-                        <h6>User For?</h6>
-                        <p>
-                            Conditions with very low platelet count such as Cancer, blood
-                            diseases, trauma, dengue etc.
-                        </p>
-                        <h6>Lasts For?</h6>
-                        <p>can be stored for 5 days at 20-24 degree celsius.</p>
-                    </div>
-                    <div class="col-md-4 detail">
-                        <h6>How long does it work?</h6>
-                        <p>
-                            We collect your blood, keep platelet and return rest to you by
-                            apheresis donation.
-                        </p>
-                        <h6>How long does it take to donate?</h6>
-                        <p>
-                            45-60 minutes to donate. 2-3 hours for pre-donation screening.
-                        </p>
-                        <h6>How often can I donate?</h6>
-                        <p>
-                            Every 2 weeks but should not exceed more than 24 times in a year.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <section class="body5">
-        <div class="container-fluid">
-            <div class="contact">
-                <h4>Contact Us</h4>
-                <!-- <p>asdabdkjdahdajksdhksajdhasjkdhsjkadhsakjdhsadhsakdhsakdha
-                    adlksadlkadasjdsajkdhasjkhsakjhajkhaskjhaskhakjsdhsa.
-                </p> -->
-            </div>
-            <div class="main">
-                <div class="info">
-                    <div class="box">
-                        <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                        <div class="text">
-                            <h3>Address</h3>
-                            <p>new road ,<br>kathmandu,<br>Nepal.</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="icon"><i class="fa-solid fa-phone"></i></div>
-                        <div class="text">
-                            <h3>Phone</h3>
-                            <p>9876543210</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
-                        <div class="text">
-                            <h3>Email</h3>
-                            <p>bloodbank@gmail.com</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="form">
-                    <form>
-                        <h2>Send Message</h2>
-                        <div class="inputBox">
-                            <input type="text" name="" required="required">
-                            <span>Full Name</span>
-                        </div>
-                        <div class="inputBox">
-                            <input type="text" name="" required="required">
-                            <span>Email</span>
-                        </div>
-                        <div class="inputBox">
-                            <textarea required="required"></textarea>
-                            <span>Type your Message...</span>
-                        </div>
-                        <div class="inputBox">
-                            <input type="submit" name="submit" value="Send">
-                        </div>
-                    </form>
+                <div class="col-md-6 image">
+                    <img src="assets/images/about.jpg" alt="">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="footer1">
-        <div class="container-fluid">
-            <footer>
-                <div class="d-flex flex-column flex-sm-row justify-content-between py-4  border-top">
-                    <p>© 2024 BloodVault. All rights reserved.</p>
-                    <ul class="list-unstyled d-flex">
-                        <li class="ms-3">
-                            <a class="link-body-emphasis" href="#"><i class="fa-brands fa-facebook"></i></a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="link-body-emphasis" href="#"><i class="fa-brands fa-instagram"></i></a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="link-body-emphasis" href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="link-body-emphasis" href="#"><i class="fa-brands fa-viber"></i></a>
-                        </li>
-                    </ul>
+
+
+    <!-- ################# Gallery Start Here #######################--->
+
+    <div id="gallery" class="gallery container-fluid">
+        <div class="container">
+            <div class="row session-title">
+                <h2>Checkout Our Gallery</h2>
+            </div>
+            <div class="gallery-row row">
+                <div id="gg-screen"></div>
+                <div class="gg-box">
+                    <div class="gg-element">
+                        <img src="assets/images/gallery/g1.jpg">
+                    </div>
+                    <div class="gg-element">
+                        <img src="assets/images/gallery/g2.jpg">
+                    </div>
+                    <div class="gg-element">
+                        <img src="assets/images/gallery/g3.jpg">
+                    </div>
+                    <div class="gg-element">
+                        <img src="assets/images/gallery/g4.jpg">
+                    </div>
+                    <div class="gg-element">
+                        <img src="assets/images/gallery/g5.jpg">
+                    </div>
+                    <div class="gg-element">
+                        <img src="assets/images/gallery/g6.jpg">
+                    </div>
+                    <div class="gg-element">
+                        <img src="assets/images/gallery/g7.jpg">
+                    </div>
+                    <div class="gg-element">
+                        <img src="assets/images/gallery/g8.jpg">
+                    </div>
+                    <div class="gg-element">
+                        <img src="assets/images/gallery/g9.jpg">
+                    </div>
+                    <div class="gg-element">
+                        <img src="assets/images/gallery/g10.jpg">
+                    </div>
+
+
                 </div>
-            </footer>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ################# Donation Process Start Here #######################--->
+
+    <section id="process" class="donation-care">
+        <div class="container">
+            <div class="row session-title">
+                <h2>Donation Process</h2>
+                <p>The donation process from the time you arrive center until the time you leave</p>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 vd">
+                    <div class="bkjiu">
+                        <img src="assets/images/gallery/g1.jpg" alt="">
+                        <h4><b>1 - </b>Registration</h4>
+                        <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit
+                            lobortis</p>
+                        <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 vd">
+                    <div class="bkjiu">
+                        <img src="assets/images/gallery/g2.jpg" alt="">
+                        <h4><b>2 - </b>Seeing</h4>
+                        <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit
+                            lobortis</p>
+                        <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 vd">
+                    <div class="bkjiu">
+                        <img src="assets/images/gallery/g3.jpg" alt="">
+                        <h4><b>3 - </b>Donation</h4>
+                        <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit
+                            lobortis</p>
+                        <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 vd">
+                    <div class="bkjiu">
+                        <img src="assets/images/gallery/g4.jpg" alt="">
+                        <h4><b>4 - </b>Save Life</h4>
+                        <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit
+                            lobortis</p>
+                        <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </section>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
-    </script>
-    <script src="script.js"></script>
+
+
+    <!--################### Our Blog Starts Here #######################--->
+    <div id="blog" class="blog-container contaienr-fluid">
+        <div class="container">
+            <div class="session-title row">
+                <h2>Latest Blog</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut
+                    est arcu. Donec hendrerit velit consectetur adipiscing elit.</p>
+            </div>
+            <div class="row news-row">
+                <div class="col-md-6">
+                    <div class="news-card">
+                        <div class="image">
+                            <img src="assets/images/blog/blog_01.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <h3>Latest News about Smarteye</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a
+                                dictum. Donec ut est arcu. Donec hendrerit consectetur adipiscing elit. </p>
+                            <p class="footp">
+                                27 Comments <span>/</span>
+                                Blog Design <span>/</span>
+                                Read More
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="news-card">
+                        <div class="image">
+                            <img src="assets/images/blog/blog_02.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <h3>Apple Launch its New Phone</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a
+                                dictum. Donec ut est arcu. Donec hendrerit consectetur adipiscing elit. </p>
+                            <p class="footp">
+                                27 Comments <span>/</span>
+                                Blog Design <span>/</span>
+                                Read More
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="news-card">
+                        <div class="image">
+                            <img src="assets/images/blog/blog_03.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <h3>About Windows 10 Update</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a
+                                dictum. Donec ut est arcu. Donec hendrerit consectetur adipiscing elit. </p>
+                            <p class="footp">
+                                27 Comments <span>/</span>
+                                Blog Design <span>/</span>
+                                Read More
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="news-card">
+                        <div class="image">
+                            <img src="assets/images/blog/blog_04.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <h3>Latest News about Smarteye</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a
+                                dictum. Donec ut est arcu. Donec hendrerit consectetur adipiscing elit. </p>
+                            <p class="footp">
+                                27 Comments <span>/</span>
+                                Blog Design <span>/</span>
+                                Read More
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--*************** Footer  Starts Here *************** -->
+    <footer id="contact" class="container-fluid">
+        <div class="container">
+
+            <div class="row content-ro">
+                <div class="col-lg-4 col-md-12 footer-contact">
+                    <h2>Contact Informatins</h2>
+                    <div class="address-row">
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="detail">
+                            <p>46-29 Indra Street, Southernbank, Tigaione, Toranto, 3006 Canada</p>
+                        </div>
+                    </div>
+                    <div class="address-row">
+                        <div class="icon">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <div class="detail">
+                            <p>sales@smarteyeapps.com <br> support@smarteyeapps.com</p>
+                        </div>
+                    </div>
+                    <div class="address-row">
+                        <div class="icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="detail">
+                            <p>+91 9751791203 <br> +91 9159669599</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 footer-links">
+                    <div class="row no-margin mt-2">
+                        <h2>Quick Links</h2>
+                        <ul>
+                            <li>Home</li>
+                            <li>About Us</li>
+                            <li>Contacts</li>
+                            <li>Pricing</li>
+                            <li>Gallery</li>
+                            <li>eatures</li>
+
+                        </ul>
+                    </div>
+                    <div class="row no-margin mt-1">
+                        <h2 class="m-t-2">More Products</h2>
+                        <ul>
+                            <li>Forum PHP Script</li>
+                            <li>Edu Smart</li>
+                            <li>Smart Event</li>
+                            <li>Smart School</li>
+
+
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-md-12 footer-form">
+                    <div class="form-card">
+                        <div class="form-title">
+                            <h4>Quick Message</h4>
+                        </div>
+                        <div class="form-body">
+                            <input type="text" placeholder="Enter Name" class="form-control">
+                            <input type="text" placeholder="Enter Mobile no" class="form-control">
+                            <input type="text" placeholder="Enter Email Address" class="form-control">
+                            <input type="text" placeholder="Your Message" class="form-control">
+                            <button class="btn btn-sm btn-primary w-100">Send Request</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copy">
+                <div class="row">
+                    <div class="col-lg-8 col-md-6">
+                        <p>Copyright © <a href="">BloodVault.com</a> | All right reserved.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 socila-link">
+                        <ul>
+                            <li><a><i class="fab fa-github"></i></a></li>
+                            <li><a><i class="fab fa-google-plus-g"></i></a></li>
+                            <li><a><i class="fab fa-pinterest-p"></i></a></li>
+                            <li><a><i class="fab fa-twitter"></i></a></li>
+                            <li><a><i class="fab fa-facebook-f"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
 </body>
+
+<script src="assets/js/jquery-3.2.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/plugins/grid-gallery/js/grid-gallery.min.js"></script>
+<script src="assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js"></script>
+<script src="assets/js/script.js"></script>
 
 </html>
