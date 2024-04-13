@@ -85,7 +85,7 @@ $query->execute();
 $result = $query->get_result();
 $rows = $result->fetch_all(MYSQLI_ASSOC);
 
-$total_records_query = $conn->query("SELECT COUNT(*) FROM donation");
+$total_records_query = $conn->query("SELECT COUNT(*) FROM event");
 $total_records = $total_records_query->fetch_row()[0];
 $total_pages = ceil($total_records / $records_per_page);
 
@@ -107,7 +107,7 @@ $total_pages = ceil($total_records / $records_per_page);
                     <input type="text" id="search-input" oninput="searchTable()" placeholder="Search...">
                 </div>
             </div>
-            <table class="table">
+            <table class="table-bordered border-dark text-center">
 
                 <thead>
                     <th>Id</th>

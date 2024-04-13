@@ -25,7 +25,7 @@
 #eventForm {
   display: none;
   position: absolute;
-  top: 60%;
+  top: 50%;
   right: 10%;
   transform: translate(-50%, -50%);
   background-color: #f9f9f9;
@@ -78,8 +78,52 @@ select {
   flex: auto;
 }
 
+#contactForm {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translate(-50%, -50%);
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1000;
+  width: 32%;
+  border-radius: 10px;
+  background-color: #d8c7c7;
+  overflow: hidden;
+}
+
+#contact .form-title {
+  text-align: center;
+  font-size: 1.5rem;
+}
+#contact .form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+#contact label {
+  font-size: 20px;
+  margin: 0 5px 0 5px;
+}
+#contact input[type="text"],
+input[type="tel"] {
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  max-width: 100%;
+}
+#contactForm i {
+  position: absolute;
+  right: 40px;
+  top: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
 .pagination {
-  margin: 20px 0;
+  margin: 20px 0 5px 0;
   text-align: center;
 }
 

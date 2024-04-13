@@ -10,14 +10,14 @@ $records_per_page = isset($_GET['records_per_page']) ? intval($_GET['records_per
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 $offset = ($page - 1) * $records_per_page;
 
-$sql = "SELECT * FROM donor ORDER BY d_id DESC LIMIT ?, ?";
+$sql = "SELECT * FROM patient ORDER BY p_id DESC LIMIT ?, ?";
 $query = $conn->prepare($sql);
 $query->bind_param('ii', $offset, $records_per_page); 
 $query->execute();
 $result = $query->get_result();
 $rows = $result->fetch_all(MYSQLI_ASSOC);
 
-$total_records_query = $conn->query("SELECT COUNT(*) FROM donation");
+$total_records_query = $conn->query("SELECT COUNT(*) FROM patient");
 $total_records = $total_records_query->fetch_row()[0];
 $total_pages = ceil($total_records / $records_per_page);
 ?>
@@ -38,9 +38,9 @@ $total_pages = ceil($total_records / $records_per_page);
                     <input type="text" id="search-input" oninput="searchTable()" placeholder="Search...">
                 </div>
             </div>
-            <table class="table-secondary table-bordered border-light text-center">
+            <table class=" table-bordered border-light text-center">
 
-                <thead class="bg bg-info ">
+                <thead>
                     <tr>
                         <th>Id</th>
                         <th>Firstname</th>

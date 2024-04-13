@@ -69,7 +69,15 @@
                       <a href="event.php" class="nav-link">
                           <i class="nav-icon fa-solid fa-calendar-days"></i>
                           <p>
-                              Event
+                              Events
+                          </p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="hotline.php" class="nav-link">
+                          <i class="nav-icon fa-solid fa-phone"></i>
+                          <p>
+                              Hotlines
                           </p>
                       </a>
                   </li>

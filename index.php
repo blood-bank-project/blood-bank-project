@@ -33,20 +33,20 @@
                                     href="index.php">Home</a>
                             </li>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
-                                <li><a class="dropdown-item" href="#">About us</a></li>
+                                <li><a class="dropdown-item" href="#about">About us</a></li>
                                 <li>
-                                    <a class="dropdown-item" href="#">Gallary</a>
+                                    <a class="dropdown-item" href="#gallery">Gallary</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">Process</a>
+                                    <a class="dropdown-item" href="#process">Process</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">Blog</a>
+                                    <a class="dropdown-item" href="#blog">Blog</a>
                                 </li>
-                                <li><a class="dropdown-item" href="#">Contact us</a></li>
+                                <li><a class="dropdown-item" href="#contact">Contact us</a></li>
                             </ul>
                         </div>
-                        <div class="dropdown">
+                        <!-- <div class="dropdown">
                             <li class="nav-item">
                                 <a class="nav-link  dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
                                     href="">Looking for blood?</a>
@@ -57,7 +57,7 @@
                                     <a class="dropdown-item" id="patientlogin">Login</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
                         <div class="dropdown">
                             <li class="nav-item">
                                 <a class="nav-link dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
@@ -83,7 +83,7 @@
                         </div>
                     </ul>
                     <div class="button">
-                        <a href="signin.php"><button class="btn btn-outline-danger m-2">Donate Now</button></a>
+                        <a href="donor/signin.php"><button class="btn btn-outline-danger m-2">Donate Now</button></a>
                         <a href="request.php"><button class="btn btn-danger">Request Blood</button></a>
                     </div>
                 </div>

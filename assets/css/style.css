@@ -798,17 +798,12 @@ footer .footer-copy .socila-link ul li a {
 }
 #request .form-container {
   width: 60%;
+  margin: 20px auto;
   padding: 20px;
   border-radius: 10px;
   background-color: #e9b5b5;
   color: rgb(138, 25, 25);
   overflow: hidden;
-}
-#request .form-group {
-  margin-right: 20px;
-}
-#request .form-field {
-  display: flex;
 }
 #request label {
   font-size: 20px;
@@ -837,4 +832,74 @@ select {
 }
 #request .hotline i {
   padding: 0 5px 0 0;
+}
+
+#hotline .top {
+  display: flex;
+  margin: 20px;
+}
+#hotline .top-content {
+  margin-right: 20px;
+}
+#hotline .title {
+  border-right: 1px solid rgb(145, 6, 6);
+  padding-right: 5px;
+}
+#date {
+  border-right: 1px solid rgb(145, 6, 6);
+  padding-right: 5px;
+}
+
+#hotline .request-list {
+  background-color: #96d8e9;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  width: 60%;
+  border-radius: 10px;
+}
+#hotline .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #000;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+  border-radius: 4px;
+}
+
+.pagination a.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.table-search {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+#search-input {
+  outline: none;
+  padding: 5px;
+  border: none;
+  background-color: #d8c7c7;
+  border-radius: 5px;
 }

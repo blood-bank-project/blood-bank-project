@@ -8,8 +8,8 @@ include('includes/topbar.php');
     <section class="content" id="request-section">
         <div class="container-fluid">
             <h2>Blood Request</h2>
-            <table class="table table-secondary table-bordered border-light text-center">
-                <thead class="bg bg-info ">
+            <table class="table-bordered border-light text-center">
+                <thead>
                     <tr>
                         <th>Id</th>
                         <th>Name</th>
@@ -32,10 +32,10 @@ include('includes/topbar.php');
         </div>
     </section>
 </div>
-   
-   
-   
-   
-   <?php
+
+
+
+
+<?php
 include("includes/footer.php");
 ?>

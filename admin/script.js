@@ -14,14 +14,31 @@ function loadContent(divId, link) {
   link.classList.add("active");
 }
 
-let addEvent = document.getElementById("addEvent");
-let closeButton = document.getElementById("closebutton");
-let eventForm = document.getElementById("eventForm");
+document.addEventListener("DOMContentLoaded", function () {
+  let addEvent = document.getElementById("addEvent");
+  let closeButton = document.getElementById("closebutton");
+  let eventForm = document.getElementById("eventForm");
 
-addEvent.addEventListener("click", () => {
-  eventForm.style.display = "block";
+  addEvent.addEventListener("click", () => {
+    eventForm.style.display = "block";
+  });
+
+  closeButton.addEventListener("click", () => {
+    eventForm.style.display = "none";
+  });
 });
 
-closebutton.addEventListener("click", () => {
-  eventForm.style.display = "none";
+document.addEventListener("DOMContentLoaded", function () {
+  let addContact = document.getElementById("addContact");
+  let closeButton1 = document.getElementById("closebutton");
+  let contactForm = document.getElementById("contactForm");
+
+  addContact.addEventListener("click", () => {
+    console.log("clicked");
+    contactForm.style.display = "block";
+  });
+
+  closeButton1.addEventListener("click", () => {
+    contactForm.style.display = "none";
+  });
 });

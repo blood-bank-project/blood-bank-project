@@ -17,7 +17,7 @@ $query->execute();
 $result = $query->get_result();
 $rows = $result->fetch_all(MYSQLI_ASSOC);
 
-$total_records_query = $conn->query("SELECT COUNT(*) FROM donation");
+$total_records_query = $conn->query("SELECT COUNT(*) FROM donor");
 $total_records = $total_records_query->fetch_row()[0];
 $total_pages = ceil($total_records / $records_per_page);
 ?>
@@ -38,12 +38,11 @@ $total_pages = ceil($total_records / $records_per_page);
                     <input type="text" id="search-input" oninput="searchTable()" placeholder="Search...">
                 </div>
             </div>
-            <table class=" table-secondary table-bordered border-dark text-center ">
-                <thead class="bg bg-info">
+            <table class="table table-bordered border-dark text-center ">
+                <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
+                        <th>Name</th>
                         <th>dob</th>
                         <th>Email</th>
                         <th>Gender</th>
@@ -51,9 +50,8 @@ $total_pages = ceil($total_records / $records_per_page);
                         <th>Occupation</th>
                         <th>Mobile number</th>
                         <th>tel. number</th>
-                        <th>Nationality</th>
-                        <th>State</th>
-                        <th>District</th>
+                        <th>Province</th>
+                        <th>Address</th>
                         <th>Action</th>
                 </thead>
                 <tbody id="donorTableBody">
@@ -63,9 +61,7 @@ $total_pages = ceil($total_records / $records_per_page);
                     <?php foreach ($rows as $data): ?>
                     <tr>
                         <td><?php echo ++$i;?></td>
-                        <td><?php echo $data['firstname'];?>
-                        </td>
-                        <td><?php echo $data["lastname"];?>
+                        <td><?php echo $data['firstname'].'' .$data["middlename"].''. $data["lastname"];?>
                         </td>
                         <td><?php echo $data["dob"];?>
                         </td>
@@ -81,12 +77,10 @@ $total_pages = ceil($total_records / $records_per_page);
                         </td>
                         <td><?php echo $data["tel"];?>
                         </td>
-                        <td><?php echo $data["nationality"];?>
+                        <td><?php echo $data["province"];?>
+                        <td><?php echo $data["municipality"] . '-' . $data["ward"] . ', ' . $data["tole"] . ', ' . $data["district"]; ?>
                         </td>
-                        <td><?php echo $data["state"];?>
-                        </td>
-                        <td><?php echo $data["district"];?>
-                        </td>
+
                         <td>
                             <a href=""> <button class="btn btn-primary">Edit</button></a>
                             <a href="backend/deletedonor.php?id=<?php echo $data['d_id']; ?>;"><button

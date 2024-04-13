@@ -46,7 +46,7 @@
                                 <li><a class="dropdown-item" href="#">Contact us</a></li>
                             </ul>
                         </div>
-                        <div class="dropdown">
+                        <!-- <div class="dropdown">
                             <li class="nav-item">
                                 <a class="nav-link  dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
                                     href="">Looking for blood?</a>
@@ -57,7 +57,7 @@
                                     <a class="dropdown-item" id="patientlogin">Login</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
                         <div class="dropdown">
                             <li class="nav-item">
                                 <a class="nav-link dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
@@ -83,7 +83,7 @@
                         </div>
                     </ul>
                     <div class="button">
-                        <a href="signin.php"><button class="btn btn-outline-danger m-2">Donate Now</button></a>
+                        <a href="donor/signin.php"><button class="btn btn-outline-danger m-2">Donate Now</button></a>
                         <a href="request.php"><button class="btn btn-danger">Request Blood</button></a>
                     </div>
                 </div>
@@ -163,22 +163,204 @@
         </div>
     </div>
 
-    <div class="footer-copy">
-        <div class="row">
-            <div class="col-lg-8 col-md-6">
-                <p>Copyright © <a href="">BloodVault.com</a> | All right reserved.</p>
+
+    <section id="hotline">
+        <div class="container top">
+            <div class="top-content title">
+                <h1>BloodVault Hotlines</h1>
             </div>
-            <div class="col-lg-4 col-md-6 socila-link">
-                <ul>
-                    <li><a><i class="fab fa-github"></i></a></li>
-                    <li><a><i class="fab fa-google-plus-g"></i></a></li>
-                    <li><a><i class="fab fa-pinterest-p"></i></a></li>
-                    <li><a><i class="fab fa-twitter"></i></a></li>
-                    <li><a><i class="fab fa-facebook-f"></i></a></li>
-                </ul>
+            <div id=" date" class="top-content"><span></span></div>
+            <div>
+                <p class="top-content total">Blood request managed till now </p>
             </div>
         </div>
-    </div>
+
+        <div class="container request-list">
+            <div class="box">
+                <div class="icon"><i class="fa-solid fa-droplet"></i></div>
+                <div class="">
+                    <h3>Blood Request Today</h3>
+                </div>
+                <div class="number"></div>
+            </div>
+            <div class="box">
+                <div class="icon"><i class="fa-solid fa-circle-check"></i></div>
+                <div class="">
+                    <h3>Managed</h3>
+                </div>
+                <div class="number"></div>
+            </div>
+            <div class="box three">
+                <div class="icon"><i class="fa-solid fa-clock"></i></div>
+                <div class="">
+                    <h3>Pending</h3>
+                </div>
+                <div class="number"></div>
+            </div>
+        </div>
+
+        <hr>
+        <?php
+require_once "backend/connect.php";
+$records_per_page = isset($_GET['records_per_page']) ? intval($_GET['records_per_page']) : 10;
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+$offset = ($page - 1) * $records_per_page;
+
+$sql = "SELECT * FROM hotline LIMIT ?, ?";
+$query = $conn->prepare($sql);
+$query->bind_param('ii', $offset, $records_per_page); // 'ii' indicates two integer parameters
+$query->execute();
+$result = $query->get_result();
+$rows = $result->fetch_all(MYSQLI_ASSOC);
+
+// Count total records
+$total_records_query = $conn->query("SELECT COUNT(*) FROM hotline");
+$total_records = $total_records_query->fetch_row()[0];
+$total_pages = ceil($total_records / $records_per_page);
+
+?>
+        <div class="container hotlinestat">
+            <h2 class="text-center m-4">Blood Bank Hotlines</h2>
+            <div class="table-search">
+                <div class="pagination-options">
+                    <label for="rows-per-page">Rows per page:</label>
+                    <select id="rows-per-page" onchange="changeRowsPerPage(this.value)">
+                        <option value="5" <?php if ($records_per_page == 5) echo 'selected'; ?>>5</option>
+                        <option value="10" <?php if ($records_per_page == 10) echo 'selected'; ?>>10</option>
+                        <option value="20" <?php if ($records_per_page == 20) echo 'selected'; ?>>20</option>
+                        <option value="50" <?php if ($records_per_page == 50) echo 'selected'; ?>>50</option>
+                    </select>
+                </div>
+                <div class="search-container">
+                    <input type="text" id="search-input" oninput="searchTable()" placeholder="Search...">
+                </div>
+            </div>
+            <table class="table ">
+
+                <thead>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Conatact</th>
+                </thead>
+                <tbody>
+                    <?php
+                 if ($rows): ?>
+                    <?php foreach ($rows as $data): ?>
+                    <tr>
+                        <td><?php echo $data['name']; ?></td>
+                        <td><?php echo $data['location']; ?></td>
+                        <td><?php echo $data['phone1'].',<br>'.$data['phone2'].',<br>'.$data['phone3'];?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                    <?php else: ?>
+                    <tr>
+                        <td colspan="11">Record not found.</td>
+                    </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+            <?php if ($total_pages > 1){ ?>
+            <div class="pagination">
+                <?php if ($page > 1){ ?>
+                <a href="?page=1&records_per_page=<?php echo $records_per_page; ?>">&laquo; First</a>
+                <a href="?page=<?php echo ($page - 1); ?>&records_per_page=<?php echo $records_per_page; ?>">&lsaquo;
+                    Previous</a>
+                <?php } ?>
+                <?php for ($i = max(1, $page - 5); $i <= min($page + 5, $total_pages); $i++){ ?>
+                <a href="?page=<?php echo $i; ?>&records_per_page=<?php echo $records_per_page; ?>"
+                    <?php if ($i === $page) echo 'class="active"'; ?>><?php echo $i; ?></a>
+                <?php } ?>
+                <?php if ($page < $total_pages){ ?>
+                <a href="?page=<?php echo ($page + 1); ?>&records_per_page=<?php echo $records_per_page; ?>">Next
+                    &rsaquo;</a>
+                <a href="?page=<?php echo $total_pages; ?>&records_per_page=<?php echo $records_per_page; ?>">Last
+                    &raquo;</a>
+                <?php } ?>
+            </div>
+            <?php } ?>
+
+        </div>
+
+
+
+
+
+        <footer id="contact" class="container-fluid">
+            <div class="container">
+
+                <div class="row content-ro">
+                    <div class="col-lg-4 col-md-12 footer-contact">
+                        <h2>Contact Informatins</h2>
+                        <div class="address-row">
+                            <div class="icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="detail">
+                                <p>46-29 Indra Street, Southernbank, Tigaione, Toranto, 3006 Canada</p>
+                            </div>
+                        </div>
+                        <div class="address-row">
+                            <div class="icon">
+                                <i class="far fa-envelope"></i>
+                            </div>
+                            <div class="detail">
+                                <p>sales@smarteyeapps.com <br> support@smarteyeapps.com</p>
+                            </div>
+                        </div>
+                        <div class="address-row">
+                            <div class="icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="detail">
+                                <p>+91 9751791203 <br> +91 9159669599</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 footer-links">
+                        <div class="row no-margin mt-2">
+                            <h2>Quick Links</h2>
+                            <ul>
+                                <li>Home</li>
+                                <li>About Us</li>
+                                <li>Contacts</li>
+                                <li>Pricing</li>
+                                <li>Gallery</li>
+                                <li>eatures</li>
+
+                            </ul>
+                        </div>
+                        <div class="row no-margin mt-1">
+                            <h2 class="m-t-2">More Products</h2>
+                            <ul>
+                                <li>Forum PHP Script</li>
+                                <li>Edu Smart</li>
+                                <li>Smart Event</li>
+                                <li>Smart School</li>
+
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="footer-copy">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6">
+                            <p>Copyright © <a href="">BloodVault.com</a> | All right reserved.</p>
+                        </div>
+                        <div class="col-lg-4 col-md-6 socila-link">
+                            <ul>
+                                <li><a><i class="fab fa-github"></i></a></li>
+                                <li><a><i class="fab fa-google-plus-g"></i></a></li>
+                                <li><a><i class="fab fa-pinterest-p"></i></a></li>
+                                <li><a><i class="fab fa-twitter"></i></a></li>
+                                <li><a><i class="fab fa-facebook-f"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
 </body>
 
 <script src="assets/js/jquery-3.2.1.min.js"></script>

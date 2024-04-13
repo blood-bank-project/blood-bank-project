@@ -1,23 +1,16 @@
-body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: antiquewhite;
-}
-.container {
+.doantionForm {
   position: relative;
   max-width: 900px;
-  width: 100%;
+  width: 80%;
   border-radius: 6px;
   padding: 30px;
-  margin: 0 15px;
+  margin: 20px 10%;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  background-color: white;
+  background-color: rgb(228, 189, 189);
 }
 .container header {
   position: relative;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 600;
   color: black;
   text-align: center;
@@ -27,7 +20,6 @@ body {
   position: relative;
   margin-top: 20px;
   min-height: 490px;
-  background-color: white;
 }
 .container form .detail.ID {
   margin-top: 30px;
@@ -44,16 +36,16 @@ body {
 .container form .fields {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
 }
 form .fields .input-field {
   display: flex;
   width: 250px;
   flex-direction: column;
+  margin-right: 20px;
 }
 .input-field label {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 500;
   color: black;
 }
@@ -76,18 +68,18 @@ form .fields .input-field {
 }
 .form button {
   height: 50px;
-  width: 100%;
+  width: 30%;
+  background-color: rgb(182, 29, 29);
   color: white;
-  margin-top: 20px;
+  margin: 20px 30%;
   font-size: 20px;
   border: none;
-  background-color: blueviolet;
   font-weight: 400;
   border-radius: 6px;
   transition: 0.2;
   cursor: pointer;
+  outline: none;
 }
-
-.form button:hover {
-  background-color: black;
+button:hover {
+  background-color: rgb(204, 35, 35);
 }

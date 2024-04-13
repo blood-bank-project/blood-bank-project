@@ -176,3 +176,7 @@ $data = mysqli_fetch_array($row);
             </div>
         </section>
     </div>
+</div>
+<?php
+     include('includes/footer.php');
+    ?>

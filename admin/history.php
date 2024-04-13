@@ -8,8 +8,8 @@ include('includes/topbar.php');
      <section class="content" id="history-section">
          <div class="container-fluid">
              <h2>Request History</h2>
-             <table class="table table-secondary table-bordered border-light text-center">
-                 <thead class="bg bg-info ">
+             <table class="table-bordered border-light text-center">
+                 <thead>
                      <tr>
                          <th>Id</th>
                          <th>Name</th>
@@ -31,9 +31,9 @@ include('includes/topbar.php');
              </table>
          </div>
      </section>
-</div>
+ </div>
 
-     <?php
+ <?php
 
 include('includes/footer.php');
 ?>
