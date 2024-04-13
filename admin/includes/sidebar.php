@@ -65,9 +65,15 @@
                           </p>
                       </a>
                   </li>
+                  <li class="nav-item">
+                      <a href="event.php" class="nav-link">
+                          <i class="nav-icon fa-solid fa-calendar-days"></i>
+                          <p>
+                              Event
+                          </p>
+                      </a>
+                  </li>
               </ul>
           </nav>
-          <!-- /.sidebar-menu -->
       </div>
-      <!-- /.sidebar -->
   </aside>

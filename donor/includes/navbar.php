@@ -11,11 +11,14 @@
                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                      <li class="nav-item">
                          <a class="nav-link active" aria-current="page" href="index.php"
-                             onclick="loadContent('donor.php')" id="home">Home</a>
+                             onclick="loadContent('donor.php')" id="home"> Home </a>
                      </li>
                      <li class="nav-item">
                          <a class="nav-link" href="donation.php" onclick="loadContent('request.php')"
                              id="request">Donation</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" href="event.php" onclick="loadContent('request.php')" id="event">Event</a>
                      </li>
                      <li class="nav-item">
                          <a class="nav-link" href="certificate.php" onclick="loadContent('certificate.php')"

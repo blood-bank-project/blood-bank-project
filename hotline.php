@@ -163,137 +163,22 @@
         </div>
     </div>
 
-    <section id="request">
-        <div class="title bg-danger">
-            <h1>Blood Request Form</h1>
-            <h5>Need Blood?</h5>
-        </div>
-        <div class="hotline">
-            <a href="hotline.php">
-                <p><i class="fa-solid fa-hand-point-right"></i>Details of us or other blood banks Hotline</p>
-            </a>
-        </div>
-        <div class="container form-container" id="donationForm">
-            <div class="form-container">
-                <form action="backend/donationregister.php" method="post">
-                    <div class="form-field">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="fname" placeholder="Your name">
-                        </div>
-                        <div class="form-group ">
-                            <label for="phone">Phone</label>
-                            <input type="integer" id="phone" name="phone" placeholder="Phone">
-                        </div>
-                    </div>
-                    <div class="form-field">
-                        <div class="form-group">
-                            <label for="blood-group">Blood Group</label>
-                            <select name="blood-group">
-                                <option value="">Select blood group</option>
-                                <option value="A+">A+ve</option>
-                                <option value="B+">B+ve</option>
-                                <option value="AB+">AB+ve</option>
-                                <option value="O+">O+ve</option>
-                                <option value="A-">A-ve</option>
-                                <option value="B-">B-ve</option>
-                                <option value="AB-">AB-ve</option>
-                                <option value="O-">O-ve</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="file">Requisition form</label>
-                            <input type="file" id="file" name="file" placeholder="Hospital form" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Any disease?"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="submit" name="submit" class="btn btn-danger mt-4 ">
-                    </div>
-                </form>
+    <div class="footer-copy">
+        <div class="row">
+            <div class="col-lg-8 col-md-6">
+                <p>Copyright © <a href="">BloodVault.com</a> | All right reserved.</p>
             </div>
-    </section>
-
-    <footer id="contact" class="container-fluid">
-        <div class="container">
-
-            <div class="row content-ro">
-                <div class="col-lg-4 col-md-12 footer-contact">
-                    <h2>Contact Informatins</h2>
-                    <div class="address-row">
-                        <div class="icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="detail">
-                            <p>46-29 Indra Street, Southernbank, Tigaione, Toranto, 3006 Canada</p>
-                        </div>
-                    </div>
-                    <div class="address-row">
-                        <div class="icon">
-                            <i class="far fa-envelope"></i>
-                        </div>
-                        <div class="detail">
-                            <p>sales@smarteyeapps.com <br> support@smarteyeapps.com</p>
-                        </div>
-                    </div>
-                    <div class="address-row">
-                        <div class="icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="detail">
-                            <p>+91 9751791203 <br> +91 9159669599</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12 footer-links">
-                    <div class="row no-margin mt-2">
-                        <h2>Quick Links</h2>
-                        <ul>
-                            <li>Home</li>
-                            <li>About Us</li>
-                            <li>Contacts</li>
-                            <li>Pricing</li>
-                            <li>Gallery</li>
-                            <li>eatures</li>
-
-                        </ul>
-                    </div>
-                    <div class="row no-margin mt-1">
-                        <h2 class="m-t-2">More Products</h2>
-                        <ul>
-                            <li>Forum PHP Script</li>
-                            <li>Edu Smart</li>
-                            <li>Smart Event</li>
-                            <li>Smart School</li>
-
-
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-            <div class="footer-copy">
-                <div class="row">
-                    <div class="col-lg-8 col-md-6">
-                        <p>Copyright © <a href="">BloodVault.com</a> | All right reserved.</p>
-                    </div>
-                    <div class="col-lg-4 col-md-6 socila-link">
-                        <ul>
-                            <li><a><i class="fab fa-github"></i></a></li>
-                            <li><a><i class="fab fa-google-plus-g"></i></a></li>
-                            <li><a><i class="fab fa-pinterest-p"></i></a></li>
-                            <li><a><i class="fab fa-twitter"></i></a></li>
-                            <li><a><i class="fab fa-facebook-f"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="col-lg-4 col-md-6 socila-link">
+                <ul>
+                    <li><a><i class="fab fa-github"></i></a></li>
+                    <li><a><i class="fab fa-google-plus-g"></i></a></li>
+                    <li><a><i class="fab fa-pinterest-p"></i></a></li>
+                    <li><a><i class="fab fa-twitter"></i></a></li>
+                    <li><a><i class="fab fa-facebook-f"></i></a></li>
+                </ul>
             </div>
         </div>
-    </footer>
+    </div>
 </body>
 
 <script src="assets/js/jquery-3.2.1.min.js"></script>

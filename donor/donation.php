@@ -17,21 +17,21 @@ include("includes/navbar.php");
                 <div class="form-group">
                     <div class="field">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="fname">
+                        <input type="text" id="name" name="fname" placeholder="Your name">
                     </div>
                     <div class="field">
                         <label for="phone">Phone</label>
-                        <input type="integer" id="phone" name="phone">
+                        <input type="integer" id="phone" name="phone" placeholder="Phone">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="field">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email">
+                        <input type="email" id="email" name="email" placeholder="Email">
                     </div>
                     <div class="field">
                         <label for="address">Address</label>
-                        <input type="text" id="address" name="address">
+                        <input type="text" id="address" name="address" placeholder="Address">
                     </div>
                 </div>
 
@@ -61,14 +61,14 @@ include("includes/navbar.php");
                     </div>
                     <div class="field">
                         <label for="unit">No. of Units</label>
-                        <input type="integer" id="unit" name="unit" required>
+                        <input type="integer" id="unit" name="unit" placeholder="How much?" required>
                     </div>
                 </div>
 
 
                 <div class="form-group2">
                     <label for="message">Disease(if any):</label>
-                    <textarea id="message" name="message" rows="4"></textarea>
+                    <textarea id="message" name="message" rows="4" placeholder="Any disease?"></textarea>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="submit" name="submit" class="btn btn-danger mt-4 ">
@@ -113,7 +113,6 @@ $total_pages = ceil($total_records / $records_per_page);
             </div>
             <div class="search-container">
                 <input type="text" id="search-input" oninput="searchTable()" placeholder="Search...">
-                <button class="btn btn-secondary" onclick="searchTable()">search</button>
             </div>
         </div>
         <table class="table">

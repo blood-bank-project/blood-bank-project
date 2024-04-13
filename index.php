@@ -30,7 +30,7 @@
                         <div class="dropdown">
                             <li class="nav-item">
                                 <a class="nav-link active dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
-                                    href="">Home</a>
+                                    href="index.php">Home</a>
                             </li>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
                                 <li><a class="dropdown-item" href="#">About us</a></li>
@@ -164,7 +164,6 @@
     </div>
 
 
-    <!-- ################# Slider Starts Here#######################--->
 
     <div class="slider-detail">
 

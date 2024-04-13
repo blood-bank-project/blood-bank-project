@@ -13,3 +13,15 @@ function loadContent(divId, link) {
   divToShow.style.display = "block";
   link.classList.add("active");
 }
+
+let addEvent = document.getElementById("addEvent");
+let closeButton = document.getElementById("closebutton");
+let eventForm = document.getElementById("eventForm");
+
+addEvent.addEventListener("click", () => {
+  eventForm.style.display = "block";
+});
+
+closebutton.addEventListener("click", () => {
+  eventForm.style.display = "none";
+});

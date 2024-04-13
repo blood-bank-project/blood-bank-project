@@ -123,8 +123,8 @@
               </a>
           </li>
           <li class="nav-item">
-              <div class="image">
-                  <img src="" class="img-circle elevation-2" alt="admin">
+              <div class="logout">
+                  <a class="nav-link" href="backend/logout.php">Logout<i class="fa-solid fa-right-from-bracket"></i></a>
               </div>
           </li>
       </ul>

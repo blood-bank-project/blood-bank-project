@@ -3,6 +3,19 @@
   padding: 0;
   box-sizing: border-box;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+#navbar {
+  font-family: montserrat;
+}
+
+strong {
+  font-family: montserrat;
+}
 
 body {
   margin: 0;
@@ -18,7 +31,9 @@ body {
 .loading {
   display: none;
 }
-
+#navbar {
+  font-size: 20px;
+}
 #navbar .logo {
   color: red;
 }
@@ -83,6 +98,7 @@ body {
 #body2 .title1 span {
   font-size: 1rem;
 }
+
 #donationForm {
   display: none;
   position: fixed;
@@ -96,12 +112,10 @@ body {
   z-index: 1000;
 }
 
-#body4 .form-title,
 #body2 .form-title {
   text-align: center;
   font-size: 1.5rem;
 }
-#body4 .form-container,
 #body2 .form-container {
   width: 40%;
   padding: 20px;
@@ -109,20 +123,13 @@ body {
   background-color: #d8c7c7;
   overflow: hidden;
 }
-#body4 .form-group,
 #body2 .form-group {
   display: flex;
 }
-#body4 label,
 #body2 label {
   font-size: 20px;
   margin-bottom: 5px;
 }
-#body4 input[type="text"],
-input[type="integer"],
-input[type="email"],
-select,
-textarea,
 #body2 input[type="text"],
 input[type="integer"],
 input[type="email"],
@@ -164,7 +171,8 @@ select {
 #body3,
 #body4,
 #body5,
-#body6 {
+#body6,
+#body7 {
   flex: 1;
 }
 
@@ -214,6 +222,50 @@ select {
   background-color: #d8c7c7;
   border-radius: 5px;
 }
+
+.event-card {
+  display: flex;
+  border: 1px solid #0c0202;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.event-details {
+  flex: 1;
+  padding: 10px;
+}
+
+.event-name {
+  margin-top: 0;
+}
+
+.event-date {
+  font-style: italic;
+}
+
+.event-location {
+  margin-bottom: 10px;
+}
+
+.event-description {
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
 /* .search-container {
   position: relative;
 }

@@ -775,3 +775,66 @@ footer .footer-copy .socila-link ul li a {
 .login .social-media i {
   margin-right: 10px;
 }
+
+#donationForm {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1000;
+  margin: 30px 80px 30px 30px;
+}
+#request .title {
+  text-align: center;
+  margin: 0 0 40px 0;
+  height: 200px;
+  color: white;
+}
+#request .title h1 {
+  font-size: 3rem;
+  padding-top: 20px;
+}
+#request .title h5 {
+  font-size: 1.5rem;
+}
+#request .form-container {
+  width: 60%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #e9b5b5;
+  color: rgb(138, 25, 25);
+  overflow: hidden;
+}
+#request .form-group {
+  margin-right: 20px;
+}
+#request .form-field {
+  display: flex;
+}
+#request label {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+#request input[type="text"],
+input[type="integer"],
+input[type="file"],
+select,
+textarea {
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  width: 100%;
+}
+#unit {
+  width: 85%;
+}
+select {
+  height: 35px;
+}
+#request .hotline {
+  text-align: center;
+  font-size: 1.5rem;
+}
+#request .hotline i {
+  padding: 0 5px 0 0;
+}
