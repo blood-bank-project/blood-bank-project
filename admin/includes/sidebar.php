@@ -26,14 +26,6 @@
                       </a>
                   </li>
                   <li class="nav-item">
-                      <a href="patient.php" class="nav-link">
-                          <i class="nav-icon fa-solid fa-bed"></i>
-                          <p>
-                              Patient
-                          </p>
-                      </a>
-                  </li>
-                  <li class="nav-item">
                       <a href="donation.php" class="nav-link">
                           <i class="nav-icon fa-solid fa-hand-holding-heart"></i>
                           <p>

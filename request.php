@@ -175,7 +175,7 @@
         </div>
         <div class="container form-container" id="donationForm">
             <div class="form-container">
-                <form action="backend/donationregister.php" method="post">
+                <form action="backend/bloodrequest.php" method="post" enctype="multipart/form-data">
                     <div class="form-field">
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -203,7 +203,7 @@
                         </div>
                         <div class="form-group">
                             <label for="file">Requisition form</label>
-                            <input type="file" id="file" name="file" placeholder="Hospital form" required>
+                            <input type="file" id="file" name="file" placeholder="Hospital form">
                         </div>
                     </div>
 
@@ -212,15 +212,20 @@
                         <textarea id="message" name="message" rows="4" placeholder="Any disease?"></textarea>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="submit" name="submit" class="btn btn-danger mt-4 ">
+                        <input type="submit" value="submit" name="submit" id="button" class="btn btn-danger mt-4 ">
                     </div>
                 </form>
+
+
             </div>
+
     </section>
+    <div id="popupMessage" style="display:none;">
+        Thank you for submitting the form!
+    </div>
 
     <footer id="contact" class="container-fluid">
         <div class="container">
-
             <div class="row content-ro">
                 <div class="col-lg-4 col-md-12 footer-contact">
                     <h2>Contact Informatins</h2>
@@ -229,7 +234,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="detail">
-                            <p>46-29 Indra Street, Southernbank, Tigaione, Toranto, 3006 Canada</p>
+                            <p>Thapathali,<br> Kathmandu, Nepal</p>
                         </div>
                     </div>
                     <div class="address-row">
@@ -237,7 +242,7 @@
                             <i class="far fa-envelope"></i>
                         </div>
                         <div class="detail">
-                            <p>sales@smarteyeapps.com <br> support@smarteyeapps.com</p>
+                            <p>Bloodvault@gmail.com <br> savelife@gmail.com</p>
                         </div>
                     </div>
                     <div class="address-row">
@@ -245,7 +250,7 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="detail">
-                            <p>+91 9751791203 <br> +91 9159669599</p>
+                            <p>+977 9864111517 <br> +91 9863482016</p>
                         </div>
                     </div>
                 </div>
@@ -253,33 +258,33 @@
                     <div class="row no-margin mt-2">
                         <h2>Quick Links</h2>
                         <ul>
-                            <li>Home</li>
-                            <li>About Us</li>
-                            <li>Contacts</li>
-                            <li>Pricing</li>
-                            <li>Gallery</li>
-                            <li>eatures</li>
-
+                            <li>
+                                <a class="nav-link" href="#">Home
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#about">About Us</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#gallery">Gallery</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#process">Process</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#blog">Blog</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#contact">Contact US</a>
+                            </li>
                         </ul>
                     </div>
-                    <div class="row no-margin mt-1">
-                        <h2 class="m-t-2">More Products</h2>
-                        <ul>
-                            <li>Forum PHP Script</li>
-                            <li>Edu Smart</li>
-                            <li>Smart Event</li>
-                            <li>Smart School</li>
-
-
-                        </ul>
-                    </div>
-
                 </div>
             </div>
             <div class="footer-copy">
                 <div class="row">
                     <div class="col-lg-8 col-md-6">
-                        <p>Copyright © <a href="">BloodVault.com</a> | All right reserved.</p>
+                        <p>Copyright © BloodVault | All right reserved.</p>
                     </div>
                     <div class="col-lg-4 col-md-6 socila-link">
                         <ul>
@@ -294,6 +299,7 @@
             </div>
         </div>
     </footer>
+
 </body>
 
 <script src="assets/js/jquery-3.2.1.min.js"></script>

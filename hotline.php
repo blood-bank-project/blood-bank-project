@@ -245,6 +245,7 @@ $total_pages = ceil($total_records / $records_per_page);
                 <tbody>
                     <?php
                  if ($rows): ?>
+                    <?php $i = ($page - 1) * $records_per_page; ?>
                     <?php foreach ($rows as $data): ?>
                     <tr>
                         <td><?php echo $data['name']; ?></td>
@@ -281,13 +282,8 @@ $total_pages = ceil($total_records / $records_per_page);
 
         </div>
 
-
-
-
-
         <footer id="contact" class="container-fluid">
             <div class="container">
-
                 <div class="row content-ro">
                     <div class="col-lg-4 col-md-12 footer-contact">
                         <h2>Contact Informatins</h2>
@@ -296,7 +292,7 @@ $total_pages = ceil($total_records / $records_per_page);
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div class="detail">
-                                <p>46-29 Indra Street, Southernbank, Tigaione, Toranto, 3006 Canada</p>
+                                <p>Thapathali,<br> Kathmandu, Nepal</p>
                             </div>
                         </div>
                         <div class="address-row">
@@ -304,7 +300,7 @@ $total_pages = ceil($total_records / $records_per_page);
                                 <i class="far fa-envelope"></i>
                             </div>
                             <div class="detail">
-                                <p>sales@smarteyeapps.com <br> support@smarteyeapps.com</p>
+                                <p>Bloodvault@gmail.com <br> savelife@gmail.com</p>
                             </div>
                         </div>
                         <div class="address-row">
@@ -312,7 +308,7 @@ $total_pages = ceil($total_records / $records_per_page);
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div class="detail">
-                                <p>+91 9751791203 <br> +91 9159669599</p>
+                                <p>+977 9864111517 <br> +91 9863482016</p>
                             </div>
                         </div>
                     </div>
@@ -320,33 +316,33 @@ $total_pages = ceil($total_records / $records_per_page);
                         <div class="row no-margin mt-2">
                             <h2>Quick Links</h2>
                             <ul>
-                                <li>Home</li>
-                                <li>About Us</li>
-                                <li>Contacts</li>
-                                <li>Pricing</li>
-                                <li>Gallery</li>
-                                <li>eatures</li>
-
+                                <li>
+                                    <a class="nav-link" href="#">Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="#about">About Us</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="#gallery">Gallery</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="#process">Process</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="#blog">Blog</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="#contact">Contact US</a>
+                                </li>
                             </ul>
                         </div>
-                        <div class="row no-margin mt-1">
-                            <h2 class="m-t-2">More Products</h2>
-                            <ul>
-                                <li>Forum PHP Script</li>
-                                <li>Edu Smart</li>
-                                <li>Smart Event</li>
-                                <li>Smart School</li>
-
-
-                            </ul>
-                        </div>
-
                     </div>
                 </div>
                 <div class="footer-copy">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
-                            <p>Copyright © <a href="">BloodVault.com</a> | All right reserved.</p>
+                            <p>Copyright © BloodVault | All right reserved.</p>
                         </div>
                         <div class="col-lg-4 col-md-6 socila-link">
                             <ul>
@@ -361,6 +357,7 @@ $total_pages = ceil($total_records / $records_per_page);
                 </div>
             </div>
         </footer>
+
 </body>
 
 <script src="assets/js/jquery-3.2.1.min.js"></script>

@@ -51,6 +51,7 @@ $total_pages = ceil($total_records / $records_per_page);
                         <th>Blood group</th>
                         <th>Gender</th>
                         <th>Disease</th>
+                        <th>Date</th>
                         <th>Action</th>
                 </thead>
                 <tbody id="donationTableBody">
@@ -69,11 +70,13 @@ $total_pages = ceil($total_records / $records_per_page);
                         <td><?php echo $data['gender'];?>
                         </td>
                         <td><?php echo $data['disease'] ;?></td>
+                        <td><?php $date = date('Y-m-d'); echo $date;?></td>
                         <td><a href="backend/acceptdonation.php?id=<?php echo $data['id']; ?>"> <button
                                     class="btn btn-success">Accept</button></a>
                             <a href="backend/rejectdonation.php?id=<?php echo $data['id'];?>"><button
                                     class="btn btn-danger">Reject</button></a>
                         </td>
+
                         <!-- <div id="confirmationPopup">
                             <div id="confirmationBox">
                                 <h2>Are you sure you want to delete?</h2>
@@ -89,7 +92,6 @@ $total_pages = ceil($total_records / $records_per_page);
                     </tr>
                     <?php endif; ?>
                 </tbody>
-            </table>
             </table>
             <?php if ($total_pages > 1){ ?>
             <div class="pagination">

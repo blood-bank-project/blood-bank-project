@@ -124,6 +124,7 @@ $total_pages = ceil($total_records / $records_per_page);
             </div>
             <?php } ?>
 
+
         </div>
 
     </section>

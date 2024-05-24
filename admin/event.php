@@ -151,7 +151,8 @@ $total_pages = ceil($total_records / $records_per_page);
                         <td><?php echo $data['description'] ;?></td>
                         <td>
                             <a href=""> <button class="btn btn-info">Edit</button></a>
-                            <a href=""><button class="btn btn-danger">Delete</button></a>
+                            <a href="backend/deleteEvent.php?id=<?php echo $data['e_id'];?>"><button
+                                    class="btn btn-danger">Delete</button></a>
                         </td>
                     </tr>
                     <?php endforeach; ?>

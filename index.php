@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Web App Landing Page Website Tempalte | Smarteyeapps.com</title>
+    <title>BloodVault</title>
     <link rel="shortcut icon" href="assets/images/fav.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="assets/images/fav.jpg">
@@ -178,13 +178,15 @@
                     <img class="d-block w-100" src="assets/images/slider/slide-02.jpg" alt="First slide">
                     <div class="carousel-caption d-none d-md-block">
                         <h5 class=" bounceInDown">Donate Blood & Save a Life</h5>
-                        <p class=" bounceInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo
-                            neque, <br>
-                            aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis <br>
-                            sed sagittis at, sagittis quis neque. Praesent.</p>
+                        <p class=" bounceInLeft">donating your time to make an impact,
+                            <br>your blood to save lives or your money to create a holistic blood management
+                            cycle.
+                        </p>
 
                         <div class=" vbh">
-                            <div class="btn btn-success  bounceInUp"> Contact US </div>
+                            <a href="#contact">
+                                <div class="btn btn-success  bounceInUp"> Contact US </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -193,10 +195,11 @@
                     <img class="d-block w-100" src="assets/images/slider/slide-03.jpg" alt="Third slide">
                     <div class="carousel-caption vdg-cur d-none d-md-block">
                         <h5 class=" bounceInDown">Donate Blood & Save a Life</h5>
-                        <p class=" bounceInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo
-                            neque, <br>
-                            aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis <br>
-                            sed sagittis at, sagittis quis neque. Praesent.</p>
+                        <p class=" bounceInLeft">In developing countries
+                            like NEPAL,<br> patients’ families have the
+                            burden and stress of managing and
+                            transporting blood themselves.<br>
+                            We are on a mission to change that.</p>
 
                     </div>
                 </div>
@@ -319,10 +322,6 @@
         </div>
     </div>
 
-
-
-    <!-- ################# Donation Process Start Here #######################--->
-
     <section id="process" class="donation-care">
         <div class="container">
             <div class="row session-title">
@@ -334,48 +333,50 @@
                     <div class="bkjiu">
                         <img src="assets/images/gallery/g1.jpg" alt="">
                         <h4><b>1 - </b>Registration</h4>
-                        <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit
-                            lobortis</p>
-                        <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 vd">
-                    <div class="bkjiu">
-                        <img src="assets/images/gallery/g2.jpg" alt="">
-                        <h4><b>2 - </b>Seeing</h4>
-                        <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit
-                            lobortis</p>
-                        <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+                        <p>Upon arrival at this website Blood Vault, you'll be asked to provide some basic information
+                            and
+                            identification to register as a donor. This may include your name, contact information, and
+                            possibly some health-related
+                            questions.</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 vd">
                     <div class="bkjiu">
                         <img src="assets/images/gallery/g3.jpg" alt="">
-                        <h4><b>3 - </b>Donation</h4>
-                        <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit
-                            lobortis</p>
-                        <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+                        <h4><b>2 - </b>Donation</h4>
+                        <p>Once you've been cleared to donate, you'll proceed to the donation area. You'll need to fill
+                            the details asked
+                            in the form and give the amount of blood you will donate and the blood group. It will take
+                            about 2-3
+                            minutes.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 vd">
+                    <div class="bkjiu">
+                        <img src="assets/images/gallery/g2.jpg" alt="">
+                        <h4><b>3 - </b>Collection</h4>
+                        <p>During the donation process, the system records details such as the type of donation (whole
+                            blood, platelets, plasma),
+                            volume collected, and donor vitals. It also tracks the processing of donated blood,
+                            including labeling, storage, and
+                            transportation to ensure proper handling and traceability.</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 vd">
                     <div class="bkjiu">
                         <img src="assets/images/gallery/g4.jpg" alt="">
-                        <h4><b>4 - </b>Save Life</h4>
-                        <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit
-                            lobortis</p>
-                        <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+                        <h4><b>4 - </b>Donor and Patient Communication</h4>
+                        <p>The system facilitates communication with donors and patients, providing information about
+                            donation opportunities,
+                            appointment reminders, and updates on blood availability. It also supports outreach efforts
+                            to recruit and retain blood
+                            donors.</p>
                     </div>
                 </div>
             </div>
-
-
         </div>
     </section>
 
-
-
-
-    <!--################### Our Blog Starts Here #######################--->
     <div id="blog" class="blog-container contaienr-fluid">
         <div class="container">
             <div class="session-title row">
@@ -458,12 +459,8 @@
 
 
 
-
-
-    <!--*************** Footer  Starts Here *************** -->
     <footer id="contact" class="container-fluid">
         <div class="container">
-
             <div class="row content-ro">
                 <div class="col-lg-4 col-md-12 footer-contact">
                     <h2>Contact Informatins</h2>
@@ -472,7 +469,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="detail">
-                            <p>46-29 Indra Street, Southernbank, Tigaione, Toranto, 3006 Canada</p>
+                            <p>Thapathali,<br> Kathmandu, Nepal</p>
                         </div>
                     </div>
                     <div class="address-row">
@@ -480,7 +477,7 @@
                             <i class="far fa-envelope"></i>
                         </div>
                         <div class="detail">
-                            <p>sales@smarteyeapps.com <br> support@smarteyeapps.com</p>
+                            <p>Bloodvault@gmail.com <br> savelife@gmail.com</p>
                         </div>
                     </div>
                     <div class="address-row">
@@ -488,7 +485,7 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="detail">
-                            <p>+91 9751791203 <br> +91 9159669599</p>
+                            <p>+977 9864111517 <br> +91 9863482016</p>
                         </div>
                     </div>
                 </div>
@@ -496,27 +493,27 @@
                     <div class="row no-margin mt-2">
                         <h2>Quick Links</h2>
                         <ul>
-                            <li>Home</li>
-                            <li>About Us</li>
-                            <li>Contacts</li>
-                            <li>Pricing</li>
-                            <li>Gallery</li>
-                            <li>eatures</li>
-
+                            <li>
+                                <a class="nav-link" href="#">Home
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#about">About Us</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#gallery">Gallery</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#process">Process</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#blog">Blog</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#contact">Contact US</a>
+                            </li>
                         </ul>
                     </div>
-                    <div class="row no-margin mt-1">
-                        <h2 class="m-t-2">More Products</h2>
-                        <ul>
-                            <li>Forum PHP Script</li>
-                            <li>Edu Smart</li>
-                            <li>Smart Event</li>
-                            <li>Smart School</li>
-
-
-                        </ul>
-                    </div>
-
                 </div>
                 <div class="col-lg-4 col-md-12 footer-form">
                     <div class="form-card">
@@ -536,7 +533,7 @@
             <div class="footer-copy">
                 <div class="row">
                     <div class="col-lg-8 col-md-6">
-                        <p>Copyright © <a href="">BloodVault.com</a> | All right reserved.</p>
+                        <p>Copyright © BloodVault | All right reserved.</p>
                     </div>
                     <div class="col-lg-4 col-md-6 socila-link">
                         <ul>
