@@ -1,13 +1,15 @@
-let donateButton = document.getElementById("donateButton");
-let donationForm = document.getElementById("donationForm");
-let closebutton = document.getElementById("closebutton");
+document.addEventListener("DOMContentLoaded", function () {
+  let donateButton = document.getElementById("donateButton");
+  let donationForm = document.getElementById("donationForm");
+  let closebutton = document.getElementById("closebutton");
 
-donateButton.addEventListener("click", () => {
-  donationForm.style.display = "block";
-});
+  donateButton.addEventListener("click", function () {
+    donationForm.classList.add("open-form");
+  });
 
-closebutton.addEventListener("click", () => {
-  donationForm.style.display = "none";
+  closebutton.addEventListener("click", function () {
+    donationForm.classList.remove("open-form");
+  });
 });
 
 function changeRowsPerPage(rows) {
@@ -39,3 +41,16 @@ function searchTable() {
     }
   }
 }
+
+function deletePopup() {
+  let confirmationPopup = document.getElementById("confirmationPopup");
+  let deleteReject = document.getElementById("cancelDelete");
+
+  confirmationPopup.classList.add("open-popup");
+
+  deleteReject.addEventListener("click", function () {
+    confirmationPopup.classList.remove("open-popup");
+  });
+}
+
+//sticky navbar

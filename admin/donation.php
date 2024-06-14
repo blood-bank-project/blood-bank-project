@@ -71,19 +71,18 @@ $total_pages = ceil($total_records / $records_per_page);
                         </td>
                         <td><?php echo $data['disease'] ;?></td>
                         <td><?php $date = date('Y-m-d'); echo $date;?></td>
-                        <td><a href="backend/acceptdonation.php?id=<?php echo $data['id']; ?>"> <button
-                                    class="btn btn-success">Accept</button></a>
-                            <a href="backend/rejectdonation.php?id=<?php echo $data['id'];?>"><button
-                                    class="btn btn-danger">Reject</button></a>
+                        <td>
+                            <div class="dropdown action">
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item action-content"><button class="btn btn-success"
+                                            onclick="return deletePopup()">Accept</button></li>
+                                    <li class="dropdown-item action-content"><button class="btn btn-danger"
+                                            onclick="return deletePopup()">Reject</button></li>
+                                </ul>
+                            </div>
                         </td>
 
-                        <!-- <div id="confirmationPopup">
-                            <div id="confirmationBox">
-                                <h2>Are you sure you want to delete?</h2>
-                                <button id="confirmDeleteButton">Yes</button>
-                                <button id="cancelDeleteButton">No</button>
-                            </div>
-                        </div> -->
+
                     </tr>
                     <?php endforeach; ?>
                     <?php else: ?>
@@ -115,7 +114,24 @@ $total_pages = ceil($total_records / $records_per_page);
 
         </div>
 
-
+        <!--accept-->
+        <div class="confirmationPopup" id="confirmationPopup">
+            <div id="confirmationBox">
+                <P>Are you sure?</P>
+                <a href="backend/acceptdonation.php?id=<?php echo $data['id']; ?>"><button class="btn btn-success"
+                        id="confirmDelete">Yes</button></a>
+                <button id="cancelDelete" class="btn btn-danger">No</button>
+            </div>
+        </div>
+        <!--reject-->
+        <div class="confirmationPopup" id="confirmationPopup">
+            <div id="confirmationBox">
+                <P>Are you sure?</P>
+                <a href="backend/rejectdonation.php?id=<?php echo $data['id'];?>"><button class="btn btn-danger"><button
+                            class="btn btn-success" id="confirmDelete">Yes</button></a>
+                <button id="cancelDelete" class="btn btn-danger">No</button>
+            </div>
+        </div>
     </section>
 </div>
 <?php

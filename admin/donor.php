@@ -82,18 +82,17 @@ $total_pages = ceil($total_records / $records_per_page);
                         </td>
 
                         <td>
-                            <a href=""> <button class="btn btn-primary">Edit</button></a>
-                            <a href="backend/deletedonor.php?id=<?php echo $data['d_id']; ?>;"><button
-                                    class="btn btn-danger">Delete</button></a>
-                        </td>
-                        <!-- <div id="confirmationPopup">
-                            <div id="confirmationBox">
-                                <h5>Are you sure you want to delete?</h5>
-                                <button
-                                        id="confirmDeleteButton" class="btn btn-success">Yes</button>
-                                <button id="cancelDeleteButton" class="btn btn-danger">No</button>
+                            <div class="dropdown text-end action">
+                                <p class="dropdown-toggle">Action</p>
+                                <ul class="dropdown-menu action-content">
+                                    <li class="dropdown-item "><a href=""> <button
+                                                class="btn btn-primary">Edit</button></a></li>
+                                    <li class="dropdown-item"> <button class="btn btn-danger" id="deleteRow"
+                                            onclick="return deletePopup()">Delete</button>
+                                    </li>
+                                </ul>
                             </div>
-                        </div> -->
+                        </td>
                     </tr>
                     <?php endforeach; ?>
                     <?php else: ?>
@@ -125,6 +124,15 @@ $total_pages = ceil($total_records / $records_per_page);
             <?php } ?>
 
 
+        </div>
+
+        <div class="confirmationPopup" id="confirmationPopup">
+            <div id="confirmationBox">
+                <P>Are you sure you want to delete?</P>
+                <a href="backend/deletedonor.php?id=<?php echo $data['d_id']; ?>;"><button class="btn btn-success"
+                        id="confirmDelete">Yes</button></a>
+                <button id="cancelDelete" class="btn btn-danger">No</button>
+            </div>
         </div>
 
     </section>

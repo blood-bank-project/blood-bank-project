@@ -6,9 +6,10 @@ include("includes/navbar.php");
 <section id="body2">
     <div class="title1 bg-danger">
         <h2>Want to donate Blood?</h2>
-        <button id="donateButton">Donate Now!</button>
+        <button id="donateButton">Donate Now</button>
     </div>
-    <div class="container form-container" id="donationForm">
+
+    <div class="container form-container donationForm" id="donationForm">
         <i class="fa-solid fa-xmark" id="closebutton"></i>
         <h2 class="form-title">Donation form</h2>
         <hr />
@@ -76,6 +77,7 @@ include("includes/navbar.php");
             </form>
         </div>
     </div>
+
 </section>
 
 
@@ -160,10 +162,17 @@ $total_pages = ceil($total_records / $records_per_page);
                     <td>
                         <?php
                         if($data['status'] != '1' && $data['status'] != '-1') : ?>
-                        <a href="backend/?id=<?php echo $data['id']; ?>"> <button class="btn btn-info">Edit</button></a>
-                        <a href="href=backend/deletedonationhistory.php?id=<?php echo $data['id'];?>"><button
-                                class="btn btn-danger">Delete</button></a>
+                        <div class="dropdown text-end action">
+                            <p class="dropdown-toggle">Action</p>
+                            <ul class="dropdown-menu action-content">
+                                <li class="dropdown-item "> <a href="backend/?id=<?php echo $data['id']; ?>"> <button
+                                            class="btn btn-info">Edit</button></a></li>
+                                <li class="dropdown-item"> <button class="btn btn-danger"
+                                        onclick="return deletePopup()">Delete</button>
 
+                                </li>
+                            </ul>
+                        </div>
                         <?php endif; ?>
                     </td>
                 </tr>
@@ -196,6 +205,16 @@ $total_pages = ceil($total_records / $records_per_page);
         <?php } ?>
 
     </div>
+
+    <div class="confirmationPopup" id="confirmationPopup">
+        <div id="confirmationBox">
+            <P>Are you sure you want to delete?</P>
+            <a hrhref="href=backend/deletedonationhistory.php?id=<?php echo $data['id'];?>"><button
+                    class="btn btn-success" id="confirmDelete">Yes</button></a>
+            <button id="cancelDelete" class="btn btn-danger">No</button>
+        </div>
+    </div>
+
 </section>
 
 <?php

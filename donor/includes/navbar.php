@@ -1,4 +1,4 @@
- <section id="navbar">
+ <section id="navbar" class="sticky">
      <nav class="navbar navbar-expand-lg bg-body-tertiary bg-light" data-bs-theme="light">
          <div class="container-fluid">
              <a class="navbar-brand logo" href="#">BloodVault</a>

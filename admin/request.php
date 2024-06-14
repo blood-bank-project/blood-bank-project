@@ -49,6 +49,7 @@ $total_pages = ceil($total_records / $records_per_page);
                         <th>File</th>
                         <th>Message</th>
                         <th>Date</th>
+                    </tr>
                 </thead>
                 <tbody id="donationTableBody">
                     <?php

@@ -679,7 +679,7 @@ footer .footer-copy .socila-link ul li a {
   display: block;
 }
 #navbar .logo {
-  color: red;
+  color: #de1f26;
 }
 #navbar .button {
   position: absolute;
@@ -695,16 +695,22 @@ footer .footer-copy .socila-link ul li a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  display: none;
-  position: fixed;
-  top: 50%;
+  position: absolute;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.1);
   background-color: #f9f9f9;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  z-index: 1000;
+  z-index: 1;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+.open-popup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
 }
 .login .head {
   display: flex;
@@ -773,7 +779,7 @@ footer .footer-copy .socila-link ul li a {
   background-color: #3b5998;
 }
 .login .social-media .btn2 {
-  background-color: #da5276;
+  background-color: #de1f26;
 }
 .login .social-media i {
   margin-right: 10px;
@@ -805,7 +811,7 @@ footer .footer-copy .socila-link ul li a {
   padding: 20px;
   border-radius: 10px;
   background-color: #e9b5b5;
-  color: rgb(138, 25, 25);
+  color: #de1f26;
   overflow: hidden;
 }
 #request label {
@@ -845,11 +851,11 @@ select {
   margin-right: 20px;
 }
 #hotline .title {
-  border-right: 1px solid rgb(145, 6, 6);
+  border-right: 1px solid #de1f26;
   padding-right: 5px;
 }
 #date {
-  border-right: 1px solid rgb(145, 6, 6);
+  border-right: 1px solid #de1f26;
   padding-right: 5px;
 }
 
@@ -885,9 +891,9 @@ select {
 }
 
 .pagination a.active {
-  background-color: #007bff;
+  background-color: #96d8e9;
   color: #fff;
-  border-color: #007bff;
+  border-color: #96d8e9;
 }
 
 .pagination a:hover:not(.active) {
@@ -916,4 +922,9 @@ select {
   border: 1px solid black;
   height: 100px;
   width: 300px;
+}
+
+.dropdown ul li a {
+  text-decoration: none;
+  cursor: pointer;
 }

@@ -9,7 +9,7 @@ include('includes/topbar.php');
         <div class="eventButton">
             <button id="addEvent" class="btn btn-primary m-4">Add Event</button>
         </div>
-        <div id="eventForm">
+        <div class="eventForm" id="eventForm">
             <i class="fa-solid fa-xmark" id="closebutton"></i>
             <form action="backend/addevent.php" method="post">
                 <div class="label">
@@ -150,9 +150,18 @@ $total_pages = ceil($total_records / $records_per_page);
                     ?></td>
                         <td><?php echo $data['description'] ;?></td>
                         <td>
-                            <a href=""> <button class="btn btn-info">Edit</button></a>
-                            <a href="backend/deleteEvent.php?id=<?php echo $data['e_id'];?>"><button
-                                    class="btn btn-danger">Delete</button></a>
+                            <div class="dropdown text-end action">
+                                <p class="dropdown-toggle">Action</p>
+                                <ul class="dropdown-menu action-content">
+                                    <li class="dropdown-item "><a href=""> <button
+                                                class="btn btn-info">Edit</button></a></li>
+                                    <li class="dropdown-item"> <button class="btn btn-danger"
+                                            onclick="return deletePopup()">Delete</button>
+                                    </li>
+                                </ul>
+                            </div>
+
+
                         </td>
                     </tr>
                     <?php endforeach; ?>
@@ -185,6 +194,14 @@ $total_pages = ceil($total_records / $records_per_page);
 
         </div>
 
+        <div class="confirmationPopup" id="confirmationPopup">
+            <div id="confirmationBox">
+                <P>Are you sure you want to delete?</P>
+                <a href="backend/deleteEvent.php?id=<?php echo $data['e_id'];?>"><button class="btn btn-success"
+                        id="confirmDelete">Yes</button></a>
+                <button id="cancelDelete" class="btn btn-danger">No</button>
+            </div>
+        </div>
 </div>
 <?php
 include('includes/footer.php');

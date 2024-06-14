@@ -19,7 +19,7 @@
     <section id="navbar">
         <nav class="navbar navbar-expand-lg bg-body-tertiary bg-light" data-bs-theme="light">
             <div class="container-fluid">
-                <a class="navbar-brand logo" href="#">BloodVault</a>
+                <a class="navbar-brand logo" href="index.php">BloodVault</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -90,6 +90,7 @@
             </div>
         </nav>
     </section>
+
     <div class="login" id="donorloginpopup">
         <div class="form-container">
             <div class="head">
@@ -138,30 +139,6 @@
                 </button></a>
         </div>
     </div>
-    <div class="login" id="patientloginpopup">
-        <div class="form-container">
-            <div class="head">
-                <h2>Patient Login</h2>
-                <i class="fa-solid fa-xmark" id="closebutton3"></i>
-            </div>
-            <form action="patient/backend/patientlogincheck.php" method="post">
-                <input type="email" name="email" placeholder="Username" />
-                <input type="password" name="password" placeholder="Password" />
-                <a href="">Forgot password?</a>
-                <button type="submit" name="submit">Log In</button>
-            </form>
-            <span>Or login with social account</span>
-        </div>
-        <div class="social-media">
-            <a href=""><button class="btn1">
-                    <i class="fa-brands fa-facebook"></i>Facebook
-                </button>
-            </a>
-            <a href=""><button class="btn2">
-                    <i class="fa-brands fa-google"></i>Google
-                </button></a>
-        </div>
-    </div>
 
     <section id="request">
         <div class="title bg-danger">
@@ -170,7 +147,7 @@
         </div>
         <div class="hotline">
             <a href="hotline.php">
-                <p><i class="fa-solid fa-hand-point-right"></i>Details of us or other blood banks Hotline</p>
+                <p><i class="fa-solid fa-hand-point-right"></i>Other blood bank's hotline</p>
             </a>
         </div>
         <div class="container form-container" id="donationForm">
@@ -218,6 +195,7 @@
 
 
             </div>
+        </div>
 
     </section>
     <div id="popupMessage" style="display:none;">

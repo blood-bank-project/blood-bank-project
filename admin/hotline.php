@@ -8,7 +8,7 @@ include('includes/topbar.php');
         <div class="contactButton">
             <button id="addContact" class="btn btn-primary m-4">Add Contact</button>
         </div>
-        <div id="contactForm">
+        <div class="contactForm" id="contactForm">
             <i class="fa-solid fa-xmark" id="closebutton"></i>
             <form action="backend/addhotline.php" method="post">
                 <div class="form-group">
@@ -96,9 +96,17 @@ $total_pages = ceil($total_records / $records_per_page);
                         <td><?php echo $data['phone1'].','.$data['phone2'].','.$data['phone3'];?></td>
 
                         <td>
-                            <a href=""> <button class="btn btn-info">Edit</button></a>
-                            <a href="backend/deletehotline.php?id=<?php echo $data['h_id']; ?>"><button
-                                    class="btn btn-danger">Delete</button></a>
+                            <div class="dropdown text-end action">
+                                <p class="dropdown-toggle">Action</p>
+                                <ul class="dropdown-menu action-content">
+                                    <li class="dropdown-item "><a href=""> <button
+                                                class="btn btn-info">Edit</button></a></li>
+                                    <li class="dropdown-item"> <button class="btn btn-danger"
+                                            onclick="return deletePopup()">Delete</button>
+
+                                    </li>
+                                </ul>
+                            </div>
                         </td>
                     </tr>
                     <?php endforeach; ?>
@@ -129,6 +137,15 @@ $total_pages = ceil($total_records / $records_per_page);
             </div>
             <?php } ?>
 
+        </div>
+
+        <div class="confirmationPopup" id="confirmationPopup">
+            <div id="confirmationBox">
+                <P>Are you sure you want to delete?</P>
+                <a href="backend/deletehotline.php?id=<?php echo $data['h_id']; ?>"><button class="btn btn-success"
+                        id="confirmDelete">Yes</button></a>
+                <button id="cancelDelete" class="btn btn-danger">No</button>
+            </div>
         </div>
 
 </div>

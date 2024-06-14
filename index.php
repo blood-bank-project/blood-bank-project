@@ -138,32 +138,6 @@
                 </button></a>
         </div>
     </div>
-    <div class="login" id="patientloginpopup">
-        <div class="form-container">
-            <div class="head">
-                <h2>Patient Login</h2>
-                <i class="fa-solid fa-xmark" id="closebutton3"></i>
-            </div>
-            <form action="patient/backend/patientlogincheck.php" method="post">
-                <input type="email" name="email" placeholder="Username" />
-                <input type="password" name="password" placeholder="Password" />
-                <a href="">Forgot password?</a>
-                <button type="submit" name="submit">Log In</button>
-            </form>
-            <span>Or login with social account</span>
-        </div>
-        <div class="social-media">
-            <a href=""><button class="btn1">
-                    <i class="fa-brands fa-facebook"></i>Facebook
-                </button>
-            </a>
-            <a href=""><button class="btn2">
-                    <i class="fa-brands fa-google"></i>Google
-                </button></a>
-        </div>
-    </div>
-
-
 
     <div class="slider-detail">
 

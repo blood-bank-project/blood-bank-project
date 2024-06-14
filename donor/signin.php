@@ -31,7 +31,7 @@
                         <div class="dropdown">
                             <li class="nav-item">
                                 <a class="nav-link active dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
-                                    href="index.php">Home</a>
+                                    href="../index.php">Home</a>
                             </li>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
                                 <li><a class="dropdown-item" href="#about">About us</a></li>
@@ -65,7 +65,7 @@
                                     href="">Want to donate blood?</a>
                             </li>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
-                                <li><a class="dropdown-item" href="donor/signin.php">Register as Donar</a></li>
+                                <li><a class="dropdown-item" href="">Register as Donar</a></li>
                                 <li>
                                     <a class="dropdown-item" id="donorlogin">Login</a>
                                 </li>
@@ -97,7 +97,7 @@
                 <h2>Donor Login</h2>
                 <i class="fa-solid fa-xmark" id="closebutton1"></i>
             </div>
-            <form action="donor/backend/donorlogincheck.php" method="post">
+            <form action="backend/donorlogincheck.php" method="post">
                 <input type="email" name="email" placeholder="Username" />
                 <input type="password" name="password" placeholder="Password" />
                 <a href="">Forgot password?</a>
@@ -121,7 +121,7 @@
                 <h2>Admin Login</h2>
                 <i class="fa-solid fa-xmark" id="closebutton2"></i>
             </div>
-            <form action="admin/backend/adminlogincheck.php" method="post">
+            <form action="../admin/backend/adminlogincheck.php" method="post">
                 <input type="email" name="email" placeholder="Username" />
                 <input type="password" name="password" placeholder="Password" />
                 <a href="">Forgot password?</a>
@@ -139,30 +139,7 @@
                 </button></a>
         </div>
     </div>
-    <div class="login" id="patientloginpopup">
-        <div class="form-container">
-            <div class="head">
-                <h2>Patient Login</h2>
-                <i class="fa-solid fa-xmark" id="closebutton3"></i>
-            </div>
-            <form action="patient/backend/patientlogincheck.php" method="post">
-                <input type="email" name="email" placeholder="Username" />
-                <input type="password" name="password" placeholder="Password" />
-                <a href="">Forgot password?</a>
-                <button type="submit" name="submit">Log In</button>
-            </form>
-            <span>Or login with social account</span>
-        </div>
-        <div class="social-media">
-            <a href=""><button class="btn1">
-                    <i class="fa-brands fa-facebook"></i>Facebook
-                </button>
-            </a>
-            <a href=""><button class="btn2">
-                    <i class="fa-brands fa-google"></i>Google
-                </button></a>
-        </div>
-    </div>
+
 
     <section id="donorRegisterfrom">
         <div class="container doantionForm">

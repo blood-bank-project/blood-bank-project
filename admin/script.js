@@ -20,11 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let eventForm = document.getElementById("eventForm");
 
   addEvent.addEventListener("click", () => {
-    eventForm.style.display = "block";
+    eventForm.classList.add("open-form");
   });
-
   closeButton.addEventListener("click", () => {
-    eventForm.style.display = "none";
+    eventForm.classList.remove("open-form");
   });
 });
 
@@ -34,12 +33,11 @@ document.addEventListener("DOMContentLoaded", function () {
   let contactForm = document.getElementById("contactForm");
 
   addContact.addEventListener("click", () => {
-    console.log("clicked");
-    contactForm.style.display = "block";
+    contactForm.classList.add("open-form");
   });
 
   closeButton1.addEventListener("click", () => {
-    contactForm.style.display = "none";
+    contactForm.classList.remove("open-form");
   });
 });
 
@@ -71,4 +69,15 @@ function searchTable() {
       }
     }
   }
+}
+
+function deletePopup() {
+  let confirmationPopup = document.getElementById("confirmationPopup");
+  let deleteReject = document.getElementById("cancelDelete");
+
+  confirmationPopup.classList.add("open-popup");
+
+  deleteReject.addEventListener("click", function () {
+    confirmationPopup.classList.remove("open-popup");
+  });
 }

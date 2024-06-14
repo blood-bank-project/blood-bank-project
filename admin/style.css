@@ -15,27 +15,34 @@
   outline: none;
   border: 1px solid black;
 }
-#navbar .profile:hover .profile-content {
+
+.action:hover .action-content {
   display: block;
 }
-#navbar .profile {
-  margin-right: 80px;
+.action {
+  cursor: pointer;
 }
 
-#eventForm {
-  display: none;
+.eventForm {
   position: absolute;
-  top: 50%;
+  top: 0;
   right: 10%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.1);
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   border-radius: 5px;
-  z-index: 1000;
+  z-index: 1;
   width: 32%;
   border-radius: 10px;
   background-color: #d8c7c7;
-  overflow: hidden;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+  margin-top: 30px;
+}
+.open-form {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 #event .form-title {
@@ -78,20 +85,25 @@ select {
   flex: auto;
 }
 
-#contactForm {
-  display: none;
+.contactForm {
   position: absolute;
-  top: 50%;
+  top: 0;
   right: 10%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.1);
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   border-radius: 5px;
-  z-index: 1000;
+  z-index: 1;
   width: 32%;
   border-radius: 10px;
   background-color: #d8c7c7;
-  overflow: hidden;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+.open-form {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 #contact .form-title {
@@ -160,22 +172,26 @@ input[type="tel"] {
   border-radius: 5px;
 }
 
-/* #confirmationPopup {
-  display: none;
+.confirmationPopup {
   position: absolute;
-  left: 65%;
-  top: 20%;
-  border-radius: 3px;
-  z-index: 1000;
+  top: 50%;
+  right: 20%;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  transition: transform 0.4s ease-out;
 }
-
+.open-popup {
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
 #confirmationBox {
-  background-color: #fff;
+  background-color: #bd9d9d;
   padding: 20px;
   border-radius: 5px;
   text-align: center;
+  font-size: 20px;
 }
 
 #confirmationBox button {
   margin: 5px;
-} */
+}
