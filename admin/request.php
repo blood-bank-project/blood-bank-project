@@ -38,49 +38,62 @@ $total_pages = ceil($total_records / $records_per_page);
                     <input type="text" id="search-input" oninput="searchTable()" placeholder="Search...">
                 </div>
             </div>
-            <table class=" table table-bordered border-light text-center">
 
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Phone</th>
-                        <th>Blood Group</th>
-                        <th>File</th>
-                        <th>Message</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-                <tbody id="donationTableBody">
-                    <?php
+            <div class="table-responsive">
+                <table class=" table table-bordered border-light text-center">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Blood Group</th>
+                            <th>File</th>
+                            <th>Message</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="donationTableBody">
+                        <?php
                  if ($rows): ?>
-                    <?php $i = ($page - 1) * $records_per_page; ?>
-                    <?php foreach ($rows as $data): ?>
-                    <tr>
-                        <td><?php echo ++$i;?></td>
-                        <td><?php echo $data['name']; ?></td>
-                        <td><?php echo $data['phone'] ;?></td>
-                        <td><?php echo $data['bgroup'] ;?></td>
-                        <td><a href="<?php echo $data['file'] ;?>">Form</a></td>
-                        <td><?php echo $data['message'];?></td>
-                        <td><?php $date = date('Y-m-d'); echo $date;?></td>
-                        <!-- <div id="confirmationPopup">
-                            <div id="confirmationBox">
-                                <h2>Are you sure you want to delete?</h2>
-                                <button id="confirmDeleteButton">Yes</button>
-                                <button id="cancelDeleteButton">No</button>
-                            </div>
-                        </div> -->
-                    </tr>
-                    <?php endforeach; ?>
-                    <?php else: ?>
-                    <tr>
-                        <td colspan="11">Record not found.</td>
-                    </tr>
-                    <?php endif; ?>
-                </tbody>
-            </table>
-            </table>
+                        <?php $i = ($page - 1) * $records_per_page; ?>
+                        <?php foreach ($rows as $data): ?>
+                        <tr>
+                            <td><?php echo ++$i;?></td>
+                            <td><?php echo $data['name']; ?></td>
+                            <td><?php echo $data['phone'] ;?></td>
+                            <td><?php echo $data['bgroup'] ;?></td>
+                            <td><a href="<?php echo $data['file'] ;?>">Form</a></td>
+                            <td><?php echo $data['message'];?></td>
+                            <td><?php $date = date('Y-m-d'); echo $date;?></td>
+                            <td><?php if($data['status'] === '0' ){
+                             echo  "<span class='bg-warning text-light p-1'>Pending..</span>";
+                            }
+                            else if($data['status'] === '1'){
+                            echo  "<span class='bg-success text-light p-1'>Managed</span>";
+                            }
+                            else if($data['status'] === '-1'){
+                            echo "<span class='bg-danger text-light p-1'>Couldn't manage</span>";
+                             } ?></td>
+                            <td>
+                                <?php if($data['status'] != '1' && $data['status'] != '-1') : ?>
+                                <li class="dropdown-item action-content"><button class="btn btn-success"
+                                        onclick="return deletePopup()">Accept</button></li>
+                                <li class="dropdown-item action-content"><button class="btn btn-danger"
+                                        onclick="return deletePopupreject()">Reject</button></li>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                        <?php else: ?>
+                        <tr>
+                            <td colspan="11">Record not found.</td>
+                        </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
             <?php if ($total_pages > 1){ ?>
             <div class="pagination">
                 <?php if ($page > 1){ ?>
@@ -102,7 +115,24 @@ $total_pages = ceil($total_records / $records_per_page);
             <?php } ?>
 
         </div>
-
+        <!--accept-->
+        <div class="confirmationPopup" id="confirmationPopup">
+            <div id="confirmationBox">
+                <P>Are you sure its managed?</P>
+                <a href="backend/requestmanaged.php?id=<?php echo $data['id']; ?>"><button class="btn btn-success"
+                        id="confirmDelete">Yes</button></a>
+                <button id="cancelDelete" class="btn btn-danger">No</button>
+            </div>
+        </div>
+        <!--reject-->
+        <div class="confirmationPopup" id="confirmationPopupReject">
+            <div id="confirmationBox">
+                <P>Are you sure its not managed?</P>
+                <a href="backend/requestnotmanaged.php?id=<?php echo $data['id'];?>"><button class="btn btn-success"
+                        id="confirmDelete">Yes</button></a>
+                <button id="cancelDeleteBtn" class="btn btn-danger">No</button>
+            </div>
+        </div>
 
     </section>
 </div>

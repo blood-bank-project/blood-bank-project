@@ -1,31 +1,30 @@
-.doantionForm {
+#donorRegisterfrom .doantionForm {
   position: relative;
   max-width: 900px;
   width: 80%;
   border-radius: 6px;
   padding: 30px;
-  margin: 20px 10%;
+  margin: 20px 15%;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  background-color: rgb(228, 189, 189);
+  background-color: rgb(236, 224, 224);
 }
-.container header {
+#donorRegisterfrom .container header {
   position: relative;
   font-size: 30px;
   font-weight: 600;
   color: black;
   text-align: center;
 }
-
-.container form {
+#donorRegisterfrom .container form {
   position: relative;
   margin-top: 20px;
   min-height: 490px;
 }
-.container form .detail.ID {
+#donorRegisterfrom .container form .detail.ID {
   margin-top: 30px;
 }
 
-.container form .title {
+#donorRegisterfrom .container form .title {
   display: flex;
   margin-bottom: 8px;
   font-size: 17px;
@@ -33,23 +32,23 @@
   margin: 7px 0;
   color: black;
 }
-.container form .fields {
+#donorRegisterfrom .container form .fields {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
-form .fields .input-field {
+#donorRegisterfrom form .fields .input-field {
   display: flex;
   width: 250px;
   flex-direction: column;
   margin-right: 20px;
 }
-.input-field label {
+#donorRegisterfrom .input-field label {
   font-size: 15px;
   font-weight: 500;
   color: black;
 }
-.input-field input {
+#donorRegisterfrom .input-field input {
   outline: none;
   font-size: 14px;
   color: black;
@@ -59,14 +58,14 @@ form .fields .input-field {
   height: 40px;
   margin: 8px 0;
 }
-.group {
+#donorRegisterfrom .group {
   height: 35px;
   border: 1px solid #dcdfe6;
 }
-.form {
+#donorRegisterfrom .form {
   margin-top: 35px;
 }
-.form button {
+#donorRegisterfrom .form button {
   height: 50px;
   width: 30%;
   background-color: #de1f26;

@@ -75,48 +75,51 @@ $total_pages = ceil($total_records / $records_per_page);
                     <input type="text" id="search-input" oninput="searchTable()" placeholder="Search...">
                 </div>
             </div>
-            <table class="table table-bordered border-dark text-center">
 
-                <thead>
-                    <th>Id</th>
-                    <th>Blood Bank Name</th>
-                    <th>Blood Bank Location</th>
-                    <th>Phone</th>
-                    <th>Action</th>
-                </thead>
-                <tbody>
-                    <?php
+            <div class="table-resonsive">
+                <table class="table table-bordered border-dark text-center">
+
+                    <thead>
+                        <th>Id</th>
+                        <th>Blood Bank Name</th>
+                        <th>Blood Bank Location</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody>
+                        <?php
                  if ($rows): ?>
-                    <?php $i = ($page - 1) * $records_per_page; ?>
-                    <?php foreach ($rows as $data): ?>
-                    <tr>
-                        <td><?php echo ++$i;?></td>
-                        <td><?php echo $data['name']; ?></td>
-                        <td><?php echo $data['location']; ?></td>
-                        <td><?php echo $data['phone1'].','.$data['phone2'].','.$data['phone3'];?></td>
+                        <?php $i = ($page - 1) * $records_per_page; ?>
+                        <?php foreach ($rows as $data): ?>
+                        <tr>
+                            <td><?php echo ++$i;?></td>
+                            <td><?php echo $data['name']; ?></td>
+                            <td><?php echo $data['location']; ?></td>
+                            <td><?php echo $data['phone1'].','.$data['phone2'].','.$data['phone3'];?></td>
 
-                        <td>
-                            <div class="dropdown text-end action">
-                                <p class="dropdown-toggle">Action</p>
-                                <ul class="dropdown-menu action-content">
-                                    <li class="dropdown-item "><a href=""> <button
-                                                class="btn btn-info">Edit</button></a></li>
-                                    <li class="dropdown-item"> <button class="btn btn-danger"
-                                            onclick="return deletePopup()">Delete</button>
+                            <td>
+                                <div class="dropdown text-end action">
+                                    <p class="dropdown-toggle">Action</p>
+                                    <ul class="dropdown-menu action-content">
+                                        <li class="dropdown-item "><a href=""> <button
+                                                    class="btn btn-info">Edit</button></a></li>
+                                        <li class="dropdown-item"> <button class="btn btn-danger"
+                                                onclick="return deletePopup()">Delete</button>
 
-                                    </li>
-                                </ul>
-                            </div>
-                        </td>
-                    </tr>
-                    <?php endforeach; ?>
-                    <?php else: ?>
-                    <tr>
-                        <td colspan="11">Record not found.</td>
-                    </tr>
-                    <?php endif; ?>
-                </tbody>
-            </table>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                        <?php else: ?>
+                        <tr>
+                            <td colspan="11">Record not found.</td>
+                        </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
             <?php if ($total_pages > 1){ ?>
             <div class="pagination">
                 <?php if ($page > 1){ ?>

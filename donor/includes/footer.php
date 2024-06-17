@@ -55,6 +55,22 @@
                          </ul>
                      </div>
                  </div>
+                 <div class="col-lg-4 col-md-12 footer-form">
+                     <div class="form-card">
+                         <div class="form-title">
+                             <h4>Quick Message</h4>
+                         </div>
+                         <div class="form-body">
+                             <form action="backend/sendmessage.php" method="post">
+                                 <input type="text" name="name" placeholder="Enter Name" class="form-control">
+                                 <input type="text" name="phone" placeholder="Enter Mobile no" class="form-control">
+                                 <input type="text" name="email" placeholder="Enter Email Address" class="form-control">
+                                 <input type="text" name="message" placeholder="Your Message" class="form-control">
+                                 <button class="btn btn-sm btn-danger w-100" name="submit">Send Request</button>
+                             </form>
+                         </div>
+                     </div>
+                 </div>
              </div>
              <div class="footer-copy">
                  <div class="row">

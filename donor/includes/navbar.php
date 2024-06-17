@@ -1,7 +1,9 @@
  <section id="navbar" class="sticky">
-     <nav class="navbar navbar-expand-lg bg-body-tertiary bg-light" data-bs-theme="light">
+     <nav class="navbar navbar-expand-lg ">
          <div class="container-fluid">
-             <a class="navbar-brand logo" href="#">BloodVault</a>
+             <a class="navbar-brand logo" href="index.php">
+                 <img src="assets/images/logo.png" alt="">
+             </a>
              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                  aria-label="Toggle navigation">
@@ -10,33 +12,27 @@
              <div class="collapse navbar-collapse" id="navbarSupportedContent">
                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                      <li class="nav-item">
-                         <a class="nav-link active" aria-current="page" href="index.php"
-                             onclick="loadContent('donor.php')" id="home"> Home </a>
+                         <a class="nav-link active" aria-current="page" href="index.php" id="home"> Home </a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link" href="donation.php" onclick="loadContent('request.php')"
-                             id="request">Donation</a>
+                         <a class="nav-link" href="donation.php" id="request">Donation</a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link" href="event.php" onclick="loadContent('request.php')" id="event">Event</a>
+                         <a class="nav-link" href="event.php" id="event">Event</a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link" href="certificate.php" onclick="loadContent('certificate.php')"
-                             id="certificate">Certificate</a>
+                         <a class="nav-link" href="certificate.php" id="certificate">Certificate</a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link" href="request.php" onclick="loadContent('certificate.php')"
-                             id="certificate">Request
+                         <a class="nav-link" href="request.php" id="certificate">Request
                              Blood</a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link" href="requesthistory.php" onclick="loadContent('certificate.php')"
-                             id="certificate">Request Status</a>
+                         <a class="nav-link" href="requesthistory.php" id="certificate">Request Status</a>
                      </li>
                  </ul>
-                 <div class="dropdown text-end profile">
-                     <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
-                         data-bs-toggle="dropdown" aria-expanded="false">
+                 <div class="text-end profile">
+                     <p class="button">
                          <!-- <img src="" alt="mdo" width="32" height="32" class="rounded-circle" /> -->
                          <?php
                                 session_start();
@@ -44,15 +40,13 @@
                                 echo $_SESSION['username'];
                             }
                             ?>
-                     </a>
-                     <ul class="dropdown-menu profile-content">
-                         <li><a class="dropdown-item" href="#">Settings</a></li>
-                         <li><a class="dropdown-item" href="#">Profile</a></li>
-                         <li>
-                             <hr class="dropdown-divider" />
-                         </li>
-                         <li><a class="dropdown-item" href="backend/logout.php">Log out</a></li>
-                     </ul>
+                         &nbsp; ▼
+                     </p>
+                     <div class="dropdown-content">
+                         <a href="#" id="top">Settings</a>
+                         <a href="#" id="middle ">Profile</a>
+                         <a href="backend/logout.php" id="buttom">Log out</a>
+                     </div>
                  </div>
              </div>
          </div>

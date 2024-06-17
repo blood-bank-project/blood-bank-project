@@ -38,71 +38,72 @@ $total_pages = ceil($total_records / $records_per_page);
                     <input type="text" id="search-input" oninput="searchTable()" placeholder="Search...">
                 </div>
             </div>
-            <table class="table table-bordered border-dark text-center ">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>dob</th>
-                        <th>Email</th>
-                        <th>Gender</th>
-                        <th>Blood Group</th>
-                        <th>Occupation</th>
-                        <th>Mobile number</th>
-                        <th>tel. number</th>
-                        <th>Province</th>
-                        <th>Address</th>
-                        <th>Action</th>
-                </thead>
-                <tbody id="donorTableBody">
-                    <?php
+            <div class="table-responsive">
+                <table class="table table-bordered border-dark text-center ">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>dob</th>
+                            <th>Email</th>
+                            <th>Gender</th>
+                            <th>Blood Group</th>
+                            <th>Occupation</th>
+                            <th>Mobile number</th>
+                            <th>tel. number</th>
+                            <th>Province</th>
+                            <th>Address</th>
+                            <th>Action</th>
+                    </thead>
+                    <tbody id="donorTableBody">
+                        <?php
                  if ($rows): ?>
-                    <?php $i = ($page - 1) * $records_per_page; ?>
-                    <?php foreach ($rows as $data): ?>
-                    <tr>
-                        <td><?php echo ++$i;?></td>
-                        <td><?php echo $data['firstname'].'' .$data["middlename"].''. $data["lastname"];?>
-                        </td>
-                        <td><?php echo $data["dob"];?>
-                        </td>
-                        <td><?php echo $data["email"];?>
-                        </td>
-                        <td><?php echo $data["gender"];?>
-                        </td>
-                        <td><?php echo $data["bgroup"];?>
-                        </td>
-                        <td><?php echo $data["occupation"];?>
-                        </td>
-                        <td><?php echo $data["phone"];?>
-                        </td>
-                        <td><?php echo $data["tel"];?>
-                        </td>
-                        <td><?php echo $data["province"];?>
-                        <td><?php echo $data["municipality"] . '-' . $data["ward"] . ', ' . $data["tole"] . ', ' . $data["district"]; ?>
-                        </td>
+                        <?php $i = ($page - 1) * $records_per_page; ?>
+                        <?php foreach ($rows as $data): ?>
+                        <tr>
+                            <td><?php echo ++$i;?></td>
+                            <td><?php echo $data['firstname'].'' .$data["middlename"].''. $data["lastname"];?>
+                            </td>
+                            <td><?php echo $data["dob"];?>
+                            </td>
+                            <td><?php echo $data["email"];?>
+                            </td>
+                            <td><?php echo $data["gender"];?>
+                            </td>
+                            <td><?php echo $data["bgroup"];?>
+                            </td>
+                            <td><?php echo $data["occupation"];?>
+                            </td>
+                            <td><?php echo $data["phone"];?>
+                            </td>
+                            <td><?php echo $data["tel"];?>
+                            </td>
+                            <td><?php echo $data["province"];?>
+                            <td><?php echo $data["municipality"] . '-' . $data["ward"] . ', ' . $data["tole"] . ', ' . $data["district"]; ?>
+                            </td>
 
-                        <td>
-                            <div class="dropdown text-end action">
-                                <p class="dropdown-toggle">Action</p>
-                                <ul class="dropdown-menu action-content">
-                                    <li class="dropdown-item "><a href=""> <button
-                                                class="btn btn-primary">Edit</button></a></li>
-                                    <li class="dropdown-item"> <button class="btn btn-danger" id="deleteRow"
-                                            onclick="return deletePopup()">Delete</button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </td>
-                    </tr>
-                    <?php endforeach; ?>
-                    <?php else: ?>
-                    <tr>
-                        <td colspan="11">Record not found.</td>
-                    </tr>
-                    <?php endif; ?>
-                </tbody>
-            </table>
-            </table>
+                            <td>
+                                <div class="dropdown text-end action">
+                                    <p class="dropdown-toggle">Action</p>
+                                    <ul class="dropdown-menu action-content">
+                                        <li class="dropdown-item "><a href=""> <button
+                                                    class="btn btn-primary">Edit</button></a></li>
+                                        <li class="dropdown-item"> <button class="btn btn-danger" id="deleteRow"
+                                                onclick="return deletePopup()">Delete</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                        <?php else: ?>
+                        <tr>
+                            <td colspan="11">Record not found.</td>
+                        </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
             <?php if ($total_pages > 1){ ?>
             <div class="pagination">
                 <?php if ($page > 1){ ?>

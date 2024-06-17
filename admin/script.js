@@ -71,6 +71,7 @@ function searchTable() {
   }
 }
 
+//open popup
 function deletePopup() {
   let confirmationPopup = document.getElementById("confirmationPopup");
   let deleteReject = document.getElementById("cancelDelete");
@@ -79,5 +80,28 @@ function deletePopup() {
 
   deleteReject.addEventListener("click", function () {
     confirmationPopup.classList.remove("open-popup");
+    console.log("button clickr=e");
   });
 }
+function deletePopupreject() {
+  let confirmationPopup = document.getElementById("confirmationPopupReject");
+  let deleteReject = document.getElementById("cancelDeleteBtn");
+
+  confirmationPopup.classList.add("open-popup");
+
+  deleteReject.addEventListener("click", function () {
+    confirmationPopup.classList.remove("open-popup");
+    console.log("button clickr=e");
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll(".nav a");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      navLinks.forEach((link) => link.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+});

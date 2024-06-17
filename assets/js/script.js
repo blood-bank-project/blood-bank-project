@@ -81,3 +81,28 @@ function searchTable() {
     }
   }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("myForm");
+  const popup = document.getElementById("successPopup");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    setTimeout(() => {
+      popup.classList.add("show");
+      popup.style.display = "block";
+      setTimeout(() => {
+        popup.classList.remove("show");
+        setTimeout(() => {
+          popup.style.display = "none";
+        }, 500);
+        form.reset();
+      }, 3000);
+    }, 500);
+  });
+});
+
+window.addEventListener("scroll", function () {
+  const nav = document.getElementById("navbar");
+  nav.classList.add("fix");
+});

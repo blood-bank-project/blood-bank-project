@@ -17,79 +17,59 @@
 
 <body>
     <section id="navbar">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-light" data-bs-theme="light">
-            <div class="container-fluid">
-                <a class="navbar-brand logo" href="#">BloodVault</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid image">
+                <a class="navbar-brand logo" href="#"><img src="assets/images/logo.png" alt="" class="logo"></a>
+                <button style="display: block;" class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <div class="dropdown">
-                            <li class="nav-item">
-                                <a class="nav-link active dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
-                                    href="index.php">Home</a>
-                            </li>
-                            <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
-                                <li><a class="dropdown-item" href="#about">About us</a></li>
-                                <li>
-                                    <a class="dropdown-item" href="#gallery">Gallary</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#process">Process</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#blog">Blog</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#contact">Contact us</a></li>
-                            </ul>
+                    <div class="dropdown">
+                        <a class="nav-link active dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
+                            href="index.php">Home</a>
+                        <div class="dropdown-menu dropdown-menu-dark dropdown-content">
+                            <a class="dropdown-item" href="#about">Why BloodVault</a><a class="dropdown-item"
+                                href="#whatwedo">What We Do?</a>
+                            <a class="dropdown-item" href="#request">See Today's request</a>
+                            <a class="dropdown-item" href="#gallery">Gallary</a>
+
+                            <a class="dropdown-item" href="#process">Process</a>
+
+                            <a class="dropdown-item" href="#blog">Camp</a>
+                            <a class="dropdown-item" href="#contact">Contact us</a>
                         </div>
-                        <!-- <div class="dropdown">
-                            <li class="nav-item">
-                                <a class="nav-link  dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
-                                    href="">Looking for blood?</a>
-                            </li>
-                            <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
-                                <li><a class="dropdown-item" href="patient/signin.php">Register as Patient</a></li>
-                                <li>
-                                    <a class="dropdown-item" id="patientlogin">Login</a>
-                                </li>
-                            </ul>
-                        </div> -->
-                        <div class="dropdown">
-                            <li class="nav-item">
-                                <a class="nav-link dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
-                                    href="">Want to donate blood?</a>
-                            </li>
-                            <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
-                                <li><a class="dropdown-item" href="donor/signin.php">Register as Donar</a></li>
-                                <li>
-                                    <a class="dropdown-item" id="donorlogin">Login</a>
-                                </li>
+                    </div>
+
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" aria-current="page" data-bs-toggle="dropdown" href="">Want
+                            to
+                            donate blood?</a>
+                        <div class="dropdown-content">
+                            <a class="dropdown-item" href="donor/signin.php">Register as Donar</a>
+                            <a href="" class="dropdown-item" id="donorlogin">Login</a>
                         </div>
-                        <div class="dropdown">
-                            <li class="nav-item">
-                                <a class="nav-link dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
-                                    href="">Admin</a>
-                            </li>
-                            <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
-                                <li><a class="dropdown-item" href="donor/signin.php">Register as Donar</a></li>
-                                <li>
-                                    <a class="dropdown-item" id="adminlogin">Login</a>
-                                </li>
-                            </ul>
+                    </div>
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
+                            href="">Admin</a>
+                        <div class="dropdown-content">
+                            <a href="donor/signin.php">Register as Admin</a>
+                            <a href="" id="adminlogin">Login</a>
                         </div>
+                    </div>
                     </ul>
                     <div class="button">
-                        <a href="donor/signin.php"><button class="btn btn-outline-danger m-2">Donate Now</button></a>
-                        <a href="request.php"><button class="btn btn-danger">Request Blood</button></a>
+                        <a href="donor/signin.php"><button class="btn btn-outline-light m-2">Donate
+                                Now</button></a>
+                        <a href="request.php"><button class="btn btn-light">Request Blood</button></a>
                     </div>
                 </div>
             </div>
         </nav>
     </section>
+    <!-- login popup -->
     <div class="login" id="donorloginpopup">
         <div class="form-container">
             <div class="head">
@@ -139,13 +119,12 @@
         </div>
     </div>
 
+    <!-- slider  -->
     <div class="slider-detail">
-
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -156,7 +135,6 @@
                             <br>your blood to save lives or your money to create a holistic blood management
                             cycle.
                         </p>
-
                         <div class=" vbh">
                             <a href="#contact">
                                 <div class="btn btn-success  bounceInUp"> Contact US </div>
@@ -164,7 +142,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="carousel-item">
                     <img class="d-block w-100" src="assets/images/slider/slide-03.jpg" alt="Third slide">
                     <div class="carousel-caption vdg-cur d-none d-md-block">
@@ -174,10 +151,8 @@
                             burden and stress of managing and
                             transporting blood themselves.<br>
                             We are on a mission to change that.</p>
-
                     </div>
                 </div>
-
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -188,16 +163,14 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-
-
     </div>
 
-    <!--*************** About Us Starts Here ***************-->
+    <!--*************** About Us  ***************-->
     <section id="about" class="contianer-fluid about-us">
         <div class="container">
             <div class="row session-title">
                 <div class="col-md-6">
-                    <h2>About Blood Doners</h2>
+                    <h2>Why BloodVault</h2>
                     <p>Welcome to Blood Vault, where innovation meets compassion.
                         <br>
                         We are a team of dedicated professionals committed to revolutionizing the way blood banks
@@ -239,17 +212,104 @@
                         Thank you for choosing Blood Vault. Let's save lives, one donation at a time.
                     </p>
                 </div>
+                <div class="col-md-6 moto">
+                    <p>give blood <span>save life</span></p>
+                </div>
+                <div class="content">
+                    <p>Your small effort can save hundred of peoples' life</p>
+                </div>
+            </div>
+    </section>
 
-                <div class="col-md-6 image">
-                    <img src="assets/images/about.jpg" alt="">
+    <section id="weDo" class="whatwedo contianer">
+        <div class=" row">
+            <div class="col work">
+                <h1>What Wo Do?</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, asperiores. Fuga iste fugit ullam
+                    aliquam mollitia dolor quo quos vero suscipit vitae, impedit iure tenetur ipsam voluptates quia non
+                    ducimus?</p>
+            </div>
+            <div class="col mission">
+                <h1>Our mission</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quos quas deserunt modi obcaecati nobis
+                    deleniti placeat exercitationem veniam nihil saepe sit, quis animi laboriosam consectetur tempore
+                    officia debitis possimus.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="hotline">
+        <div class="heading">
+            <h1>See Today's Request</h1>
+        </div>
+        <div class="container-fluid top">
+            <div class="top-content title">
+                <a href="hotline.php">
+                    <h3>Other bloodbank's Hotlines <i class="fa-solid fa-phone-volume"></i></h3>
+                </a>
+            </div>
+            <div id=" date" class="top-content"><span></span></div>
+            <div>
+                <p class="top-content total">Blood request managed till now <i class="fa-solid fa-arrow-right"></i></p>
+            </div>
+        </div>
+
+        <div class="container-fluid request-list ">
+            <div class="box ">
+                <div class="icon"><i class="fa-solid fa-droplet"></i></div>
+                <div class="content">
+                    <h3>Blood Request Today</h3>
+                </div>
+                <div class="number">
+                    <?php
+                    require_once "backend/connect.php";
+                    $today = date('Y-m-d 00:00:00');
+                    $tomorrow = date('Y-m-d 00:00:00', strtotime('+1 day'));
+                    $sql = "SELECT count(*) as request_count FROM request WHERE date >= '$today' AND date < '$tomorrow'";
+                    $row = $conn->query($sql);
+                    $data= mysqli_fetch_array($row);
+                    ?>
+                    <p><?php echo $data['request_count'];?></p>
+                </div>
+            </div>
+            <div class="box ">
+                <div class="icon1"><i class="fa-solid fa-circle-check"></i></div>
+                <div class="content">
+                    <h3>Managed</h3>
+                </div>
+                <div class="number">
+                    <?php
+                    require_once "backend/connect.php";
+                    $today = date('Y-m-d 00:00:00');
+                    $tomorrow = date('Y-m-d 00:00:00', strtotime('+1 day'));
+                    $sql = "SELECT count(*) as managed_count FROM request WHERE date >= '$today' AND date < '$tomorrow' AND status = 1 group by status ";
+                    $row = $conn->query($sql);
+                    $data= mysqli_fetch_array($row);
+                    ?>
+                    <p><?php echo ($row != null && isset($data['managed_count']))? $data['managed_count']:0;?></p>
+                </div>
+            </div>
+            <div class="box three ">
+                <div class="icon"><i class="fa-solid fa-clock"></i></div>
+                <div class="content">
+                    <h3>Pending</h3>
+                </div>
+                <div class="number">
+                    <?php
+                    require_once "backend/connect.php";
+                    $today = date('Y-m-d 00:00:00');
+                    $tomorrow = date('Y-m-d 00:00:00', strtotime('+1 day'));
+                    $sql = "SELECT count(*) as request_count FROM request WHERE date >= '$today' AND date < '$tomorrow'";
+                    $row = $conn->query($sql);
+                    $data= mysqli_fetch_array($row);
+                    ?>
+                    <p><?php echo $data['request_count'];?></p>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-    <!-- ################# Gallery Start Here #######################--->
+    <!-- ################# Gallery #######################--->
 
     <div id="gallery" class="gallery container-fluid">
         <div class="container">
@@ -289,8 +349,6 @@
                     <div class="gg-element">
                         <img src="assets/images/gallery/g10.jpg">
                     </div>
-
-
                 </div>
             </div>
         </div>
@@ -351,88 +409,53 @@
         </div>
     </section>
 
+    <!-- events -->
     <div id="blog" class="blog-container contaienr-fluid">
         <div class="container">
             <div class="session-title row">
-                <h2>Latest Blog</h2>
+                <h2>Upcomming Donation Camps</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut
                     est arcu. Donec hendrerit velit consectetur adipiscing elit.</p>
             </div>
-            <div class="row news-row">
-                <div class="col-md-6">
-                    <div class="news-card">
-                        <div class="image">
-                            <img src="assets/images/blog/blog_01.jpg" alt="">
-                        </div>
-                        <div class="detail">
-                            <h3>Latest News about Smarteye</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a
-                                dictum. Donec ut est arcu. Donec hendrerit consectetur adipiscing elit. </p>
-                            <p class="footp">
-                                27 Comments <span>/</span>
-                                Blog Design <span>/</span>
-                                Read More
-                            </p>
-                        </div>
+            <section id="card" class="row">
+                <div class="container col" id="card-container">
+                    <?php
+                require_once "backend/connect.php";
+                $sql = "SELECT * FROM event ORDER BY e_id DESC LIMIT 6 ";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($data = $result->fetch_object()) {
+                    ?>
+                    <div class="card">
+                        <h2><?php echo $data->name; ?></h2>
+                        <p>Location: <?php echo $data->location; ?></p>
+                        <p>Date: <?php echo $data->date;?></p>
+                        <p>Organizer: <?php echo $data->organizer;?></p>
+                        <p>Email: <?php echo $data->email;?></p>
+                        <p>Status: <?php 
+                                    if($data->status == -1){
+                                        echo "cancelled";
+                                    }else if($data->status == 0){
+                                        echo "upcoming";
+                                    }if($data->status == 1){
+                                        echo "completed";
+                                    }
+                                    ?>
+                        </p>
+                        <p>Description: <?php echo $data->description;?></p>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="news-card">
-                        <div class="image">
-                            <img src="assets/images/blog/blog_02.jpg" alt="">
-                        </div>
-                        <div class="detail">
-                            <h3>Apple Launch its New Phone</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a
-                                dictum. Donec ut est arcu. Donec hendrerit consectetur adipiscing elit. </p>
-                            <p class="footp">
-                                27 Comments <span>/</span>
-                                Blog Design <span>/</span>
-                                Read More
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="news-card">
-                        <div class="image">
-                            <img src="assets/images/blog/blog_03.jpg" alt="">
-                        </div>
-                        <div class="detail">
-                            <h3>About Windows 10 Update</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a
-                                dictum. Donec ut est arcu. Donec hendrerit consectetur adipiscing elit. </p>
-                            <p class="footp">
-                                27 Comments <span>/</span>
-                                Blog Design <span>/</span>
-                                Read More
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="news-card">
-                        <div class="image">
-                            <img src="assets/images/blog/blog_04.jpg" alt="">
-                        </div>
-                        <div class="detail">
-                            <h3>Latest News about Smarteye</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a
-                                dictum. Donec ut est arcu. Donec hendrerit consectetur adipiscing elit. </p>
-                            <p class="footp">
-                                27 Comments <span>/</span>
-                                Blog Design <span>/</span>
-                                Read More
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    <?php
+            }
+                 } else {
+             echo "<p>No Event available.</p>";
+            }
+            ?>
+            </section>
         </div>
     </div>
 
-
-
+    <!-- footer-->
     <footer id="contact" class="container-fluid">
         <div class="container">
             <div class="row content-ro">
@@ -481,7 +504,7 @@
                                 <a class="nav-link" href="#process">Process</a>
                             </li>
                             <li>
-                                <a class="nav-link" href="#blog">Blog</a>
+                                <a class="nav-link" href="#blog">Camp</a>
                             </li>
                             <li>
                                 <a class="nav-link" href="#contact">Contact US</a>
@@ -495,11 +518,13 @@
                             <h4>Quick Message</h4>
                         </div>
                         <div class="form-body">
-                            <input type="text" placeholder="Enter Name" class="form-control">
-                            <input type="text" placeholder="Enter Mobile no" class="form-control">
-                            <input type="text" placeholder="Enter Email Address" class="form-control">
-                            <input type="text" placeholder="Your Message" class="form-control">
-                            <button class="btn btn-sm btn-primary w-100">Send Request</button>
+                            <form action="backend/insertmessage.php" method="post">
+                                <input type="text" name="name" placeholder="Enter Name" class="form-control">
+                                <input type="text" name="phone" placeholder="Enter Mobile no" class="form-control">
+                                <input type="text" name="email" placeholder="Enter Email Address" class="form-control">
+                                <input type="text" name="message" placeholder="Your Message" class="form-control">
+                                <button class="btn btn-sm btn-primary w-100" name="submit">Send Request</button>
+                            </form>
                         </div>
                     </div>
                 </div>

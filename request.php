@@ -152,7 +152,7 @@
         </div>
         <div class="container form-container" id="donationForm">
             <div class="form-container">
-                <form action="backend/bloodrequest.php" method="post" enctype="multipart/form-data">
+                <form action="backend/bloodrequest.php" method="post" id="myForm" enctype="multipart/form-data">
                     <div class="form-field">
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -198,8 +198,9 @@
         </div>
 
     </section>
-    <div id="popupMessage" style="display:none;">
-        Thank you for submitting the form!
+
+    <div id="successPopup" class="popup">
+        Form submitted successfully!
     </div>
 
     <footer id="contact" class="container-fluid">
@@ -259,6 +260,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="footer-copy">
                 <div class="row">
                     <div class="col-lg-8 col-md-6">

@@ -4,9 +4,9 @@ include("includes/navbar.php");
 ?>
 
 <section id="body2">
-    <div class="title1 bg-danger">
+    <div class="title1">
         <h2>Want to donate Blood?</h2>
-        <button id="donateButton">Donate Now</button>
+        <button id="donateButton" class="btn btn-outline-danger m-2">Donate Now</button>
     </div>
 
     <div class="container form-container donationForm" id="donationForm">
@@ -86,8 +86,8 @@ require_once "backend/connect.php";
 $records_per_page = isset($_GET['records_per_page']) ? intval($_GET['records_per_page']) : 10;
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 $offset = ($page - 1) * $records_per_page;
-
-$sql = "SELECT * FROM donation ORDER BY id DESC LIMIT ?, ?";
+$id = $_SESSION['user_id'];
+$sql = "SELECT * FROM donation inner join donor on donor.d_id=donation.user_id where donor.d_id = $id  ORDER BY id DESC LIMIT ?, ?";
 $query = $conn->prepare($sql);
 $query->bind_param('ii', $offset, $records_per_page); // 'ii' indicates two integer parameters
 $query->execute();
@@ -95,14 +95,16 @@ $result = $query->get_result();
 $rows = $result->fetch_all(MYSQLI_ASSOC);
 
 // Count total records
-$total_records_query = $conn->query("SELECT COUNT(*) FROM donation");
+$total_records_query = $conn->query("SELECT COUNT(id) FROM donation inner join donor on donor.d_id=donation.user_id where donor.d_id = $id group by donation.user_id");
 $total_records = $total_records_query->fetch_row()[0];
 $total_pages = ceil($total_records / $records_per_page);
 
 ?>
 <section id="body3">
     <div class="container donationstat">
-        <h2>Donation Status</h2>
+        <div class="title">
+            <h2>Your Donation Status</h2>
+        </div>
         <div class="table-search">
             <div class="pagination-options">
                 <label for="rows-per-page">Rows per page:</label>
@@ -129,7 +131,7 @@ $total_pages = ceil($total_records / $records_per_page);
                 <th>Blood group</th>
                 <th>Gender</th>
                 <th>Disease</th>
-                <th>status</th>
+                <th>Status</th>
                 <th>Action</th>
             </thead>
             <tbody>
@@ -162,16 +164,10 @@ $total_pages = ceil($total_records / $records_per_page);
                     <td>
                         <?php
                         if($data['status'] != '1' && $data['status'] != '-1') : ?>
-                        <div class="dropdown text-end action">
-                            <p class="dropdown-toggle">Action</p>
-                            <ul class="dropdown-menu action-content">
-                                <li class="dropdown-item "> <a href="backend/?id=<?php echo $data['id']; ?>"> <button
-                                            class="btn btn-info">Edit</button></a></li>
-                                <li class="dropdown-item"> <button class="btn btn-danger"
-                                        onclick="return deletePopup()">Delete</button>
-
-                                </li>
-                            </ul>
+                        <div class=" text-end action">
+                            <li class="dropdown-item "> <a href="backend/?id=<?php echo $data['id']; ?>"> <button
+                                        class="btn btn-info">Edit</button></a>
+                                <button class="btn btn-danger" onclick="return deletePopup()">Delete</button>
                         </div>
                         <?php endif; ?>
                     </td>
@@ -209,8 +205,8 @@ $total_pages = ceil($total_records / $records_per_page);
     <div class="confirmationPopup" id="confirmationPopup">
         <div id="confirmationBox">
             <P>Are you sure you want to delete?</P>
-            <a hrhref="href=backend/deletedonationhistory.php?id=<?php echo $data['id'];?>"><button
-                    class="btn btn-success" id="confirmDelete">Yes</button></a>
+            <a href="backend/deletedonationhistory.php?id=<?php echo $data['id'];?>"><button class="btn btn-success"
+                    id="confirmDelete">Yes</button></a>
             <button id="cancelDelete" class="btn btn-danger">No</button>
         </div>
     </div>

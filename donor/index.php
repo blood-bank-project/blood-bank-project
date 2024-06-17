@@ -5,8 +5,10 @@ include("includes/navbar.php");
 
 <div id="content">
     <section id="body1" class="content">
-        <div class="container-fluid">
+        <div class="dashboardtitle">
             <h2 class="title">Dashboard</h2>
+        </div>
+        <div class="container-fluid allstock">
             <?php
                     require_once "backend/connect.php";
 $sql = "SELECT * FROM blood";
@@ -15,37 +17,37 @@ $data = mysqli_fetch_array($row);
 
 ?>
             <div class="row ">
-                <div class="col-1 stock-detail bg-danger">
+                <div class="col-1 stock-detail">
                     <h2><?php echo $data['A+']; ?></h2>
                     <p>A+ (unit in ml)</p>
                 </div>
-                <div class="col-1 stock-detail bg-danger">
+                <div class="col-1 stock-detail">
                     <h2><?php echo $data['A-']; ?></h2>
                     <p>A- (unit in ml)</p>
 
                 </div>
-                <div class="col-1 stock-detail bg-danger">
+                <div class="col-1 stock-detail">
                     <h2><?php echo $data['B+']; ?></h2>
                     <p>B+ (unit in ml)</p>
                 </div>
-                <div class="col-1 stock-detail bg bg-danger">
+                <div class="col-1 stock-detail">
                     <h2><?php echo $data['B-']; ?></h2>
                     <p>B- (unit in ml)</p>
                 </div>
-                <div class="col-1 stock-detail bg bg-danger">
+                <div class="col-1 stock-detail">
                     <h2><?php echo $data['AB+']; ?></h2>
                     <p>AB+ (unit in ml)</p>
 
                 </div>
-                <div class="col-1 stock-detail bg bg-danger">
+                <div class="col-1 stock-detail">
                     <h2><?php echo $data['AB-']; ?></h2>
                     <p>AB- (unit in ml)</p>
                 </div>
-                <div class="col-1 stock-detail bg bg-danger">
+                <div class="col-1 stock-detail">
                     <h2><?php echo $data['O+']; ?></h2>
                     <p>O+ (unit in ml)</p>
                 </div>
-                <div class="col-1 stock-detail bg bg-danger">
+                <div class="col-1 stock-detail">
                     <h2><?php echo $data['O-']; ?></h2>
                     <p>O- (unit in ml)</p>
                 </div>
@@ -54,7 +56,8 @@ $data = mysqli_fetch_array($row);
             <div class="row ">
                 <?php
                      require_once "backend/connect.php";
-$sql = "SELECT count(id) as totaldonation FROM donation";
+                     $id = $_SESSION['user_id'];
+$sql = "SELECT count(id) as totaldonation FROM donation inner join donor on donor.d_id=donation.user_id where donor.d_id = $id group by donation.user_id ";
 $row = $conn->query($sql);
 $data = mysqli_fetch_array($row);
 ?>
@@ -65,34 +68,35 @@ $data = mysqli_fetch_array($row);
                 <div class="col-1 donor-detail">
                     <?php
                      require_once "backend/connect.php";
-$sql = "SELECT count(id) as totalpending FROM donation  WHERE status='0' ";
+                      $id = $_SESSION['user_id'];
+$sql = "SELECT count(id) as totalpending FROM donation inner join donor on donor.d_id=donation.user_id where donor.d_id = $id and status='0' group by donation.user_id ";
 $row = $conn->query($sql);
 $data = mysqli_fetch_array($row);
 ?>
-                    <h2><?php echo $data['totalpending'];?></h2>
+                    <h2><?php echo ($row != null && isset($data['totalpending'])) ? $data['totalpending'] : 0; ?></h2>
                     <p>Pending Request</p>
 
                 </div>
                 <div class="col-1 donor-detail">
                     <?php
                      require_once "backend/connect.php";
-$sql = "SELECT count(id) as totalaccept FROM donation  WHERE status='1' ";
+                      $id = $_SESSION['user_id'];
+$sql ="SELECT count(id) as totalaccept FROM donation inner join donor on donor.d_id=donation.user_id where donor.d_id = $id and status='1' group by donation.user_id ";
 $row = $conn->query($sql);
 $data = mysqli_fetch_array($row);
 ?>
-
-                    <h2><?php echo $data['totalaccept'];?></h2>
+                    <h2><?php echo ($row != null && isset($data['totalaccept'])) ? $data['totalaccept'] : 0; ?></h2>
                     <p>Approved Request</p>
                 </div>
                 <div class="col-1 donor-detail">
                     <?php
                      require_once "backend/connect.php";
-$sql = "SELECT count(id) as totalreject FROM donation  WHERE status='-1' ";
+                      $id = $_SESSION['user_id'];
+$sql = "SELECT count(id) as totalreject FROM donation inner join donor on donor.d_id=donation.user_id where donor.d_id = $id and status='-1' group by donation.user_id ";
 $row = $conn->query($sql);
 $data = mysqli_fetch_array($row);
 ?>
-
-                    <h2><?php echo $data['totalreject'];?></h2>
+                    <h2><?php echo ($row != null && isset($data['totalreject'])) ? $data['totalreject'] : 0; ?></h2>
                     <p>Rejected Request
                 </div>
             </div>
@@ -101,20 +105,6 @@ $data = mysqli_fetch_array($row);
 
     </section>
 </div>
-
-<script>
-$(document).ready(function() {
-    $,
-    ajax({
-        url: "donation.php",
-        method: 'POST',
-        success: function(response) {
-            $('#content').html(response);
-        }
-    })
-});
-</script>
-
 <?php
 include("includes/footer.php");
 ?>

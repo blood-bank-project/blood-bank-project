@@ -143,13 +143,12 @@
 
     <section id="donorRegisterfrom">
         <div class="container doantionForm">
-            <header>Registration Form</header>
-
+            <header>Get Register</header>
+            <hr style="padding:20px;">
             <form action="backend/registerdonor.php" method="post">
                 <div class="form first">
                     <div class="detail">
                         <span class="title">Personal Details</span>
-
                         <div class="fields">
                             <div class="input-field">
                                 <label>First Name</label>

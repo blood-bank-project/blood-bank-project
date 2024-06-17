@@ -54,3 +54,7 @@ function deletePopup() {
 }
 
 //sticky navbar
+// window.addEventListener("scroll", function () {
+//   const navbar = document.querySelector(".navbar");
+//   navbar.classList.toogle("sticky", scrollY > 0);
+// });

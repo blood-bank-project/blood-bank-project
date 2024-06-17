@@ -38,60 +38,63 @@ $total_pages = ceil($total_records / $records_per_page);
                     <input type="text" id="search-input" oninput="searchTable()" placeholder="Search...">
                 </div>
             </div>
-            <table class=" table table-bordered border-light text-center">
 
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                        <th>Address</th>
-                        <th>Blood unit</th>
-                        <th>Blood group</th>
-                        <th>Gender</th>
-                        <th>Disease</th>
-                        <th>Date</th>
-                        <th>Action</th>
-                </thead>
-                <tbody id="donationTableBody">
-                    <?php
+            <div class="table-responsive">
+                <table class=" table table-bordered border-light text-center">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Blood unit</th>
+                            <th>Blood group</th>
+                            <th>Gender</th>
+                            <th>Disease</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                    </thead>
+                    <tbody id="donationTableBody">
+                        <?php
                  if ($rows): ?>
-                    <?php $i = ($page - 1) * $records_per_page; ?>
-                    <?php foreach ($rows as $data): ?>
-                    <tr>
-                        <td><?php echo ++$i;?></td>
-                        <td><?php echo $data['name']; ?></td>
-                        <td><?php echo $data['phone'] ;?></td>
-                        <td><?php echo $data['email'] ;?></td>
-                        <td><?php echo $data['address'] ;?></td>
-                        <td><?php echo $data['bloodunit'] . ' Unit' ;?></td>
-                        <td><?php echo $data['bloodgroup'] ;?></td>
-                        <td><?php echo $data['gender'];?>
-                        </td>
-                        <td><?php echo $data['disease'] ;?></td>
-                        <td><?php $date = date('Y-m-d'); echo $date;?></td>
-                        <td>
-                            <div class="dropdown action">
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown-item action-content"><button class="btn btn-success"
-                                            onclick="return deletePopup()">Accept</button></li>
-                                    <li class="dropdown-item action-content"><button class="btn btn-danger"
-                                            onclick="return deletePopup()">Reject</button></li>
-                                </ul>
-                            </div>
-                        </td>
+                        <?php $i = ($page - 1) * $records_per_page; ?>
+                        <?php foreach ($rows as $data): ?>
+                        <tr>
+                            <td><?php echo ++$i;?></td>
+                            <td><?php echo $data['name']; ?></td>
+                            <td><?php echo $data['phone'] ;?></td>
+                            <td><?php echo $data['email'] ;?></td>
+                            <td><?php echo $data['address'] ;?></td>
+                            <td><?php echo $data['bloodunit'] . ' Unit' ;?></td>
+                            <td><?php echo $data['bloodgroup'] ;?></td>
+                            <td><?php echo $data['gender'];?>
+                            </td>
+                            <td><?php echo $data['disease'] ;?></td>
+                            <td><?php $date = date('Y-m-d'); echo $date;?></td>
+                            <td>
+                                <!-- <div class="dropdown action">
+                                    <p class="dropdown-toggle">Action</p>
+                                    <ul class="dropdown-menu"> -->
+                                <li class="dropdown-item action-content"><button class="btn btn-success"
+                                        onclick="return deletePopup()">Accept</button></li>
+                                <li class="dropdown-item action-content"><button class="btn btn-danger"
+                                        onclick="return deletePopupreject()">Reject</button></li>
+                                <!-- </ul>
+                                </div> -->
+                            </td>
 
 
-                    </tr>
-                    <?php endforeach; ?>
-                    <?php else: ?>
-                    <tr>
-                        <td colspan="11">Record not found.</td>
-                    </tr>
-                    <?php endif; ?>
-                </tbody>
-            </table>
+                        </tr>
+                        <?php endforeach; ?>
+                        <?php else: ?>
+                        <tr>
+                            <td colspan="11">Record not found.</td>
+                        </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
             <?php if ($total_pages > 1){ ?>
             <div class="pagination">
                 <?php if ($page > 1){ ?>
@@ -117,19 +120,19 @@ $total_pages = ceil($total_records / $records_per_page);
         <!--accept-->
         <div class="confirmationPopup" id="confirmationPopup">
             <div id="confirmationBox">
-                <P>Are you sure?</P>
+                <P>Are you sure you want to accept?</P>
                 <a href="backend/acceptdonation.php?id=<?php echo $data['id']; ?>"><button class="btn btn-success"
                         id="confirmDelete">Yes</button></a>
                 <button id="cancelDelete" class="btn btn-danger">No</button>
             </div>
         </div>
         <!--reject-->
-        <div class="confirmationPopup" id="confirmationPopup">
+        <div class="confirmationPopup" id="confirmationPopupReject">
             <div id="confirmationBox">
-                <P>Are you sure?</P>
-                <a href="backend/rejectdonation.php?id=<?php echo $data['id'];?>"><button class="btn btn-danger"><button
-                            class="btn btn-success" id="confirmDelete">Yes</button></a>
-                <button id="cancelDelete" class="btn btn-danger">No</button>
+                <P>Are you sure you want to reject?</P>
+                <a href="backend/rejectdonation.php?id=<?php echo $data['id'];?>"><button class="btn btn-success"
+                        id="confirmDelete">Yes</button></a>
+                <button id="cancelDeleteBtn" class="btn btn-danger">No</button>
             </div>
         </div>
     </section>

@@ -1,3 +1,7 @@
+.sidebar .nav ul li a.active,
+.nav ul li a.hover {
+  background-color: #007bff;
+}
 #stock-section h2 {
   text-align: center;
 }
@@ -38,6 +42,7 @@
   visibility: hidden;
   transition: transform 0.4s, top 0.4s;
   margin-top: 30px;
+  padding: 5px;
 }
 .open-form {
   visibility: visible;
@@ -68,21 +73,21 @@ textarea {
   border: none;
   border-radius: 10px;
   outline: none;
-  max-width: 100%;
+  width: 100%;
 }
 select {
   height: 35px;
 }
 #eventForm i {
   position: absolute;
-  right: 40px;
-  top: 10px;
+  right: 10px;
+  top: -5px;
   font-size: 1.5rem;
   cursor: pointer;
 }
 .label {
   display: flex;
-  flex: auto;
+  flex: 1;
 }
 
 .contactForm {
@@ -173,7 +178,7 @@ input[type="tel"] {
 }
 
 .confirmationPopup {
-  position: absolute;
+  position: fixed;
   top: 50%;
   right: 20%;
   transform: translate(-50%, -50%) scale(0.1);

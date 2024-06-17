@@ -12,42 +12,42 @@ include('includes/topbar.php');
         <div class="eventForm" id="eventForm">
             <i class="fa-solid fa-xmark" id="closebutton"></i>
             <form action="backend/addevent.php" method="post">
-                <div class="label">
-                    <div class="form-group">
+                <div class="label row">
+                    <div class="form-group col">
                         <label for="name">Event Name</label>
                         <input type="text" id="ename" name="ename" placeholder="Event name" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col">
                         <label for="dtae">Event Date</label>
                         <input type="date" id="date" name="date">
                     </div>
                 </div>
-                <div class="label">
-                    <div class="form-group">
+                <div class="label row">
+                    <div class="form-group col">
                         <label for="location">Event Location</label>
                         <input type="text" id="location" name="location" placeholder="Location">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col">
                         <label for="organizer">Event Organizer</label>
                         <input type="text" id="organizer" name="organizer" placeholder="Organizer">
                     </div>
                 </div>
-                <div class="label">
-                    <div class="form-group">
+                <div class="label row">
+                    <div class="form-group col">
                         <label for="person">Conatct Person</label>
                         <input type="text" id="person" name="person" placeholder="whom to contact?">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col">
                         <label for="phone">Contact Phone</label>
                         <input type="integer" id="phone" name="phone">
                     </div>
                 </div>
-                <div class="label">
-                    <div class="form-group">
+                <div class="label row">
+                    <div class="form-group col">
                         <label for="email">Contact Email</label>
                         <input type="email" id="email" name="email">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col">
                         <label for="status">Status</label>
                         <select name="status">
                             <option value="">Select event status</option>
@@ -107,37 +107,37 @@ $total_pages = ceil($total_records / $records_per_page);
                     <input type="text" id="search-input" oninput="searchTable()" placeholder="Search...">
                 </div>
             </div>
-            <table class="table-bordered border-dark text-center">
-
-                <thead>
-                    <th>Id</th>
-                    <th>Event Name</th>
-                    <th>Event date</th>
-                    <th>Event location</th>
-                    <th>Event organizer</th>
-                    <th>Contact person</th>
-                    <th>Phone</th>
-                    <th>Email</th>
-                    <th>Status</th>
-                    <th>Description</th>
-                    <th>Action</th>
-                </thead>
-                <tbody>
-                    <?php
+            <div class="table-responsive">
+                <table class="table table-bordered border-dark text-center">
+                    <thead>
+                        <th>Id</th>
+                        <th>Event Name</th>
+                        <th>Event date</th>
+                        <th>Event location</th>
+                        <th>Event organizer</th>
+                        <th>Contact person</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody>
+                        <?php
                  if ($rows): ?>
-                    <?php $i = ($page - 1) * $records_per_page; ?>
-                    <?php foreach ($rows as $data): ?>
-                    <tr>
-                        <td><?php echo ++$i;?></td>
-                        <td><?php echo $data['name']; ?></td>
-                        <td><?php echo $data['date'] ;?></td>
-                        <td><?php echo $data['location'] ;?></td>
-                        <td><?php echo $data['organizer'] ;?></td>
-                        <td><?php echo $data['c_person'] ;?></td>
-                        <td><?php echo $data['phone'] ;?></td>
-                        <td><?php echo $data['email'];?>
-                        </td>
-                        <td><?php if($data['status'] === '0' ){
+                        <?php $i = ($page - 1) * $records_per_page; ?>
+                        <?php foreach ($rows as $data): ?>
+                        <tr>
+                            <td><?php echo ++$i;?></td>
+                            <td><?php echo $data['name']; ?></td>
+                            <td><?php echo $data['date'] ;?></td>
+                            <td><?php echo $data['location'] ;?></td>
+                            <td><?php echo $data['organizer'] ;?></td>
+                            <td><?php echo $data['c_person'] ;?></td>
+                            <td><?php echo $data['phone'] ;?></td>
+                            <td><?php echo $data['email'];?>
+                            </td>
+                            <td><?php if($data['status'] === '0' ){
                         echo  "<span class='bg-warning text-light p-1'>Upcoming</span>";
                     }
                         else if($data['status'] === '1'){
@@ -148,30 +148,31 @@ $total_pages = ceil($total_records / $records_per_page);
                         }
 
                     ?></td>
-                        <td><?php echo $data['description'] ;?></td>
-                        <td>
-                            <div class="dropdown text-end action">
-                                <p class="dropdown-toggle">Action</p>
-                                <ul class="dropdown-menu action-content">
-                                    <li class="dropdown-item "><a href=""> <button
-                                                class="btn btn-info">Edit</button></a></li>
-                                    <li class="dropdown-item"> <button class="btn btn-danger"
-                                            onclick="return deletePopup()">Delete</button>
-                                    </li>
-                                </ul>
-                            </div>
+                            <td><?php echo $data['description'] ;?></td>
+                            <td>
+                                <div class="dropdown text-end action">
+                                    <p class="dropdown-toggle">Action</p>
+                                    <ul class="dropdown-menu action-content">
+                                        <li class="dropdown-item "><a href=""> <button
+                                                    class="btn btn-info">Edit</button></a></li>
+                                        <li class="dropdown-item"> <button class="btn btn-danger"
+                                                onclick="return deletePopup()">Delete</button>
+                                        </li>
+                                    </ul>
+                                </div>
 
 
-                        </td>
-                    </tr>
-                    <?php endforeach; ?>
-                    <?php else: ?>
-                    <tr>
-                        <td colspan="11">Record not found.</td>
-                    </tr>
-                    <?php endif; ?>
-                </tbody>
-            </table>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                        <?php else: ?>
+                        <tr>
+                            <td colspan="11">Record not found.</td>
+                        </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
             <?php if ($total_pages > 1){ ?>
             <div class="pagination">
                 <?php if ($page > 1){ ?>

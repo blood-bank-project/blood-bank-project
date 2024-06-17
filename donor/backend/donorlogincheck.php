@@ -13,6 +13,7 @@ if(isset($_POST['submit']))
 		session_start();
 		$_SESSION['loginstatus']='Active';
 		$_SESSION['username']=$data->firstname;
+		$_SESSION['user_id']=$data->d_id;
 		header('Location:../index.php');
 	}else{
 	    echo "<script>window.location='../../index.php'</script>";

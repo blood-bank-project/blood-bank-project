@@ -163,200 +163,173 @@
         </div>
     </div>
 
+    <section id="card">
+        <div class="top-content title1">
+            <h1>Contact Info.</h1>
+        </div>
+        <div class="container" id="card-container">
 
-    <section id="hotline">
-        <div class="container top">
-            <div class="top-content title">
-                <h1>BloodVault Hotlines</h1>
+            <?php
+                require_once "backend/connect.php";
+
+                $sql = "SELECT * FROM hotline";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($data = $result->fetch_object()) {
+                    ?>
+            <div class="card">
+                <h2><?php echo $data->name; ?></h2>
+                <p>Location: <?php echo $data->location; ?></p>
+                <p>Phone: <?php echo $data->phone1; ?>/<?php echo $data->phone2; ?></p>
             </div>
-            <div id=" date" class="top-content"><span></span></div>
-            <div>
-                <p class="top-content total">Blood request managed till now </p>
+            <?php
+            }
+                 } else {
+             echo "<p>No hotlines available.</p>";
+            }
+            ?>
+    </section>
+
+    <section id="other-contact" class="container">
+        <h1>Other way to contact with BloodVault</h1>
+        <div class="row first ">
+            <div class="col contact">
+                <a href="">
+                    <i class="fa-solid fa-computer"></i>
+                    <h3>Request form</h3>
+                    <p>People in need blood can fill the form to request blood via bloodvault website.</p>
+                </a>
+            </div>
+            <div class="col contact">
+                <a href="">
+                    <i class="fa-brands fa-facebook"></i>
+                    <h3>Facebook</h3>
+                    <p>People in need blood can share there blood need via facebook.</p>
+                </a>
+            </div>
+            <div class="col contact">
+                <a href="">
+                    <i class="fa-brands fa-facebook-messenger"></i>
+                    <h3>Messanger</h3>
+                    <p>People in need blood can directly message us via messanger.</p>
+                </a>
+            </div>
+            <div class="col contact">
+                <a href="">
+                    <i class="fa-brands fa-viber"></i>
+                    <h3>Viber</h3>
+                    <p>People in need blood can contact us via viber.</p>
+                </a>
             </div>
         </div>
-
-        <div class="container request-list">
-            <div class="box">
-                <div class="icon"><i class="fa-solid fa-droplet"></i></div>
-                <div class="">
-                    <h3>Blood Request Today</h3>
-                </div>
-                <div class="number"></div>
+        <div class="row first">
+            <div class="col contact">
+                <a href="">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <h3>WhatsApp</h3>
+                    <p>People in need blood can conatct bloodvault via whatsapp.</p>
+                </a>
             </div>
-            <div class="box">
-                <div class="icon"><i class="fa-solid fa-circle-check"></i></div>
-                <div class="">
-                    <h3>Managed</h3>
-                </div>
-                <div class="number"></div>
+            <div class="col contact">
+                <a href="">
+                    <i class="fa-brands fa-instagram"></i>
+                    <h3>Instagram</h3>
+                    <p>People in need blood can share there blood need via Instagram.</p>
+                </a>
             </div>
-            <div class="box three">
-                <div class="icon"><i class="fa-solid fa-clock"></i></div>
-                <div class="">
-                    <h3>Pending</h3>
-                </div>
-                <div class="number"></div>
+            <div class="col contact">
+                <a href="">
+                    <i class="fa-brands fa-twitter"></i>
+                    <h3>Twitter</h3>
+                    <p>People in need blood can share their blood need via twitter.</p>
+                </a>
+            </div>
+            <div class="col contact">
+                <a href="">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <h3>Phone</h3>
+                    <p>People in need blood can contact us via phone number 986411517.</p>
+                </a>
             </div>
         </div>
+    </section>
 
-        <hr>
-        <?php
-require_once "backend/connect.php";
-$records_per_page = isset($_GET['records_per_page']) ? intval($_GET['records_per_page']) : 10;
-$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-$offset = ($page - 1) * $records_per_page;
-
-$sql = "SELECT * FROM hotline LIMIT ?, ?";
-$query = $conn->prepare($sql);
-$query->bind_param('ii', $offset, $records_per_page); // 'ii' indicates two integer parameters
-$query->execute();
-$result = $query->get_result();
-$rows = $result->fetch_all(MYSQLI_ASSOC);
-
-// Count total records
-$total_records_query = $conn->query("SELECT COUNT(*) FROM hotline");
-$total_records = $total_records_query->fetch_row()[0];
-$total_pages = ceil($total_records / $records_per_page);
-
-?>
-        <div class="container hotlinestat">
-            <h2 class="text-center m-4">Blood Bank Hotlines</h2>
-            <div class="table-search">
-                <div class="pagination-options">
-                    <label for="rows-per-page">Rows per page:</label>
-                    <select id="rows-per-page" onchange="changeRowsPerPage(this.value)">
-                        <option value="5" <?php if ($records_per_page == 5) echo 'selected'; ?>>5</option>
-                        <option value="10" <?php if ($records_per_page == 10) echo 'selected'; ?>>10</option>
-                        <option value="20" <?php if ($records_per_page == 20) echo 'selected'; ?>>20</option>
-                        <option value="50" <?php if ($records_per_page == 50) echo 'selected'; ?>>50</option>
-                    </select>
-                </div>
-                <div class="search-container">
-                    <input type="text" id="search-input" oninput="searchTable()" placeholder="Search...">
-                </div>
-            </div>
-            <table class="table ">
-
-                <thead>
-                    <th>Name</th>
-                    <th>Location</th>
-                    <th>Conatact</th>
-                </thead>
-                <tbody>
-                    <?php
-                 if ($rows): ?>
-                    <?php $i = ($page - 1) * $records_per_page; ?>
-                    <?php foreach ($rows as $data): ?>
-                    <tr>
-                        <td><?php echo $data['name']; ?></td>
-                        <td><?php echo $data['location']; ?></td>
-                        <td><?php echo $data['phone1'].',<br>'.$data['phone2'].',<br>'.$data['phone3'];?></td>
-                    </tr>
-                    <?php endforeach; ?>
-                    <?php else: ?>
-                    <tr>
-                        <td colspan="11">Record not found.</td>
-                    </tr>
-                    <?php endif; ?>
-                </tbody>
-            </table>
-            <?php if ($total_pages > 1){ ?>
-            <div class="pagination">
-                <?php if ($page > 1){ ?>
-                <a href="?page=1&records_per_page=<?php echo $records_per_page; ?>">&laquo; First</a>
-                <a href="?page=<?php echo ($page - 1); ?>&records_per_page=<?php echo $records_per_page; ?>">&lsaquo;
-                    Previous</a>
-                <?php } ?>
-                <?php for ($i = max(1, $page - 5); $i <= min($page + 5, $total_pages); $i++){ ?>
-                <a href="?page=<?php echo $i; ?>&records_per_page=<?php echo $records_per_page; ?>"
-                    <?php if ($i === $page) echo 'class="active"'; ?>><?php echo $i; ?></a>
-                <?php } ?>
-                <?php if ($page < $total_pages){ ?>
-                <a href="?page=<?php echo ($page + 1); ?>&records_per_page=<?php echo $records_per_page; ?>">Next
-                    &rsaquo;</a>
-                <a href="?page=<?php echo $total_pages; ?>&records_per_page=<?php echo $records_per_page; ?>">Last
-                    &raquo;</a>
-                <?php } ?>
-            </div>
-            <?php } ?>
-
-        </div>
-
-        <footer id="contact" class="container-fluid">
-            <div class="container">
-                <div class="row content-ro">
-                    <div class="col-lg-4 col-md-12 footer-contact">
-                        <h2>Contact Informatins</h2>
-                        <div class="address-row">
-                            <div class="icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="detail">
-                                <p>Thapathali,<br> Kathmandu, Nepal</p>
-                            </div>
+    <footer id="contact" class="container-fluid">
+        <div class="container">
+            <div class="row content-ro">
+                <div class="col-lg-4 col-md-12 footer-contact">
+                    <h2>Contact Informatins</h2>
+                    <div class="address-row">
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <div class="address-row">
-                            <div class="icon">
-                                <i class="far fa-envelope"></i>
-                            </div>
-                            <div class="detail">
-                                <p>Bloodvault@gmail.com <br> savelife@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="address-row">
-                            <div class="icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="detail">
-                                <p>+977 9864111517 <br> +91 9863482016</p>
-                            </div>
+                        <div class="detail">
+                            <p>Thapathali,<br> Kathmandu, Nepal</p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-12 footer-links">
-                        <div class="row no-margin mt-2">
-                            <h2>Quick Links</h2>
-                            <ul>
-                                <li>
-                                    <a class="nav-link" href="#">Home
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#about">About Us</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#gallery">Gallery</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#process">Process</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#blog">Blog</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#contact">Contact US</a>
-                                </li>
-                            </ul>
+                    <div class="address-row">
+                        <div class="icon">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <div class="detail">
+                            <p>Bloodvault@gmail.com <br> savelife@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="address-row">
+                        <div class="icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="detail">
+                            <p>+977 9864111517 <br> +91 9863482016</p>
                         </div>
                     </div>
                 </div>
-                <div class="footer-copy">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-6">
-                            <p>Copyright © BloodVault | All right reserved.</p>
-                        </div>
-                        <div class="col-lg-4 col-md-6 socila-link">
-                            <ul>
-                                <li><a><i class="fab fa-github"></i></a></li>
-                                <li><a><i class="fab fa-google-plus-g"></i></a></li>
-                                <li><a><i class="fab fa-pinterest-p"></i></a></li>
-                                <li><a><i class="fab fa-twitter"></i></a></li>
-                                <li><a><i class="fab fa-facebook-f"></i></a></li>
-                            </ul>
-                        </div>
+                <div class="col-lg-4 col-md-12 footer-links">
+                    <div class="row no-margin mt-2">
+                        <h2>Quick Links</h2>
+                        <ul>
+                            <li>
+                                <a class="nav-link" href="#">Home
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#about">About Us</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#gallery">Gallery</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#process">Process</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#blog">Blog</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#contact">Contact US</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </footer>
+            <div class="footer-copy">
+                <div class="row">
+                    <div class="col-lg-8 col-md-6">
+                        <p>Copyright © BloodVault | All right reserved.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 socila-link">
+                        <ul>
+                            <li><a><i class="fab fa-github"></i></a></li>
+                            <li><a><i class="fab fa-google-plus-g"></i></a></li>
+                            <li><a><i class="fab fa-pinterest-p"></i></a></li>
+                            <li><a><i class="fab fa-twitter"></i></a></li>
+                            <li><a><i class="fab fa-facebook-f"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </body>
 

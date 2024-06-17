@@ -4,6 +4,9 @@ include("includes/navbar.php");
 ?>
 
 <section id="body5">
+    <div class="rh">
+        <h1 class="text-center">Request History</h1>
+    </div>
     <?php
 require_once "backend/connect.php";
 $records_per_page = isset($_GET['records_per_page']) ? intval($_GET['records_per_page']) : 10;
@@ -24,7 +27,9 @@ $total_pages = ceil($total_records / $records_per_page);
 
 ?>
     <div class="container">
-        <h1 class="text-center">Request History</h1>
+        <div class="text">
+            <p>Watch your blood request history here.</p><i class="fa-solid fa-hand-point-down"></i>
+        </div>
         <div class="table-search">
             <div class="pagination-options">
                 <label for="rows-per-page">Rows per page:</label>

@@ -42,14 +42,6 @@
                       </a>
                   </li>
                   <li class="nav-item">
-                      <a href="history.php" class="nav-link">
-                          <i class="nav-icon fa-solid fa-clock-rotate-left"></i>
-                          <p>
-                              Request History
-                          </p>
-                      </a>
-                  </li>
-                  <li class="nav-item">
                       <a href="bloodstock.php" class="nav-link">
                           <i class="nav-icon fa-solid fa-hand-holding-droplet"></i>
                           <p>
