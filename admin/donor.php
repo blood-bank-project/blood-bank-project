@@ -5,22 +5,22 @@ include('includes/topbar.php');
 ?>
 <div class="content-wrapper">
     <?php
-require_once "backend/connect.php";
-$records_per_page = isset($_GET['records_per_page']) ? intval($_GET['records_per_page']) : 10;
-$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-$offset = ($page - 1) * $records_per_page;
+    require_once "backend/connect.php";
+    $records_per_page = isset($_GET['records_per_page']) ? intval($_GET['records_per_page']) : 10;
+    $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+    $offset = ($page - 1) * $records_per_page;
 
-$sql = "SELECT * FROM donor ORDER BY d_id DESC LIMIT ?, ?";
-$query = $conn->prepare($sql);
-$query->bind_param('ii', $offset, $records_per_page); 
-$query->execute();
-$result = $query->get_result();
-$rows = $result->fetch_all(MYSQLI_ASSOC);
+    $sql = "SELECT * FROM donor ORDER BY d_id DESC LIMIT ?, ?";
+    $query = $conn->prepare($sql);
+    $query->bind_param('ii', $offset, $records_per_page); 
+    $query->execute();
+    $result = $query->get_result();
+    $rows = $result->fetch_all(MYSQLI_ASSOC);
 
-$total_records_query = $conn->query("SELECT COUNT(*) FROM donor");
-$total_records = $total_records_query->fetch_row()[0];
-$total_pages = ceil($total_records / $records_per_page);
-?>
+    $total_records_query = $conn->query("SELECT COUNT(*) FROM donor");
+    $total_records = $total_records_query->fetch_row()[0];
+    $total_pages = ceil($total_records / $records_per_page);
+    ?>
     <section class="content" id="donor-section">
         <div class="container-fluid">
             <h2 class="text-center">Donors Information</h2>
@@ -54,51 +54,34 @@ $total_pages = ceil($total_records / $records_per_page);
                             <th>Province</th>
                             <th>Address</th>
                             <th>Action</th>
+                        </tr>
                     </thead>
                     <tbody id="donorTableBody">
-                        <?php
-                 if ($rows): ?>
+                        <?php if ($rows): ?>
                         <?php $i = ($page - 1) * $records_per_page; ?>
                         <?php foreach ($rows as $data): ?>
                         <tr>
                             <td><?php echo ++$i;?></td>
-                            <td><?php echo $data['firstname'].'' .$data["middlename"].''. $data["lastname"];?>
-                            </td>
-                            <td><?php echo $data["dob"];?>
-                            </td>
-                            <td><?php echo $data["email"];?>
-                            </td>
-                            <td><?php echo $data["gender"];?>
-                            </td>
-                            <td><?php echo $data["bgroup"];?>
-                            </td>
-                            <td><?php echo $data["occupation"];?>
-                            </td>
-                            <td><?php echo $data["phone"];?>
-                            </td>
-                            <td><?php echo $data["tel"];?>
-                            </td>
-                            <td><?php echo $data["province"];?>
+                            <td><?php echo $data['firstname'].' '.$data["middlename"].' '.$data["lastname"];?></td>
+                            <td><?php echo $data["dob"];?></td>
+                            <td><?php echo $data["email"];?></td>
+                            <td><?php echo $data["gender"];?></td>
+                            <td><?php echo $data["bgroup"];?></td>
+                            <td><?php echo $data["occupation"];?></td>
+                            <td><?php echo $data["phone"];?></td>
+                            <td><?php echo $data["tel"];?></td>
+                            <td><?php echo $data["province"];?></td>
                             <td><?php echo $data["municipality"] . '-' . $data["ward"] . ', ' . $data["tole"] . ', ' . $data["district"]; ?>
                             </td>
-
                             <td>
-                                <div class="dropdown text-end action">
-                                    <p class="dropdown-toggle">Action</p>
-                                    <ul class="dropdown-menu action-content">
-                                        <li class="dropdown-item "><a href=""> <button
-                                                    class="btn btn-primary">Edit</button></a></li>
-                                        <li class="dropdown-item"> <button class="btn btn-danger" id="deleteRow"
-                                                onclick="return deletePopup()">Delete</button>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <button class="btn btn-danger"
+                                    onclick="deletePopup(<?php echo $data['d_id']; ?>)">Delete</button>
                             </td>
                         </tr>
                         <?php endforeach; ?>
                         <?php else: ?>
                         <tr>
-                            <td colspan="11">Record not found.</td>
+                            <td colspan="12">Record not found.</td>
                         </tr>
                         <?php endif; ?>
                     </tbody>
@@ -124,21 +107,17 @@ $total_pages = ceil($total_records / $records_per_page);
             </div>
             <?php } ?>
 
-
-        </div>
-
-        <div class="confirmationPopup" id="confirmationPopup">
-            <div id="confirmationBox">
-                <P>Are you sure you want to delete?</P>
-                <a href="backend/deletedonor.php?id=<?php echo $data['d_id']; ?>;"><button class="btn btn-success"
-                        id="confirmDelete">Yes</button></a>
-                <button id="cancelDelete" class="btn btn-danger">No</button>
+            <div class="confirmationPopup" id="confirmationPopup">
+                <div id="confirmationBox">
+                    <p>Are you sure you want to delete?</p>
+                    <button class="btn btn-success" id="confirmDelete">Yes</button>
+                    <button id="cancelDelete" class="btn btn-danger">No</button>
+                </div>
             </div>
         </div>
-
     </section>
 </div>
 
 <?php
-        include('includes/footer.php');
-    ?>
+include('includes/footer.php');
+?>

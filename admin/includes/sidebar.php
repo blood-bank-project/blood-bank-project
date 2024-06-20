@@ -65,6 +65,14 @@
                           </p>
                       </a>
                   </li>
+                  <li class="nav-item">
+                      <a href="certificate.php" class="nav-link">
+                          <i class="nav-icon fa-solid fa-phone"></i>
+                          <p>
+                              Certificate
+                          </p>
+                      </a>
+                  </li>
               </ul>
           </nav>
       </div>

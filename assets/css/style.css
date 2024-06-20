@@ -586,6 +586,19 @@ footer .footer-copy .socila-link ul li a {
 #navbar .nav-link {
   color: #fff;
 }
+#adminlogin,
+#donorlogin {
+  color: #fff;
+}
+#adminlogin,
+#donorlogin {
+  color: #fff;
+}
+.dropdown-content #adminlogin:hover,
+.dropdown-content #donorlogin:hover {
+  background-color: #fff;
+  color: #de1f26;
+}
 .sticky {
   padding: 50px 100px;
 }
@@ -603,7 +616,6 @@ footer .footer-copy .socila-link ul li a {
     max-height: 40px;
   }
 }
-
 #navbar .button {
   position: absolute;
   right: 20px;
@@ -647,6 +659,10 @@ footer .footer-copy .socila-link ul li a {
   flex: 1;
   cursor: pointer;
   margin-left: 40px;
+}
+.login .error {
+  color: #de1f26;
+  font-size: 15px;
 }
 .login .form-container a {
   color: #333;
@@ -720,6 +736,7 @@ footer .footer-copy .socila-link ul li a {
   margin: 0 0 40px 0;
   height: 200px;
   color: white;
+  background-color: #de1f26;
 }
 #request .title h1 {
   font-size: 3rem;
@@ -729,22 +746,26 @@ footer .footer-copy .socila-link ul li a {
   font-size: 1.5rem;
 }
 #request .form-container {
-  width: 60%;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #e9b5b5;
-  color: #de1f26;
-  overflow: hidden;
+  background-color: #e4bdbd;
+  border-radius: 20px;
+  margin: 20px 100px;
 }
-#request label {
+#request .form-container h2 {
+  text-align: center;
+}
+#request .form-group {
+  display: flex;
+  flex-direction: column;
   font-size: 20px;
-  margin-bottom: 5px;
 }
-#request input[type="text"],
-input[type="integer"],
-input[type="file"],
+#request .form-field {
+  display: flex;
+  flex: 1;
+}
+#request .form-group input[type="text"],
+input[type="number"],
 select,
+input[type="file"],
 textarea {
   padding: 5px;
   border: none;
@@ -752,11 +773,12 @@ textarea {
   outline: none;
   width: 100%;
 }
-#unit {
-  width: 85%;
-}
-select {
-  height: 35px;
+#request .form-group .btn {
+  background-color: #de1f26;
+  width: 20%;
+  margin-left: 40%;
+  font-size: 20px;
+  color: #fff;
 }
 #request .hotline {
   text-align: center;

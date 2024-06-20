@@ -9,3 +9,4 @@ $sql = "UPDATE request SET status = '-1' WHERE id=$id ";
         else{
             echo 'ERROR';
         }
+ ?>

@@ -62,7 +62,7 @@ $row = $conn->query($sql);
 $data = mysqli_fetch_array($row);
 ?>
                 <div class="col-1 donor-detail">
-                    <h2><?php echo $data['totaldonation'];?></h2>
+                    <h2><?php echo ($row != null && isset($data['totaldonation'])) ? $data['totaldonation'] : 0; ?></h2>
                     <p>Total Donation</p>
                 </div>
                 <div class="col-1 donor-detail">

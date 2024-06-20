@@ -17,7 +17,7 @@
 
 <body>
     <section id="navbar">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-light" data-bs-theme="light">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand logo" href="index.php">BloodVault</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -26,65 +26,38 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <div class="dropdown">
-                            <li class="nav-item">
-                                <a class="nav-link active dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
-                                    href="index.php">Home</a>
-                            </li>
-                            <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
-                                <li><a class="dropdown-item" href="#">About us</a></li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Gallary</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Process</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Blog</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#">Contact us</a></li>
-                            </ul>
+                    <div class="dropdown">
+                        <a class="nav-link active dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
+                            href="index.php">Home</a>
+                        <div class="dropdown-menu dropdown-menu-dark dropdown-content">
+                            <a class="dropdown-item" href="#">About us</a>
+                            <a class="dropdown-item" href="#">Gallary</a>
+
+                            <a class="dropdown-item" href="#">Process</a>
+
+                            <a class="dropdown-item" href="#">Blog</a>
+                            <a class="dropdown-item" href="#">Contact us</a>
                         </div>
-                        <!-- <div class="dropdown">
-                            <li class="nav-item">
-                                <a class="nav-link  dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
-                                    href="">Looking for blood?</a>
-                            </li>
-                            <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
-                                <li><a class="dropdown-item" href="patient/signin.php">Register as Patient</a></li>
-                                <li>
-                                    <a class="dropdown-item" id="patientlogin">Login</a>
-                                </li>
-                            </ul>
-                        </div> -->
-                        <div class="dropdown">
-                            <li class="nav-item">
-                                <a class="nav-link dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
-                                    href="">Want to donate blood?</a>
-                            </li>
-                            <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
-                                <li><a class="dropdown-item" href="donor/signin.php">Register as Donar</a></li>
-                                <li>
-                                    <a class="dropdown-item" id="donorlogin">Login</a>
-                                </li>
+                    </div>
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" aria-current="page" data-bs-toggle="dropdown" href="">Want
+                            to donate blood?</a>
+                        <div class=" dropdown-content">
+                            <a class="dropdown-item" href="donor/signin.php">Register as Donar</a>
+                            <a class="dropdown-item" id="donorlogin">Login</a>
                         </div>
-                        <div class="dropdown">
-                            <li class="nav-item">
-                                <a class="nav-link dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
-                                    href="">Admin</a>
-                            </li>
-                            <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
-                                <li><a class="dropdown-item" href="donor/signin.php">Register as Donar</a></li>
-                                <li>
-                                    <a class="dropdown-item" id="adminlogin">Login</a>
-                                </li>
-                            </ul>
+                    </div>
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
+                            href="">Admin</a>
+                        <div class="dropdown-content">
+                            <a class="dropdown-item" href="donor/signin.php">Register as Donar</a>
+                            <a class="dropdown-item" id="adminlogin">Login</a>
                         </div>
-                    </ul>
+                    </div>
                     <div class="button">
-                        <a href="donor/signin.php"><button class="btn btn-outline-danger m-2">Donate Now</button></a>
-                        <a href="request.php"><button class="btn btn-danger">Request Blood</button></a>
+                        <a href="donor/signin.php"><button class="btn btn-outline-light m-2">Donate Now</button></a>
+                        <a href="request.php"><button class="btn btn-light">Request Blood</button></a>
                     </div>
                 </div>
             </div>
@@ -97,9 +70,10 @@
                 <h2>Donor Login</h2>
                 <i class="fa-solid fa-xmark" id="closebutton1"></i>
             </div>
-            <form action="donor/backend/donorlogincheck.php" method="post">
-                <input type="email" name="email" placeholder="Username" />
-                <input type="password" name="password" placeholder="Password" />
+            <form class="donorloginForm">
+                <span class="error"></span>
+                <input class="username" type="email" name="email" placeholder="Username" />
+                <input class="password" type="password" name="password" placeholder="Password" />
                 <a href="">Forgot password?</a>
                 <button type="submit" name="submit">Log In</button>
             </form>
@@ -121,9 +95,10 @@
                 <h2>Admin Login</h2>
                 <i class="fa-solid fa-xmark" id="closebutton2"></i>
             </div>
-            <form action="admin/backend/adminlogincheck.php" method="post">
-                <input type="email" name="email" placeholder="Username" />
-                <input type="password" name="password" placeholder="Password" />
+            <form class="adminloginForm">
+                <span class="error1"></span>
+                <input class="emailid" type="email" name="email" placeholder="Username" />
+                <input class="pass" type="password" name="password" placeholder="Password" />
                 <a href="">Forgot password?</a>
                 <button type="submit" name="submit">Log In</button>
             </form>
@@ -141,7 +116,7 @@
     </div>
 
     <section id="request">
-        <div class="title bg-danger">
+        <div class="title">
             <h1>Blood Request Form</h1>
             <h5>Need Blood?</h5>
         </div>
@@ -150,21 +125,23 @@
                 <p><i class="fa-solid fa-hand-point-right"></i>Other blood bank's hotline</p>
             </a>
         </div>
-        <div class="container form-container" id="donationForm">
+        <div class="container form-container">
+            <h2 class="form-title">Fill the form for blood</h2>
+            <hr />
             <div class="form-container">
-                <form action="backend/bloodrequest.php" method="post" id="myForm" enctype="multipart/form-data">
-                    <div class="form-field">
-                        <div class="form-group">
+                <form action="backend/bloodrequest.php" method="post" enctype="multipart/form-data">
+                    <div class="form-field row">
+                        <div class="form-group col">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="fname" placeholder="Your name">
                         </div>
-                        <div class="form-group ">
+                        <div class="form-group col">
                             <label for="phone">Phone</label>
-                            <input type="integer" id="phone" name="phone" placeholder="Phone">
+                            <input type="number" id="phone" name="phone" placeholder="Phone">
                         </div>
                     </div>
-                    <div class="form-field">
-                        <div class="form-group">
+                    <div class="form-field row">
+                        <div class="form-group col">
                             <label for="blood-group">Blood Group</label>
                             <select name="blood-group">
                                 <option value="">Select blood group</option>
@@ -178,7 +155,7 @@
                                 <option value="O-">O-ve</option>
                             </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group col">
                             <label for="file">Requisition form</label>
                             <input type="file" id="file" name="file" placeholder="Hospital form">
                         </div>
@@ -189,11 +166,9 @@
                         <textarea id="message" name="message" rows="4" placeholder="Any disease?"></textarea>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="submit" name="submit" id="button" class="btn btn-danger mt-4 ">
+                        <input type="submit" value="submit" name="submit" id="button" class="btn ">
                     </div>
                 </form>
-
-
             </div>
         </div>
 

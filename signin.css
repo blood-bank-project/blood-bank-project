@@ -82,3 +82,10 @@
 button:hover {
   background-color: rgb(204, 35, 35);
 }
+
+#navbar {
+  background-color: #de1f26;
+}
+#navbar .nav-link {
+  color: #fff;
+}

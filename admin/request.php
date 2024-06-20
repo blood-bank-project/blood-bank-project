@@ -78,10 +78,11 @@ $total_pages = ceil($total_records / $records_per_page);
                              } ?></td>
                             <td>
                                 <?php if($data['status'] != '1' && $data['status'] != '-1') : ?>
-                                <li class="dropdown-item action-content"><button class="btn btn-success"
-                                        onclick="return deletePopup()">Accept</button></li>
-                                <li class="dropdown-item action-content"><button class="btn btn-danger"
-                                        onclick="return deletePopupreject()">Reject</button></li>
+                                <button class="btn btn-success"
+                                    onclick="acceptRequest(<?php echo  $data['id'];?>)">Accept</button>
+
+                                <button class="btn btn-danger"
+                                    onclick="rejectRequest(<?php echo  $data['id'];?>)">Reject</button>
                                 <?php endif; ?>
                             </td>
                         </tr>
@@ -119,18 +120,16 @@ $total_pages = ceil($total_records / $records_per_page);
         <div class="confirmationPopup" id="confirmationPopup">
             <div id="confirmationBox">
                 <P>Are you sure its managed?</P>
-                <a href="backend/requestmanaged.php?id=<?php echo $data['id']; ?>"><button class="btn btn-success"
-                        id="confirmDelete">Yes</button></a>
-                <button id="cancelDelete" class="btn btn-danger">No</button>
+                <button class="btn btn-success" id="confirmAccept">Yes</button>
+                <button id="cancelAccept" class="btn btn-danger">No</button>
             </div>
         </div>
         <!--reject-->
         <div class="confirmationPopup" id="confirmationPopupReject">
             <div id="confirmationBox">
                 <P>Are you sure its not managed?</P>
-                <a href="backend/requestnotmanaged.php?id=<?php echo $data['id'];?>"><button class="btn btn-success"
-                        id="confirmDelete">Yes</button></a>
-                <button id="cancelDeleteBtn" class="btn btn-danger">No</button>
+                <button class="btn btn-success" id="confirmReject">Yes</button>
+                <button id="cancelReject" class="btn btn-danger">No</button>
             </div>
         </div>
 

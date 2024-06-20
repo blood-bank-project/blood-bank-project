@@ -96,9 +96,10 @@
                 <h2>Donor Login</h2>
                 <i class="fa-solid fa-xmark" id="closebutton1"></i>
             </div>
-            <form action="donor/backend/donorlogincheck.php" method="post">
-                <input type="email" name="email" placeholder="Username" />
-                <input type="password" name="password" placeholder="Password" />
+            <form class="donorloginForm">
+                <span class="error"></span>
+                <input class="username" type="email" name="email" placeholder="Username" />
+                <input class="password" type="password" name="password" placeholder="Password" />
                 <a href="">Forgot password?</a>
                 <button type="submit" name="submit">Log In</button>
             </form>
@@ -120,9 +121,10 @@
                 <h2>Admin Login</h2>
                 <i class="fa-solid fa-xmark" id="closebutton2"></i>
             </div>
-            <form action="admin/backend/adminlogincheck.php" method="post">
-                <input type="email" name="email" placeholder="Username" />
-                <input type="password" name="password" placeholder="Password" />
+            <form class="adminloginForm">
+                <span class="error1"></span>
+                <input class="emailid" type="email" name="email" placeholder="Username" />
+                <input class="pass" type="password" name="password" placeholder="Password" />
                 <a href="">Forgot password?</a>
                 <button type="submit" name="submit">Log In</button>
             </form>

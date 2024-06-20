@@ -35,7 +35,7 @@
                      <p class="button">
                          <!-- <img src="" alt="mdo" width="32" height="32" class="rounded-circle" /> -->
                          <?php
-                                session_start();
+                            session_start();
                             if(isset($_SESSION['username'])) {
                                 echo $_SESSION['username'];
                             }

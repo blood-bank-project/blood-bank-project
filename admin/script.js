@@ -14,6 +14,7 @@ function loadContent(divId, link) {
   link.classList.add("active");
 }
 
+// add event popup
 document.addEventListener("DOMContentLoaded", function () {
   let addEvent = document.getElementById("addEvent");
   let closeButton = document.getElementById("closebutton");
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//add contact popup
 document.addEventListener("DOMContentLoaded", function () {
   let addContact = document.getElementById("addContact");
   let closeButton1 = document.getElementById("closebutton");
@@ -41,13 +43,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//***** pagination******
 function changeRowsPerPage(rows) {
   let urlParams = new URLSearchParams(window.location.search);
   urlParams.set("page", "1");
   urlParams.set("records_per_page", rows);
   window.location.search = urlParams.toString();
 }
-
+//***table search */
 function searchTable() {
   let input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("search-input");
@@ -71,37 +74,67 @@ function searchTable() {
   }
 }
 
-//open popup
-function deletePopup() {
+//*****delete donor *****//
+function deletePopup(id) {
   let confirmationPopup = document.getElementById("confirmationPopup");
-  let deleteReject = document.getElementById("cancelDelete");
-
+  let confirmDelete = document.getElementById("confirmDelete");
   confirmationPopup.classList.add("open-popup");
-
-  deleteReject.addEventListener("click", function () {
+  confirmDelete.onclick = function () {
+    window.location.href = "backend/deletedonor.php?id=" + id;
+  };
+  document.getElementById("cancelDelete").onclick = function () {
     confirmationPopup.classList.remove("open-popup");
-    console.log("button clickr=e");
-  });
+  };
 }
-function deletePopupreject() {
+
+//******** Accept blood request*******//
+function acceptRequest(id) {
+  let confirmationPopup = document.getElementById("confirmationPopup");
+  let confirmAccept = document.getElementById("confirmAccept");
+  confirmationPopup.classList.add("open-popup");
+  confirmAccept.onclick = function () {
+    window.location.href = "backend/requestmanaged.php?id=" + id;
+  };
+  document.getElementById("cancelAccept").onclick = function () {
+    confirmationPopup.classList.remove("open-popup");
+  };
+}
+
+//****** Reject blood request ********//
+function rejectRequest(id) {
   let confirmationPopup = document.getElementById("confirmationPopupReject");
-  let deleteReject = document.getElementById("cancelDeleteBtn");
-
+  let confirmReject = document.getElementById("confirmReject");
   confirmationPopup.classList.add("open-popup");
-
-  deleteReject.addEventListener("click", function () {
+  confirmReject.onclick = function () {
+    window.location.href = "backend/requestnotmanaged.php?id=" + id;
+  };
+  document.getElementById("cancelReject").onclick = function () {
     confirmationPopup.classList.remove("open-popup");
-    console.log("button clickr=e");
-  });
+  };
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const navLinks = document.querySelectorAll(".nav a");
+//******** Accept blood donation request*******//
+function acceptDonationrequest(id) {
+  let confirmationPopup = document.getElementById("confirmationPopup");
+  let confirmAccept = document.getElementById("donationAccept");
+  confirmationPopup.classList.add("open-popup");
+  confirmAccept.onclick = function () {
+    window.location.href = "backend/acceptdonation.php?id=" + id;
+  };
+  document.getElementById("canceldonationAccept").onclick = function () {
+    confirmationPopup.classList.remove("open-popup");
+  };
+}
 
-  navLinks.forEach((link) => {
-    link.addEventListener("click", function () {
-      navLinks.forEach((link) => link.classList.remove("active"));
-      this.classList.add("active");
-    });
-  });
-});
+//****** Reject blood donation request ********//
+function rejectDonationrequest(id) {
+  let confirmationPopup = document.getElementById("confirmationPopupReject");
+  let confirmReject = document.getElementById("donationReject");
+  confirmationPopup.classList.add("open-popup");
+  confirmReject.onclick = function () {
+    window.location.href = "backend/rejectdonation.php?id=" + id;
+  };
+  document.getElementById("canceldonationReject").onclick = function () {
+    confirmationPopup.classList.remove("open-popup");
+  };
+}

@@ -48,7 +48,7 @@
                             donate blood?</a>
                         <div class="dropdown-content">
                             <a class="dropdown-item" href="donor/signin.php">Register as Donar</a>
-                            <a href="" class="dropdown-item" id="donorlogin">Login</a>
+                            <a class="dropdown-item" id="donorlogin">Login</a>
                         </div>
                     </div>
                     <div class="dropdown">
@@ -56,12 +56,12 @@
                             href="">Admin</a>
                         <div class="dropdown-content">
                             <a href="donor/signin.php">Register as Admin</a>
-                            <a href="" id="adminlogin">Login</a>
+                            <a id="adminlogin">Login</a>
                         </div>
                     </div>
                     </ul>
                     <div class="button">
-                        <a href="donor/signin.php"><button class="btn btn-outline-light m-2">Donate
+                        <a href="signin.php"><button class="btn btn-outline-light m-2">Donate
                                 Now</button></a>
                         <a href="request.php"><button class="btn btn-light">Request Blood</button></a>
                     </div>
@@ -76,11 +76,13 @@
                 <h2>Donor Login</h2>
                 <i class="fa-solid fa-xmark" id="closebutton1"></i>
             </div>
-            <form action="donor/backend/donorlogincheck.php" method="post">
-                <input type="email" name="email" placeholder="Username" />
-                <input type="password" name="password" placeholder="Password" />
+            <hr>
+            <form class="donorloginForm">
+                <span class="error"></span>
+                <input class="username" type="email" name="email" placeholder="Username" />
+                <input class="password" type="password" name="password" placeholder="Password" />
                 <a href="">Forgot password?</a>
-                <button type="submit" name="submit">Log In</button>
+                <button type="submit" name="submit" value="submit">Log In</button>
             </form>
             <span>Or login with social account</span>
         </div>
@@ -100,11 +102,12 @@
                 <h2>Admin Login</h2>
                 <i class="fa-solid fa-xmark" id="closebutton2"></i>
             </div>
-            <form action="admin/backend/adminlogincheck.php" method="post">
-                <input type="email" name="email" placeholder="Username" />
-                <input type="password" name="password" placeholder="Password" />
+            <form class="adminloginForm">
+                <span class="error1"></span>
+                <input class="emailid" type="email" name="email" placeholder="Username" />
+                <input class="pass" type="password" name="password" placeholder="Password" />
                 <a href="">Forgot password?</a>
-                <button type="submit" name="submit">Log In</button>
+                <button type="submit" name="submit" value="submit">Log In</button>
             </form>
             <span>Or login with social account</span>
         </div>
