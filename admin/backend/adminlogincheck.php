@@ -4,10 +4,10 @@ header('Content-Type: application/json');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email1'];
-    $password = $_POST['password1'];
+    $pass = $_POST['password1'];
 	
     // Basic input validation
-    if (empty($email) || empty($password)) {
+    if (empty($email) || empty($pass)) {
         echo json_encode(['success' => false, 'error' => 'Email and password are required.']);
         exit;
     }
@@ -17,16 +17,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
     require_once "connect.php";
+        $email = $conn->real_escape_string($email);
+        $pass = $conn->real_escape_string($pass);
     try {
-      
-        $stmt = $conn->prepare("SELECT * FROM admin WHERE email = ?");
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $result = $stmt->get_result();
+       $sql = "SELECT * FROM admin WHERE email = '$email' AND password = '$pass'";
+        $result = $conn->query($sql);
 
         if ($result->num_rows == 1) {
             $user = $result->fetch_assoc();
-            if ($email === $user['email']){
+            if ($pass === $user['password']){
                 session_start();
                 $_SESSION['loginstatus'] = 'Active';
                 $_SESSION['username'] = $user['name'];
@@ -41,8 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (PDOException $e) {
         echo json_encode(['success' => false, 'error' => 'Database error: ' . $e->getMessage()]);
     } finally {
-        $stmt->close();
-        $conn->close();
+       $conn->close();
     }
 } else {
     echo json_encode(['success' => false, 'error' => 'Invalid request method.']);

@@ -23,7 +23,7 @@ $total_pages = ceil($total_records / $records_per_page);
 ?>
     <section class="content" id="donor-section">
         <div class="container-fluid">
-            <h2 class="text-center">Donors Information</h2>
+            <h1 class="text-center p-2" style="color:#666;">Donors Information</h1>
             <div class="table-search">
                 <div class="pagination-options">
                     <label for="rows-per-page">Rows per page:</label>
@@ -38,8 +38,8 @@ $total_pages = ceil($total_records / $records_per_page);
                     <input type="text" id="search-input" oninput="searchTable()" placeholder="Search...">
                 </div>
             </div>
-            <div class="table-responsive">
-                <table class="table table-bordered border-dark text-center ">
+            <div>
+                <table class="table table-striped table-bordered text-center w-80 ms-3 mt-1">
                     <thead>
                         <tr>
                             <th>Id</th>
@@ -66,17 +66,9 @@ $total_pages = ceil($total_records / $records_per_page);
                             </td>
 
                             <td>
-                                <div class="dropdown text-end action">
-                                    <p class="dropdown-toggle">Action</p>
-                                    <ul class="dropdown-menu action-content">
-                                        <li class="dropdown-item "><a href=""> <button
-                                                    class="btn btn-primary">Edit</button></a></li>
-                                        <li class="dropdown-item"> <button class="btn btn-danger" id="deleteRow"
-                                                onclick="return deletePopup()">Delete</button>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
+                                <button class="btn btn-danger" id="deleteRow"
+                                    onclick="return deletePopup()">Delete</button>
+
                         </tr>
                         <?php endforeach; ?>
                         <?php else: ?>

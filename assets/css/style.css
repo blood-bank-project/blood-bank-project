@@ -664,6 +664,10 @@ footer .footer-copy .socila-link ul li a {
   color: #de1f26;
   font-size: 15px;
 }
+.login .error1 {
+  color: #de1f26;
+  font-size: 15px;
+}
 .login .form-container a {
   color: #333;
   text-decoration: none;

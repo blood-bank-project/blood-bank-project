@@ -3,7 +3,8 @@ include('includes/header.php');
 include('includes/sidebar.php');
 include('includes/topbar.php');
 ?>
-<?php
+<div class="content-wrapper">
+    <?php
 require_once "backend/connect.php";
 $records_per_page = isset($_GET['records_per_page']) ? intval($_GET['records_per_page']) : 10;
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
@@ -16,14 +17,14 @@ $query->execute();
 $result = $query->get_result();
 $rows = $result->fetch_all(MYSQLI_ASSOC);
 
-$total_records_query = $conn->query("SELECT COUNT(*) FROM donation");
+$total_records_query = $conn->query("SELECT COUNT(*) FROM donation where status= 0");
 $total_records = $total_records_query->fetch_row()[0];
 $total_pages = ceil($total_records / $records_per_page);
 ?>
-<div class="content-wrapper">
+
     <section class="content" id="donation-section">
         <div class="container-fluid">
-            <h2>Donation</h2>
+            <h1 class='text-center p-2' style="color:#666;">Donation</h1>
             <div class="table-search">
                 <div class="pagination-options">
                     <label for="rows-per-page">Rows per page:</label>
@@ -40,7 +41,7 @@ $total_pages = ceil($total_records / $records_per_page);
             </div>
 
             <div class="table-responsive">
-                <table class=" table table-bordered border-light text-center">
+                <table class="table table-striped table-bordered text-center w-80 ms-3 mt-1">
                     <thead>
                         <tr>
                             <th>Id</th>

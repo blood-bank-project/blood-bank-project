@@ -11,25 +11,26 @@ include('includes/topbar.php');
         <div class="contactForm" id="contactForm">
             <i class="fa-solid fa-xmark" id="closebutton"></i>
             <form action="backend/addhotline.php" method="post">
-                <div class="form-group">
-                    <label for="name">Blood Bank Name</label>
-                    <input type="text" id="bname" name="bname" placeholder="Blood Bank name" required>
+                <div class="mb-3">
+                    <label class="form-label">Blood Bank Name</label>
+                    <input type="text" class="form-control" name=" bname" placeholder="Blood Bank name">
                 </div>
-                <div class="form-group">
-                    <label for="location">Blood Bank Address</label>
-                    <input type="text" id="location" name="location" placeholder="Location">
+                <div class="mb-3">
+                    <label class="form-label">Blood Bank Address</label>
+                    <input type="text" class="form-control" name="location""
+                        placeholder=" Location">
                 </div>
-                <div class="form-group">
-                    <label for="phone">Phone 1</label>
-                    <input type="tel" name="phone1">
+                <div class="mb-3">
+                    <label class="form-label">Phone 1</label>
+                    <input type="number" class="form-control" name="phone1">
                 </div>
-                <div class="form-group">
-                    <label for="phone">Phone 2</label>
-                    <input type="tel" name="phone2">
+                <div class="mb-3">
+                    <label class="form-label">Phone 2</label>
+                    <input type="number" class="form-control" name="phone2">
                 </div>
-                <div class="form-group">
-                    <label for="phone">Phone 2</label>
-                    <input type="tel" name="phone3">
+                <div class="mb-3">
+                    <label class="form-label">Phone 3</label>
+                    <input type="number" class="form-control" name="phone3">
                 </div>
 
                 <div class="form-group">
@@ -59,8 +60,8 @@ $total_pages = ceil($total_records / $records_per_page);
 
 ?>
     <section id="eventStat">
-        <div class="container eventStat">
-            <h2>Hotlines</h2>
+        <div class="container-fluid eventStat">
+            <h1 class="text-center p-2" style="color:#666;">Hotlines</h1>
             <div class="table-search">
                 <div class="pagination-options">
                     <label for="rows-per-page">Rows per page:</label>
@@ -77,7 +78,7 @@ $total_pages = ceil($total_records / $records_per_page);
             </div>
 
             <div class="table-resonsive">
-                <table class="table table-bordered border-dark text-center">
+                <table class="table table-striped table-bordered text-center w-80 ms-3 mt-1">
 
                     <thead>
                         <th>Id</th>
@@ -98,17 +99,10 @@ $total_pages = ceil($total_records / $records_per_page);
                             <td><?php echo $data['phone1'].','.$data['phone2'].','.$data['phone3'];?></td>
 
                             <td>
-                                <div class="dropdown text-end action">
-                                    <p class="dropdown-toggle">Action</p>
-                                    <ul class="dropdown-menu action-content">
-                                        <li class="dropdown-item "><a href=""> <button
-                                                    class="btn btn-info">Edit</button></a></li>
-                                        <li class="dropdown-item"> <button class="btn btn-danger"
-                                                onclick="return deletePopup()">Delete</button>
-
-                                        </li>
-                                    </ul>
-                                </div>
+                                <a href="edit_hotline.php?id=<?php echo $data['h_id']; ?>"><button
+                                        class="btn btn-info">Edit</button></a>
+                                <button class="btn btn-danger"
+                                    onclick="deleteHotline(<?php echo $data['h_id']; ?>)">Delete</button>
                             </td>
                         </tr>
                         <?php endforeach; ?>
@@ -142,12 +136,11 @@ $total_pages = ceil($total_records / $records_per_page);
 
         </div>
 
-        <div class="confirmationPopup" id="confirmationPopup">
+        <div class="confirmationPopup" id="deleteHotlinePopup">
             <div id="confirmationBox">
                 <P>Are you sure you want to delete?</P>
-                <a href="backend/deletehotline.php?id=<?php echo $data['h_id']; ?>"><button class="btn btn-success"
-                        id="confirmDelete">Yes</button></a>
-                <button id="cancelDelete" class="btn btn-danger">No</button>
+                <button class="btn btn-success" id="confirmhotlineDelete">Yes</button></a>
+                <button id="cancelhotlineDelete" class="btn btn-danger">No</button>
             </div>
         </div>
 

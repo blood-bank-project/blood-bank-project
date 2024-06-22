@@ -3,7 +3,8 @@ include('includes/header.php');
 include('includes/sidebar.php');
 include('includes/topbar.php');
 ?>
-<?php
+<div class="content-wrapper">
+    <?php
 require_once "backend/connect.php";
 $records_per_page = isset($_GET['records_per_page']) ? intval($_GET['records_per_page']) : 10;
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
@@ -20,10 +21,9 @@ $total_records_query = $conn->query("SELECT COUNT(*) FROM request");
 $total_records = $total_records_query->fetch_row()[0];
 $total_pages = ceil($total_records / $records_per_page);
 ?>
-<div class="content-wrapper">
     <section class="content" id="donation-section">
         <div class="container-fluid">
-            <h2>Blood Request</h2>
+            <h1 class="text-center p-2" style="color:#666;">Blood Request</h1>
             <div class="table-search">
                 <div class="pagination-options">
                     <label for="rows-per-page">Rows per page:</label>
@@ -40,7 +40,7 @@ $total_pages = ceil($total_records / $records_per_page);
             </div>
 
             <div class="table-responsive">
-                <table class=" table table-bordered border-light text-center">
+                <table class=" table table-striped table-bordered text-center w-80 ms-3 mt-1">
                     <thead>
                         <tr>
                             <th>Id</th>
@@ -64,7 +64,10 @@ $total_pages = ceil($total_records / $records_per_page);
                             <td><?php echo $data['name']; ?></td>
                             <td><?php echo $data['phone'] ;?></td>
                             <td><?php echo $data['bgroup'] ;?></td>
-                            <td><a href="<?php echo $data['file'] ;?>">Form</a></td>
+                            <td>
+                                <!-- <a href="backend/convert_to_pdf.php?file=<?php echo urlencode($data['file']); ?>" target="_blank">Form</a> -->
+                                <a href="<?php echo $data['file']; ?>" target="_blank">Form</a>
+                            </td>
                             <td><?php echo $data['message'];?></td>
                             <td><?php $date = date('Y-m-d'); echo $date;?></td>
                             <td><?php if($data['status'] === '0' ){

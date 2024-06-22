@@ -23,7 +23,7 @@ include('includes/topbar.php');
     ?>
     <section class="content" id="donor-section">
         <div class="container-fluid">
-            <h2 class="text-center">Donors Information</h2>
+            <h2 class="text-center p-2" style="color:#666;">Donors Information</h2>
             <div class="table-search">
                 <div class="pagination-options">
                     <label for="rows-per-page">Rows per page:</label>
@@ -38,8 +38,8 @@ include('includes/topbar.php');
                     <input type="text" id="search-input" oninput="searchTable()" placeholder="Search...">
                 </div>
             </div>
-            <div class="table-responsive">
-                <table class="table table-bordered border-dark text-center ">
+            <div class="table">
+                <table class="table table-striped table-bordered text-center w-80 ms-3 mt-1">
                     <thead>
                         <tr>
                             <th>Id</th>
@@ -47,10 +47,9 @@ include('includes/topbar.php');
                             <th>dob</th>
                             <th>Email</th>
                             <th>Gender</th>
-                            <th>Blood Group</th>
+                            <th>B.Group</th>
                             <th>Occupation</th>
-                            <th>Mobile number</th>
-                            <th>tel. number</th>
+                            <th>Phone</th>
                             <th>Province</th>
                             <th>Address</th>
                             <th>Action</th>
@@ -69,7 +68,6 @@ include('includes/topbar.php');
                             <td><?php echo $data["bgroup"];?></td>
                             <td><?php echo $data["occupation"];?></td>
                             <td><?php echo $data["phone"];?></td>
-                            <td><?php echo $data["tel"];?></td>
                             <td><?php echo $data["province"];?></td>
                             <td><?php echo $data["municipality"] . '-' . $data["ward"] . ', ' . $data["tole"] . ', ' . $data["district"]; ?>
                             </td>

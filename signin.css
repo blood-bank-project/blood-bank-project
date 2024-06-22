@@ -89,3 +89,21 @@ button:hover {
 #navbar .nav-link {
   color: #fff;
 }
+span {
+  color: red;
+  font-size: 15px;
+}
+#navbar .image {
+  display: flex;
+  align-items: center;
+}
+#navbar .image .logo {
+  max-width: 50px;
+  height: auto;
+  width: auto;
+}
+@media (max-width: 600px) {
+  .logo {
+    max-height: 40px;
+  }
+}

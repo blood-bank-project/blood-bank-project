@@ -20,7 +20,8 @@
     <section id="navbar">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand logo" href="#">BloodVault</a>
+                <!-- <a class="navbar-brand logo" href="index.php"><img src="assets/images/logo.png" alt="" class="logo"></a> -->
+                <a class="navbar-brand logo" style="color:#fff; font-size:20px;">BloodVault</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -55,7 +56,6 @@
                         <a class="nav-link dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
                             href="">Admin</a>
                         <div class=" dropdown-content">
-                            <a class="dropdown-item" href="donor/signin.php">Register as Admin</a>
                             <a class="dropdown-item" id="adminlogin">Login</a>
 
                         </div>
@@ -124,14 +124,16 @@
         <div class="container doantionForm">
             <header>Get Register</header>
             <hr style="padding:20px;">
-            <form id="form" action="donor/backend/registerdonor.php" method="POST">
+            <form id="form" onsubmit="return formValidate(event)" action="donor/backend/registerdonor.php"
+                method="POST">
                 <div class="form first">
                     <div class="detail">
-                        <span class="title">Personal Details</span>
+                        <p class="title">Personal Details</p>
                         <div class="fields">
                             <div class="input-field">
                                 <label>First Name</label>
-                                <input type="text" name="fname" placeholder="Enter your first name" />
+                                <input type="text" name="fname" id="fname" placeholder="Enter your first name" />
+                                <span id="ferror"></span>
                             </div>
                             <div class="input-field">
                                 <label>Middle Name</label>
@@ -139,36 +141,43 @@
                             </div>
                             <div class="input-field">
                                 <label>Last Name</label>
-                                <input type="text" name="lname" placeholder="Enter your last name" />
+                                <input type="text" name="lname" id="lname" placeholder="Enter your last name" />
+                                <span id="lerror"></span>
                             </div>
                             <div class="input-field">
                                 <label>Date of Birth</label>
-                                <input type="date" name="dob" placeholder="Enter your Date of birth" />
+                                <input type="date" id="dob" name="dob" placeholder="Enter your Date of birth" />
+                                <span id="doberror"></span>
                             </div>
                             <div class="input-field">
                                 <label>Email</label>
-                                <input type="text" name="email" placeholder="Enter your email" />
+                                <input type="text" name="email" id="email" placeholder="Enter your email" />
+                                <span id="eerror"></span>
                             </div>
                             <div class="input-field">
                                 <label>Gender</label>
-                                <select class="group" name="gender">
+                                <select class="group" name="gender" id="gender">
                                     <option value="">Select gender</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
                                     <option value="others">Others</option>
                                 </select>
+                                <span id="gerror"></span>
                             </div>
                             <div class="input-field">
                                 <label>Occupation</label>
-                                <input type="text" name="occupation" placeholder="Enter your Occupation" />
+                                <input type="text" name="occupation" id="occupation"
+                                    placeholder="Enter your Occupation" />
+                                <span id="oerror"></span>
                             </div>
                             <div class="input-field">
                                 <label>Mobile Number</label>
-                                <input type="number" name="phone" placeholder="Enter your mobile number" />
+                                <input type="number" name="phone" id="phone" placeholder="Enter your mobile number" />
+                                <span id="perror"></span>
                             </div>
                             <div class="input-field">
                                 <label>Blood Group</label>
-                                <select name="blood" class="group">
+                                <select name="blood" class="group" id="bgroup">
                                     <option value="">Select your Blood Group</option>
                                     <option value="A+">A positive</option>
                                     <option value="A-">A negative</option>
@@ -179,12 +188,13 @@
                                     <option value="AB+">AB positive</option>
                                     <option value="AB-">AB negative</option>
                                 </select>
+                                <span id="berror"></span>
                             </div>
                         </div>
                     </div>
 
                     <div class="detail ID">
-                        <span class="title">Address Detail</span>
+                        <p class="title">Address Detail</p>
 
                         <div class="fields">
                             <div class="input-field">
@@ -201,11 +211,13 @@
                             </div>
                             <div class="input-field">
                                 <label>Tole</label>
-                                <input type="text" name="tole" placeholder="Enter your tole" />
+                                <input type="text" name="tole" id="tole" placeholder="Enter your tole" />
+                                <span id="terror"></span>
                             </div>
                             <div class="input-field">
                                 <label>Ward no.</label>
-                                <input type="number" name="ward" placeholder="Enter your ward no." />
+                                <input type="number" name="ward" id="ward" placeholder="Enter your ward no." />
+                                <span id="werror"></span>
                             </div>
                         </div>
                     </div>
@@ -216,20 +228,17 @@
                         <div class="detail ID">
                             <span class="title">Set Password</span>
                             <div class="input-field">
-                                <label>Username:</label>
-                                <input type="text" name="uname" placeholder="Enter username" />
-                            </div>
-
-                            <div class="input-field">
                                 <label>Password</label>
-                                <input type="Password" name="pass" placeholder="Enter your Password" />
+                                <input type="Password" name="pass" id="pass" placeholder="Enter your Password" />
+                                <span id="perror"></span>
                             </div>
                             <div class="input-field">
                                 <label>Confirm Password</label>
-                                <input type="Password" name="cpass" placeholder="Enter Confirm Password" />
+                                <input type="Password" name="cpass" id="cpass" placeholder="Enter Confirm Password" />
+                                <span id="cperror"></span>
                             </div>
                         </div>
-                        <div class="errorContainer">
+                        <div id="error">
                         </div>
                         <button type="submit" name="submit">Submit</button>
                     </div>

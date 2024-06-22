@@ -67,9 +67,17 @@
                   </li>
                   <li class="nav-item">
                       <a href="certificate.php" class="nav-link">
-                          <i class="nav-icon fa-solid fa-phone"></i>
+                          <i class="nav-icon fa-solid fa-certificate"></i>
                           <p>
                               Certificate
+                          </p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="getData.php" class="nav-link">
+                          <i class="nav-icon fa-solid fa-file-pdf"></i>
+                          <p>
+                              Get Data
                           </p>
                       </a>
                   </li>

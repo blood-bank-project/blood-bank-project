@@ -7,7 +7,7 @@ include('includes/topbar.php');
     <div id="content">
         <section class="content" id="main-section">
             <div class="container-fluid">
-                <h1>Dashboard</h1>
+                <h1 style="color:#666;">Dashboard</h1>
                 <div class="row">
                     <?php
                     require_once "backend/connect.php";
@@ -131,27 +131,39 @@ $data = mysqli_fetch_array($row);
 
                                 <p>Total Donor</p>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
                         </div>
                     </div>
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-success">
                             <div class="inner">
-                                <h3>53</h3>
+                                <?php
+                            require_once "backend/connect.php";
+$sql = "SELECT count(id) as totalrequest FROM request";
+$row = $conn->query($sql);
+$data = mysqli_fetch_array($row);
+?>
+                                <h3><?php echo $data['totalrequest'];?></h3>
 
                                 <p>Total Request</p>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
                         </div>
                     </div>
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-warning">
                             <div class="inner">
-                                <h3>44</h3>
+                                <?php
+                            require_once "backend/connect.php";
+$sql = "SELECT count(id) as approvedrequest FROM request WHERE status = 1 ";
+$row = $conn->query($sql);
+$data = mysqli_fetch_array($row);
+?>
+                                <h3><?php echo $data['approvedrequest'];?></h3>
 
                                 <p>Approved Request</p>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
                         </div>
                     </div>
                     <div class="col-lg-3 col-6">
@@ -169,7 +181,7 @@ $data = mysqli_fetch_array($row);
 
                                 <p>Total Blood Unit(in ml)</p>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
                         </div>
                     </div>
                 </div>

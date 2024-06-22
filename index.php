@@ -20,6 +20,7 @@
         <nav class="navbar navbar-expand-lg ">
             <div class="container-fluid image">
                 <a class="navbar-brand logo" href="#"><img src="assets/images/logo.png" alt="" class="logo"></a>
+                <a class="navbar-brand logo" style="color:#fff; font-size:20px;">BloodVault</a>
                 <button style="display: block;" class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +48,7 @@
                             to
                             donate blood?</a>
                         <div class="dropdown-content">
-                            <a class="dropdown-item" href="donor/signin.php">Register as Donar</a>
+                            <a class="dropdown-item" href="signin.php">Register as Donar</a>
                             <a class="dropdown-item" id="donorlogin">Login</a>
                         </div>
                     </div>
@@ -55,7 +56,6 @@
                         <a class="nav-link dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
                             href="">Admin</a>
                         <div class="dropdown-content">
-                            <a href="donor/signin.php">Register as Admin</a>
                             <a id="adminlogin">Login</a>
                         </div>
                     </div>

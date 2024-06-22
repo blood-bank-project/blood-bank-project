@@ -27,6 +27,19 @@ document.addEventListener("DOMContentLoaded", function () {
     eventForm.classList.remove("open-form");
   });
 });
+// edit event popup
+//  function openEditPopup() {
+//   let addEvent = document.getElementById("editForm");
+//   let closeButton = document.getElementById("closebutton");
+//   let eventForm = document.getElementById("eventForm");
+
+//   addEvent.addEventListener("click", () => {
+//     eventForm.classList.add("open-form");
+//   });
+//   closeButton.addEventListener("click", () => {
+//     eventForm.classList.remove("open-form");
+//   });
+// });
 
 //add contact popup
 document.addEventListener("DOMContentLoaded", function () {
@@ -135,6 +148,32 @@ function rejectDonationrequest(id) {
     window.location.href = "backend/rejectdonation.php?id=" + id;
   };
   document.getElementById("canceldonationReject").onclick = function () {
+    confirmationPopup.classList.remove("open-popup");
+  };
+}
+
+//******  delete event ********//
+function deleteEvent(id) {
+  let confirmationPopup = document.getElementById("eventdeletePopup");
+  let confirmDeleteevent = document.getElementById("confirmDeleteevent");
+  confirmationPopup.classList.add("open-popup");
+  confirmDeleteevent.onclick = function () {
+    window.location.href = "backend/deleteEvent.php?id=" + id;
+  };
+  document.getElementById("cancelDeleteevent").onclick = function () {
+    confirmationPopup.classList.remove("open-popup");
+  };
+}
+
+//******  delete hotline ********//
+function deleteHotline(id) {
+  let confirmationPopup = document.getElementById("deleteHotlinePopup");
+  let confirmhotlineDelete = document.getElementById("confirmhotlineDelete");
+  confirmationPopup.classList.add("open-popup");
+  confirmhotlineDelete.onclick = function () {
+    window.location.href = "backend/deletehotline.php?id=" + id;
+  };
+  document.getElementById("cancelhotlineDelete").onclick = function () {
     confirmationPopup.classList.remove("open-popup");
   };
 }

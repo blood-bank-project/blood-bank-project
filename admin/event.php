@@ -5,6 +5,7 @@ include('includes/topbar.php');
 ?>
 <div class="content-wrapper">
 
+    <!--******* add event*******-->
     <section id="event">
         <div class="eventButton">
             <button id="addEvent" class="btn btn-primary m-4">Add Event</button>
@@ -13,43 +14,44 @@ include('includes/topbar.php');
             <i class="fa-solid fa-xmark" id="closebutton"></i>
             <form action="backend/addevent.php" method="post">
                 <div class="label row">
-                    <div class="form-group col">
-                        <label for="name">Event Name</label>
-                        <input type="text" id="ename" name="ename" placeholder="Event name" required>
+                    <div class="mb-3">
+                        <label class="form-label">Event Name</label>
+                        <input type="text" class="form-control" name="ename" placeholder="Event name">
                     </div>
-                    <div class="form-group col">
-                        <label for="dtae">Event Date</label>
-                        <input type="date" id="date" name="date">
+                    <div class="mb-3">
+                        <label class="form-label">Event Date</label>
+                        <input type="date" class="form-control" name="date">
+                    </div>
+
+                </div>
+                <div class="label row">
+                    <div class="mb-3">
+                        <label class="form-label">Event Location</label>
+                        <input type="text" class="form-control" name="location">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Event Organizer</label>
+                        <input type="text" class="form-control" name="organizer">
                     </div>
                 </div>
                 <div class="label row">
-                    <div class="form-group col">
-                        <label for="location">Event Location</label>
-                        <input type="text" id="location" name="location" placeholder="Location">
+                    <div class="mb-3">
+                        <label class="form-label">Conatct Person</label>
+                        <input type="text" class="form-control" name="person">
                     </div>
-                    <div class="form-group col">
-                        <label for="organizer">Event Organizer</label>
-                        <input type="text" id="organizer" name="organizer" placeholder="Organizer">
-                    </div>
-                </div>
-                <div class="label row">
-                    <div class="form-group col">
-                        <label for="person">Conatct Person</label>
-                        <input type="text" id="person" name="person" placeholder="whom to contact?">
-                    </div>
-                    <div class="form-group col">
-                        <label for="phone">Contact Phone</label>
-                        <input type="integer" id="phone" name="phone">
+                    <div class="mb-3">
+                        <label class="form-label">Conatct Phone</label>
+                        <input type="number" class="form-control" name="phone">
                     </div>
                 </div>
                 <div class="label row">
-                    <div class="form-group col">
-                        <label for="email">Contact Email</label>
-                        <input type="email" id="email" name="email">
+                    <div class="mb-3">
+                        <label class="form-label">Conatct Email</label>
+                        <input type="email" class="form-control" name="email">
                     </div>
-                    <div class="form-group col">
-                        <label for="status">Status</label>
-                        <select name="status">
+                    <div class="mb-3">
+                        <label for="status" class="form-label">Status</label>
+                        <select name="status" class="form-control">
                             <option value="">Select event status</option>
                             <option value="-1">Cancelled</option>
                             <option value="0">Upcoming</option>
@@ -58,10 +60,9 @@ include('includes/topbar.php');
                     </div>
                 </div>
                 <div class="label">
-                    <div class="form-group">
-                        <label for="message">Description (In Brief)</label>
-                        <textarea id="message" name="message" rows="4" cols="30"></textarea>
-
+                    <div class="mb-3">
+                        <label class="form-label">Description (In Brief)</label>
+                        <textarea class="form-control" rows="3" name="message"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
@@ -70,8 +71,6 @@ include('includes/topbar.php');
             </form>
         </div>
     </section>
-
-
     <?php
 require_once "backend/connect.php";
 $records_per_page = isset($_GET['records_per_page']) ? intval($_GET['records_per_page']) : 10;
@@ -91,8 +90,8 @@ $total_pages = ceil($total_records / $records_per_page);
 
 ?>
     <section id="eventStat">
-        <div class="container eventStat">
-            <h2>Event Status</h2>
+        <div class="container-fluid eventStat">
+            <h1 class="text-center p-2" style="color:#666;">Event Status</h1>
             <div class="table-search">
                 <div class="pagination-options">
                     <label for="rows-per-page">Rows per page:</label>
@@ -108,7 +107,7 @@ $total_pages = ceil($total_records / $records_per_page);
                 </div>
             </div>
             <div class="table-responsive">
-                <table class="table table-bordered border-dark text-center">
+                <table class="table table-striped table-bordered text-center w-80 ms-3 mt-1">
                     <thead>
                         <th>Id</th>
                         <th>Event Name</th>
@@ -150,17 +149,10 @@ $total_pages = ceil($total_records / $records_per_page);
                     ?></td>
                             <td><?php echo $data['description'] ;?></td>
                             <td>
-                                <div class="dropdown text-end action">
-                                    <p class="dropdown-toggle">Action</p>
-                                    <ul class="dropdown-menu action-content">
-                                        <li class="dropdown-item "><a href=""> <button
-                                                    class="btn btn-info">Edit</button></a></li>
-                                        <li class="dropdown-item"> <button class="btn btn-danger"
-                                                onclick="return deletePopup()">Delete</button>
-                                        </li>
-                                    </ul>
-                                </div>
-
+                                <a href="edit_event.php?id=<?php echo $data['e_id']; ?>"><button class="btn btn-info"
+                                        id="editForm">Edit</button></a>
+                                <button class="btn btn-danger"
+                                    onclick="deleteEvent(<?php echo $data['e_id']; ?>)">Delete</button>
 
                             </td>
                         </tr>
@@ -195,12 +187,11 @@ $total_pages = ceil($total_records / $records_per_page);
 
         </div>
 
-        <div class="confirmationPopup" id="confirmationPopup">
+        <div class="confirmationPopup" id="eventdeletePopup">
             <div id="confirmationBox">
                 <P>Are you sure you want to delete?</P>
-                <a href="backend/deleteEvent.php?id=<?php echo $data['e_id'];?>"><button class="btn btn-success"
-                        id="confirmDelete">Yes</button></a>
-                <button id="cancelDelete" class="btn btn-danger">No</button>
+                <button class="btn btn-success" id="confirmDeleteevent">Yes</button>
+                <button id="cancelDeleteevent" class="btn btn-danger">No</button>
             </div>
         </div>
 </div>

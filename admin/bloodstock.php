@@ -7,7 +7,7 @@ include('includes/topbar.php');
 
     <section class="content" id="stock-section">
         <div class="container-fluid">
-            <h1>Blood Stock</h1>
+            <h1 class="text-center p-2" style="color:#666;">Blood Stock</h1>
             <div class="row">
                 <?php
                 require_once "backend/connect.php";
@@ -137,6 +137,6 @@ $data = mysqli_fetch_array($row);
     </section>
 </div>
 
-    <?php
+<?php
 include('includes/footer.php');
 ?>

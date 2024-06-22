@@ -9,3 +9,4 @@ $sql = "UPDATE donation SET status = '1'  WHERE id=$id ";
         else{
             echo 'ERROR';
         }
+?>

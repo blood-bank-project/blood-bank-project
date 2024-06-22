@@ -19,7 +19,8 @@
     <section id="navbar">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand logo" href="index.php">BloodVault</a>
+                <!-- <a class="navbar-brand logo" href="index.php"><img src="assets/images/logo.png" alt="" class="logo"></a> -->
+                <a class="navbar-brand logo" style="color:#fff; font-size:20px;">BloodVault</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -51,12 +52,11 @@
                         <a class="nav-link dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
                             href="">Admin</a>
                         <div class="dropdown-content">
-                            <a class="dropdown-item" href="donor/signin.php">Register as Donar</a>
                             <a class="dropdown-item" id="adminlogin">Login</a>
                         </div>
                     </div>
                     <div class="button">
-                        <a href="donor/signin.php"><button class="btn btn-outline-light m-2">Donate Now</button></a>
+                        <a href="signin.php"><button class="btn btn-outline-light m-2">Donate Now</button></a>
                         <a href="request.php"><button class="btn btn-light">Request Blood</button></a>
                     </div>
                 </div>

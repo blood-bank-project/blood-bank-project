@@ -98,7 +98,6 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
 $total_records_query = $conn->query("SELECT COUNT(id) FROM donation inner join donor on donor.d_id=donation.user_id where donor.d_id = $id group by donation.user_id");
 $total_records = $total_records_query->fetch_row()[0];
 $total_pages = ceil($total_records / $records_per_page);
-
 ?>
 <section id="body3">
     <div class="container donationstat">

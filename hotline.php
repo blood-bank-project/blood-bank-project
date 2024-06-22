@@ -17,9 +17,10 @@
 
 <body>
     <section id="navbar">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-light" data-bs-theme="light">
+        <nav class="navbar navbar-expand-lg ">
             <div class="container-fluid">
-                <a class="navbar-brand logo" href="#">BloodVault</a>
+                <!-- <a class="navbar-brand logo" href="index.php"><img src="assets/images/logo.png" alt="" class="logo"></a> -->
+                <a class="navbar-brand logo" style="color:#fff; font-size:20px;">BloodVault</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -46,25 +47,13 @@
                                 <li><a class="dropdown-item" href="#">Contact us</a></li>
                             </ul>
                         </div>
-                        <!-- <div class="dropdown">
-                            <li class="nav-item">
-                                <a class="nav-link  dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
-                                    href="">Looking for blood?</a>
-                            </li>
-                            <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
-                                <li><a class="dropdown-item" href="patient/signin.php">Register as Patient</a></li>
-                                <li>
-                                    <a class="dropdown-item" id="patientlogin">Login</a>
-                                </li>
-                            </ul>
-                        </div> -->
                         <div class="dropdown">
                             <li class="nav-item">
                                 <a class="nav-link dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
                                     href="">Want to donate blood?</a>
                             </li>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
-                                <li><a class="dropdown-item" href="donor/signin.php">Register as Donar</a></li>
+                                <li><a class="dropdown-item" href="signin.php">Register as Donar</a></li>
                                 <li>
                                     <a class="dropdown-item" id="donorlogin">Login</a>
                                 </li>
@@ -75,7 +64,6 @@
                                     href="">Admin</a>
                             </li>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-content">
-                                <li><a class="dropdown-item" href="donor/signin.php">Register as Donar</a></li>
                                 <li>
                                     <a class="dropdown-item" id="adminlogin">Login</a>
                                 </li>
@@ -83,8 +71,8 @@
                         </div>
                     </ul>
                     <div class="button">
-                        <a href="donor/signin.php"><button class="btn btn-outline-danger m-2">Donate Now</button></a>
-                        <a href="request.php"><button class="btn btn-danger">Request Blood</button></a>
+                        <a href="signin.php"><button class="btn btn-outline-light m-2">Donate Now</button></a>
+                        <a href="request.php"><button class="btn btn-light">Request Blood</button></a>
                     </div>
                 </div>
             </div>
