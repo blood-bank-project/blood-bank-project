@@ -29,8 +29,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <div class="dropdown">
-                        <a class="nav-link active dropdown-toggle" aria-current="page" data-bs-toggle="dropdown"
-                            href="index.php">Home</a>
+                        <a href="index.php" class="nav-link active dropdown-toggle" aria-current="page"
+                            data-bs-toggle="dropdown">Home</a>
 
                         <div class="dropdown-content">
                             <a class="dropdown-item" href="#about">About us</a>
@@ -124,8 +124,8 @@
         <div class="container doantionForm">
             <header>Get Register</header>
             <hr style="padding:20px;">
-            <form id="form" onsubmit="return formValidate(event)" action="donor/backend/registerdonor.php"
-                method="POST">
+            <span id="error"></span>
+            <form id="form" onsubmit="return formValidate(event)" method="POST">
                 <div class="form first">
                     <div class="detail">
                         <p class="title">Personal Details</p>
@@ -137,7 +137,8 @@
                             </div>
                             <div class="input-field">
                                 <label>Middle Name</label>
-                                <input type="text" name="mname" placeholder="Enter your middle name" />
+                                <input type="text" name="mname" id="mname"
+                                    placeholderplaceholder="Enter your middle name" />
                             </div>
                             <div class="input-field">
                                 <label>Last Name</label>
@@ -199,15 +200,19 @@
                         <div class="fields">
                             <div class="input-field">
                                 <label>Province</label>
-                                <input type="text" name="province" placeholder="Enter your Province" />
+                                <input type="text" id="province" name="province" placeholder="Enter your Province" />
+                                <span id="proerror"></span>
                             </div>
                             <div class="input-field">
                                 <label>District</label>
-                                <input type="text" name="district" placeholder="Enter your District" />
+                                <input type="text" id="district" name="district" placeholder="Enter your District" />
+                                <span id="diserror"></span>
                             </div>
                             <div class="input-field">
                                 <label> Rural / Urban Municipality </label>
-                                <input type="text" name="municipality" placeholder="Enter your Municipality" />
+                                <input type="text" id="municipality" name="municipality"
+                                    placeholder="Enter your Municipality" />
+                                <span id="rulerror"></span>
                             </div>
                             <div class="input-field">
                                 <label>Tole</label>
@@ -230,7 +235,7 @@
                             <div class="input-field">
                                 <label>Password</label>
                                 <input type="Password" name="pass" id="pass" placeholder="Enter your Password" />
-                                <span id="perror"></span>
+                                <span id="paserror"></span>
                             </div>
                             <div class="input-field">
                                 <label>Confirm Password</label>
@@ -238,8 +243,7 @@
                                 <span id="cperror"></span>
                             </div>
                         </div>
-                        <div id="error">
-                        </div>
+
                         <button type="submit" name="submit">Submit</button>
                     </div>
                 </div>

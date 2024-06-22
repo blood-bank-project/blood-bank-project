@@ -107,3 +107,6 @@ span {
     max-height: 40px;
   }
 }
+#error {
+  margin-left: 50%;
+}

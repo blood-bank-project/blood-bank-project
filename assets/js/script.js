@@ -82,30 +82,30 @@ function searchTable() {
   }
 }
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   const form = document.getElementById("myForm");
-//   const popup = document.getElementById("successPopup");
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("myForm");
+  const popup = document.getElementById("successPopup");
 
-//   form.addEventListener("submit", (event) => {
-//     event.preventDefault();
-//     setTimeout(() => {
-//       popup.classList.add("show");
-//       popup.style.display = "block";
-//       setTimeout(() => {
-//         popup.classList.remove("show");
-//         setTimeout(() => {
-//           popup.style.display = "none";
-//         }, 500);
-//         form.reset();
-//       }, 3000);
-//     }, 500);
-//   });
-// });
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    setTimeout(() => {
+      popup.classList.add("show");
+      popup.style.display = "block";
+      setTimeout(() => {
+        popup.classList.remove("show");
+        setTimeout(() => {
+          popup.style.display = "none";
+        }, 500);
+        form.reset();
+      }, 3000);
+    }, 500);
+  });
+});
 
-// window.addEventListener("scroll", function () {
-//   const nav = document.getElementById("navbar");
-//   nav.classList.add("fix");
-// });
+window.addEventListener("scroll", function () {
+  const nav = document.getElementById("navbar");
+  nav.classList.add("fix");
+});
 
 // login async
 document
@@ -115,10 +115,6 @@ document
 
     const email = document.querySelector(".username").value;
     const password = document.querySelector(".password").value;
-
-    // Debugging statements to check values
-    console.log("Email:", email);
-    console.log("Password:", password);
 
     fetch("donor/backend/donorlogincheck.php", {
       method: "POST",
@@ -203,138 +199,201 @@ document
       });
   });
 
-// donor register
-// function formValidate(event) {
-//   event.preventDefault();
+// ********* register donor********/
+function formValidate(event) {
+  event.preventDefault();
 
-//   const fname = document.getElementById("fname");
-//   const lname = document.getElementById("lname");
-//   const dob = document.getElementById("dob");
-//   const email = document.getElementById("email");
-//   const gender = document.getElementById("gender");
-//   const occupation = document.getElementById("occupation");
-//   const phone = document.getElementById("phone");
-//   const bgroup = document.getElementById("bgroup");
-//   const tole = document.getElementById("tole");
-//   const ward = document.getElementById("ward");
-//   const pass = document.getElementById("pass");
-//   const cpass = document.getElementById("cpass");
+  const fname = document.getElementById("fname").value.trim();
+  const mname = document.getElementById("mname").value.trim();
+  const lname = document.getElementById("lname").value.trim();
+  const dob = document.getElementById("dob").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const gender = document.getElementById("gender").value.trim();
+  const occupation = document.getElementById("occupation").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const bgroup = document.getElementById("bgroup").value.trim();
+  const province = document.getElementById("province").value.trim();
+  const district = document.getElementById("district").value.trim();
+  const municipality = document.getElementById("municipality").value.trim();
+  const tole = document.getElementById("tole").value.trim();
+  const ward = document.getElementById("ward").value.trim();
+  const pass = document.getElementById("pass").value.trim();
+  const cpass = document.getElementById("cpass").value.trim();
 
-//   const evalid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-//   const pvalid =
-//     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
+  const evalid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const pvalid =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
 
-//   let isValid = true;
+  let isValid = true;
 
-//   if (fname.value.trim() === "") {
-//     document.querySelector("#ferror").innerHTML = "First name is required";
-//     isValid = false;
-//   } else {
-//     document.querySelector("#ferror").innerHTML = "";
-//   }
+  if (fname === "") {
+    document.querySelector("#ferror").innerHTML = "First name is required";
+    isValid = false;
+  } else {
+    document.querySelector("#ferror").innerHTML = "";
+  }
 
-//   if (lname.value.trim() === "") {
-//     document.querySelector("#lerror").innerHTML = "Last name is required";
-//     isValid = false;
-//   } else {
-//     document.querySelector("#lerror").innerHTML = "";
-//   }
+  if (lname === "") {
+    document.querySelector("#lerror").innerHTML = "Last name is required";
+    isValid = false;
+  } else {
+    document.querySelector("#lerror").innerHTML = "";
+  }
 
-//   if (dob.value.trim() === "") {
-//     document.querySelector("#derror").innerHTML = "DOB is required";
-//     isValid = false;
-//   } else {
-//     document.querySelector("#derror").innerHTML = "";
-//   }
+  if (dob === "") {
+    document.querySelector("#doberror").innerHTML = "DOB is required";
+    isValid = false;
+  } else {
+    document.querySelector("#doberror").innerHTML = "";
+  }
 
-//   if (email.value.trim() === "") {
-//     document.querySelector("#eerror").innerHTML = "Email is required";
-//     isValid = false;
-//   } else if (!evalid.test(email.value)) {
-//     document.querySelector("#eerror").innerHTML = "Please enter a valid email";
-//     isValid = false;
-//   } else {
-//     document.querySelector("#eerror").innerHTML = "";
-//   }
+  if (email === "") {
+    document.querySelector("#eerror").innerHTML = "Email is required";
+    isValid = false;
+  } else if (!evalid.test(email)) {
+    document.querySelector("#eerror").innerHTML = "Please enter a valid email";
+    isValid = false;
+  } else {
+    document.querySelector("#eerror").innerHTML = "";
+  }
 
-//   if (gender.value.trim() === "") {
-//     document.querySelector("#gerror").innerHTML = "Gender is required";
-//     isValid = false;
-//   } else {
-//     document.querySelector("#gerror").innerHTML = "";
-//   }
+  if (gender === "") {
+    document.querySelector("#gerror").innerHTML = "Gender is required";
+    isValid = false;
+  } else {
+    document.querySelector("#gerror").innerHTML = "";
+  }
 
-//   if (occupation.value.trim() === "") {
-//     document.querySelector("#oerror").innerHTML = "Occupation is required";
-//     isValid = false;
-//   } else {
-//     document.querySelector("#oerror").innerHTML = "";
-//   }
+  if (occupation === "") {
+    document.querySelector("#oerror").innerHTML = "Occupation is required";
+    isValid = false;
+  } else {
+    document.querySelector("#oerror").innerHTML = "";
+  }
 
-//   if (phone.value.trim() === "") {
-//     document.querySelector("#perror").innerHTML = "Phone no. is required";
-//     isValid = false;
-//   } else if (!/^\d{10}$/.test(phone.value)) {
-//     // Assuming 10 digits for phone number
-//     document.querySelector("#perror").innerHTML =
-//       "Please enter a valid phone no.";
-//     isValid = false;
-//   } else {
-//     document.querySelector("#perror").innerHTML = "";
-//   }
+  if (phone === "") {
+    document.querySelector("#perror").innerHTML = "Phone no. is required";
+    isValid = false;
+  } else if (!/^\d{10}$/.test(phone)) {
+    document.querySelector("#perror").innerHTML =
+      "Please enter a valid phone no.";
+    isValid = false;
+  } else {
+    document.querySelector("#perror").innerHTML = "";
+  }
 
-//   if (bgroup.value.trim() === "") {
-//     document.querySelector("#berror").innerHTML = "Blood-group is required";
-//     isValid = false;
-//   } else {
-//     document.querySelector("#berror").innerHTML = "";
-//   }
+  if (bgroup === "") {
+    document.querySelector("#berror").innerHTML = "Blood-group is required";
+    isValid = false;
+  } else {
+    document.querySelector("#berror").innerHTML = "";
+  }
 
-//   if (tole.value.trim() === "") {
-//     document.querySelector("#terror").innerHTML = "Tole is required";
-//     isValid = false;
-//   } else {
-//     document.querySelector("#terror").innerHTML = "";
-//   }
+  if (province === "") {
+    document.querySelector("#proerror").innerHTML = "Province is required";
+    isValid = false;
+  } else {
+    document.querySelector("#proerror").innerHTML = "";
+  }
 
-//   if (ward.value.trim() === "") {
-//     document.querySelector("#werror").innerHTML = "Ward no. is required";
-//     isValid = false;
-//   } else {
-//     document.querySelector("#werror").innerHTML = "";
-//   }
+  if (district === "") {
+    document.querySelector("#diserror").innerHTML = "District is required";
+    isValid = false;
+  } else {
+    document.querySelector("#diserror").innerHTML = "";
+  }
 
-//   if (pass.value.trim() === "") {
-//     document.querySelector("#perror").innerHTML = "Password is required";
-//     isValid = false;
-//   } else if (!pvalid.test(pass.value)) {
-//     document.querySelector("#perror").innerHTML =
-//       "Password should be 8-20 characters long and must contain one uppercase, one lowercase, one digit, and one special character.";
-//     isValid = false;
-//   } else {
-//     document.querySelector("#perror").innerHTML = "";
-//   }
+  if (municipality === "") {
+    document.querySelector("#rulerror").innerHTML = "Municipality is required";
+    isValid = false;
+  } else {
+    document.querySelector("#rulerror").innerHTML = "";
+  }
 
-//   if (cpass.value.trim() === "") {
-//     document.querySelector("#cperror").innerHTML =
-//       "Re-enter the password is required.";
-//     isValid = false;
-//   } else if (cpass.value !== pass.value) {
-//     document.querySelector("#cperror").innerHTML = "Password does not match.";
-//     isValid = false;
-//   } else {
-//     document.querySelector("#cperror").innerHTML = "";
-//   }
+  if (tole === "") {
+    document.querySelector("#terror").innerHTML = "Tole is required";
+    isValid = false;
+  } else {
+    document.querySelector("#terror").innerHTML = "";
+  }
 
-//   if (isValid) {
-//     document.getElementById("error").innerHTML = "";
-//     // If there are no errors, proceed with form submission
-//     window.location.href = "../donor/backend/registerdonor.php";
-//   } else {
-//     document.getElementById("error").innerHTML = "All fields are required.";
-//   }
-// }
+  if (ward === "") {
+    document.querySelector("#werror").innerHTML = "Ward no. is required";
+    isValid = false;
+  } else {
+    document.querySelector("#werror").innerHTML = "";
+  }
 
-// function empty(input) {
-//   return input.value.trim() === "";
-// }
+  if (pass === "") {
+    document.querySelector("#paserror").innerHTML = "Password is required";
+    isValid = false;
+  } else if (!pvalid.test(pass)) {
+    document.querySelector("#paserror").innerHTML =
+      "Password should be 8-20 characters long and must contain one uppercase, one lowercase, one digit, and one special character.";
+    isValid = false;
+  } else {
+    document.querySelector("#paserror").innerHTML = "";
+  }
+
+  if (cpass === "") {
+    document.querySelector("#cperror").innerHTML =
+      "Re-enter the password is required.";
+    isValid = false;
+  } else if (cpass !== pass) {
+    document.querySelector("#cperror").innerHTML = "Password does not match.";
+    isValid = false;
+  } else {
+    document.querySelector("#cperror").innerHTML = "";
+  }
+
+  if (isValid) {
+    const formData = new URLSearchParams({
+      fname: fname,
+      mname: mname,
+      lname: lname,
+      dob: dob,
+      email: email,
+      gender: gender,
+      occupation: occupation,
+      phone: phone,
+      bgroup: bgroup,
+      province: province,
+      district: district,
+      municipality: municipality,
+      tole: tole,
+      ward: ward,
+      pass: pass,
+    });
+
+    fetch("donor/backend/registerdonor.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: formData,
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (data.success) {
+          window.location.href = "index.php";
+        } else {
+          document.getElementById("error").innerHTML = data.error;
+        }
+      })
+      .catch((error) => {
+        document.getElementById("error").innerHTML =
+          "An error occurred. Please try again.";
+      });
+  } else {
+    document.getElementById("error").innerHTML = "All fields are required.";
+  }
+}
+
+function empty(input) {
+  return input.value.trim() === "";
+}

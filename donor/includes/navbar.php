@@ -43,7 +43,6 @@
                          &nbsp; ▼
                      </p>
                      <div class="dropdown-content">
-                         <a href="#" id="top">Settings</a>
                          <a href="#" id="middle ">Profile</a>
                          <a href="backend/logout.php" id="buttom">Log out</a>
                      </div>

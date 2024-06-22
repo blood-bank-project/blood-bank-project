@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2024 at 05:27 PM
+-- Generation Time: Jun 22, 2024 at 09:30 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`aid`, `name`, `email`, `password`) VALUES
-(1, 'Dipesh', 'admin@gmail.com', 'admin');
+(1, 'Dipesh', 'admin@gmail.com', 'admin123');
 
 -- --------------------------------------------------------
 
@@ -64,7 +64,7 @@ CREATE TABLE `blood` (
 --
 
 INSERT INTO `blood` (`s_n`, `A+`, `A-`, `B+`, `B-`, `AB+`, `AB-`, `O+`, `O-`) VALUES
-(1, 17, 20, 80, 30, 50, 25, 30, 40);
+(1, 17, 40, 80, 30, 50, 25, 30, 40);
 
 -- --------------------------------------------------------
 
@@ -82,25 +82,17 @@ CREATE TABLE `donation` (
   `bloodgroup` varchar(5) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `disease` varchar(300) NOT NULL,
-  `status` text NOT NULL DEFAULT '0'
+  `status` text NOT NULL DEFAULT '0',
+  `user_id` int(4) NOT NULL,
+  `Date` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `donation`
 --
 
-INSERT INTO `donation` (`id`, `name`, `phone`, `email`, `address`, `bloodunit`, `bloodgroup`, `gender`, `disease`, `status`) VALUES
-(1, 'Dipesh', 34543, 'dipesh@gmail.com', 'Duwakot', 33, '', '', 'nothing', '1'),
-(2, 'Dipesh', 34, 'dipesh@gmail.com', 'Duwakot', 33, 'B+', 'Male', 'nothing', '1'),
-(4, 'nijal', 2147483647, 'nijal@gmail.com', 'kathmandu', 50, 'A-', 'Male', 'nothing', '1'),
-(5, 'Dipesh', 1314, 'nijal@gmail.com', 'ktm', 33, 'AB-', 'Male', 'none', '-1'),
-(6, 'Dipesh', 2345677, 'dipesh@gmail.com', 'kathmandu', 22, 'AB+', 'Male', 'nothing', '1'),
-(7, 'nirmal', 2324, 'nirmal@gmail.com', 'kathmandu', 20, 'AB+', 'Male', 'nothing', '-1'),
-(8, 'Dipesh', 34543, 'dipesh@gmail.com', 'kathmandu', 33, 'A+', 'Male', 'ddd', '1'),
-(9, 'Dipesh', 34543, 'dipesh@gmail.com', 'kathmandu', 33, 'A+', 'Male', 'ddd', '-1'),
-(10, 'Dipesh', 34543, 'dipesh@gmail.com', 'kathmandu', 50, 'B+', 'Male', '', '1'),
-(11, 'nijal', 34, 'dipesh@gmail.com', 'kathmandu', 33, 'A+', 'Male', '', '-1'),
-(12, 'nijal', 34, 'dipesh@gmail.com', 'kathmandu', 33, 'AB+', 'Male', '', '1');
+INSERT INTO `donation` (`id`, `name`, `phone`, `email`, `address`, `bloodunit`, `bloodgroup`, `gender`, `disease`, `status`, `user_id`, `Date`) VALUES
+(25, 'Dipesh Shrestha', 2147483647, 'dipesh@gmail.com', 'kathmandu', 33, 'AB+', 'Male', 'nothing', '1', 32, '2024-06-21');
 
 -- --------------------------------------------------------
 
@@ -113,6 +105,7 @@ CREATE TABLE `donor` (
   `firstname` varchar(40) NOT NULL,
   `middlename` text NOT NULL,
   `lastname` varchar(40) NOT NULL,
+  `username` varchar(40) NOT NULL,
   `dob` date NOT NULL,
   `email` varchar(40) NOT NULL,
   `gender` varchar(30) NOT NULL,
@@ -133,8 +126,9 @@ CREATE TABLE `donor` (
 -- Dumping data for table `donor`
 --
 
-INSERT INTO `donor` (`d_id`, `firstname`, `middlename`, `lastname`, `dob`, `email`, `gender`, `bgroup`, `occupation`, `phone`, `tel`, `province`, `municipality`, `district`, `tole`, `ward`, `password`, `cpassword`) VALUES
-(5, 'Dipesh', '', 'Shrestha', '2004-12-13', 'dipesh@gmail.com', 'male', 'B+', 'student', 34543, 242, 'bagmati', 'baiteshwor', 'dolakha', 'kshatrapa', 8, 'dipesh', 'dipesh');
+INSERT INTO `donor` (`d_id`, `firstname`, `middlename`, `lastname`, `username`, `dob`, `email`, `gender`, `bgroup`, `occupation`, `phone`, `tel`, `province`, `municipality`, `district`, `tole`, `ward`, `password`, `cpassword`) VALUES
+(32, 'Dipesh', '', 'Shrestha', 'dipesh123', '2004-12-12', 'dipesh@gmail.com', 'male', 'A-', 'student', 2147483647, 0, 'bagmati', 'baiteshwor', 'dolakha', 'kshatrapa', 8, 'Dipesh@11', ''),
+(33, 'Shubham', '', 'Bhandari', 'shubham1', '2004-12-13', 'shubham@gmail.com', 'male', 'A-', 'student', 34543, 0, 'bagmati', 'baiteshwor', 'dolakha', 'kshatrapa', 5, 'Shubh@m1', '');
 
 -- --------------------------------------------------------
 
@@ -160,8 +154,9 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`e_id`, `name`, `date`, `location`, `organizer`, `c_person`, `phone`, `email`, `status`, `description`) VALUES
-(1, 'Blood donation', '2024-01-22', 'maitighar,kathmnadu', 'red cross', 'dipesh shrestha', '9864521874', 'dipesh@gmail.com', '0', 'this is the blood donation event'),
-(2, 'doantion camp', '5523-02-25', 'DOLAKHA', 'red cross', 'nijal', '5445698', 'niajl@gamail.com', '1', 'no need to say');
+(5, 'Blood donation', '2004-12-13', 'Sallaghari, Bhaktapur', 'Red Cross', 'Ceo od red cross', '326165', 'red@gmail.com', '1', 'hello donor, we are happy to have you here'),
+(6, 'doantion camp', '0000-00-00', 'maitighar,kathmnadu', 'red cross', 'nijal', '9864151754', 'nijal@gmail.com', '-1', 'dhjtd'),
+(7, 'doantion camp', '4552-02-05', 'Sallaghari, Bhaktapur', 'Red Cross', 'Ceo od red cross', '9864151754', 'nirmal@gmail.com', '1', 'go to hell');
 
 -- --------------------------------------------------------
 
@@ -178,6 +173,17 @@ CREATE TABLE `hotline` (
   `phone3` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `hotline`
+--
+
+INSERT INTO `hotline` (`h_id`, `name`, `location`, `phone1`, `phone2`, `phone3`) VALUES
+(6, 'blood bank', 'Bhaktapur', '2456', '986545', '123456'),
+(7, 'e-raktakosh', 'lalitpur', '0125258', '', ''),
+(8, 'blood vault', 'kTHMndu', '54494', '', ''),
+(9, 'hamro life bank', 'DOLAKHA', '54494', '5353', '36536'),
+(10, 'red cross', 'DOLAKHA', '0125258', '5353', '');
+
 -- --------------------------------------------------------
 
 --
@@ -190,20 +196,40 @@ CREATE TABLE `request` (
   `phone` varchar(40) NOT NULL,
   `bgroup` varchar(5) NOT NULL,
   `file` varchar(255) NOT NULL,
-  `message` varchar(400) NOT NULL
+  `message` varchar(400) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `status` text NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `request`
 --
 
-INSERT INTO `request` (`id`, `name`, `phone`, `bgroup`, `file`, `message`) VALUES
-(1, 'Dipesh', '', '', '../files/8109_1713082730.png', ''),
-(2, 'Dipesh', '9864151754', 'O+', '../files/1781_1713082751.png', 'need fast'),
-(3, 'Dipesh', '9864151754', 'B+', '../files/9367_1713083237.png', 'bllod vault'),
-(4, 'Dipesh', '9864151754', 'B+', '../files/4096_1713083375.png', 'hyy'),
-(5, 'Dipesh', '9864151754', 'AB+', '../files/1947_1713084097.png', 'hurry!'),
-(6, 'Dipesh', '9864151754', 'A-', '../files/5905_1713084155.png', 'ahah');
+INSERT INTO `request` (`id`, `name`, `phone`, `bgroup`, `file`, `message`, `date`, `status`) VALUES
+(1, 'Dipesh', '', '', '../files/8109_1713082730.png', '', '2024-06-16 15:45:23', '1'),
+(2, 'Dipesh', '9864151754', 'O+', '../files/1781_1713082751.png', 'need fast', '2024-06-16 15:45:23', '-1'),
+(3, 'Dipesh', '9864151754', 'B+', '../files/9367_1713083237.png', 'bllod vault', '2024-06-16 15:45:23', '1'),
+(4, 'Dipesh', '9864151754', 'B+', '../files/4096_1713083375.png', 'hyy', '2024-06-16 15:45:23', '0'),
+(5, 'Dipesh', '9864151754', 'AB+', '../files/1947_1713084097.png', 'hurry!', '2024-06-16 15:45:23', '0'),
+(6, 'Dipesh', '9864151754', 'A-', '../files/5905_1713084155.png', 'ahah', '2024-06-16 15:45:23', '0'),
+(7, 'Dipesh', '', '', '', '', '2024-06-16 15:45:23', '0'),
+(8, 'Dipesh', '9864151754', 'B+', '', 'fef', '2024-06-16 15:45:23', '0'),
+(9, '', '', '', '', '', '2024-06-16 15:45:23', '0'),
+(10, 'Dipesh', '9864151754', '', '', 'dfd', '2024-06-16 15:45:23', '-1'),
+(11, 'Dipesh', '34543', '', '', '', '2024-06-16 15:45:23', '0'),
+(12, 'Dipesh', '', '', '', '', '2024-06-16 15:45:23', '0'),
+(13, 'nijal', '', '', '', '', '2024-06-16 15:45:23', '0'),
+(14, 'nijal', '', '', '', '', '2024-06-16 15:45:23', '0'),
+(15, 'Dipesh', '', '', '', '', '2024-06-16 15:45:23', '0'),
+(16, 'Dipesh', '', '', '../files/5421_1718445396.jpg', '', '2024-06-16 15:45:23', '0'),
+(17, 'Dipesh', '', '', '../files/3523_1718445429.jpg', '', '2024-06-16 15:45:23', '0'),
+(18, 'Donor', '', '', '', '', '2024-06-16 15:45:23', '0'),
+(19, 'nirmal', '', '', '../files/5464_1718445456.jpg', '', '2024-06-16 15:45:23', '0'),
+(20, 'nirmal', '', '', '../files/7600_1718445473.jpg', '', '2024-06-16 15:45:23', '-1'),
+(21, 'Dipesh', '', '', '../files/2526_1718445486.jpg', '', '2024-06-16 15:45:23', '0'),
+(22, 'Dipesh', '9864151754', '', '../files/2463_1718445525.jpg', '', '2024-06-16 15:45:23', '0'),
+(23, 'Dipesh', '', '', '../files/5406_1718445599.jpg', '', '2024-06-16 15:45:23', '0'),
+(24, 'Dipesh', '', '', '../files/5700_1718445713.jpg', '', '2024-06-16 15:45:23', '-1');
 
 --
 -- Indexes for dumped tables
@@ -225,7 +251,8 @@ ALTER TABLE `blood`
 -- Indexes for table `donation`
 --
 ALTER TABLE `donation`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_user_id` (`user_id`);
 
 --
 -- Indexes for table `donor`
@@ -271,31 +298,41 @@ ALTER TABLE `blood`
 -- AUTO_INCREMENT for table `donation`
 --
 ALTER TABLE `donation`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `donor`
 --
 ALTER TABLE `donor`
-  MODIFY `d_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `d_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `e_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `e_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `hotline`
 --
 ALTER TABLE `hotline`
-  MODIFY `h_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `h_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `donation`
+--
+ALTER TABLE `donation`
+  ADD CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `donor` (`d_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
