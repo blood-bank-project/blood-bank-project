@@ -96,15 +96,28 @@ include('includes/topbar.php');
                             </div>
                         </form>
                     </div>
-                    <div id="pdf">
-                        <form method="GET" action="backend/export_pdf.php">
-                            <input type="hidden" name="blood_group" value="<?php echo $blood_group; ?>">
-                            <input type="hidden" name="date" value="<?php echo $date; ?>">
-                            <button type="submit" class="btn btn-danger"><i class="fa-solid fa-file-pdf"></i> Export to
-                                PDF</button>
-                        </form>
-                    </div>
+                    <div class="pdf_excel">
+                        <div id="pdf">
+                            <form method="GET" action="backend/export_pdf.php">
+                                <input type="hidden" name="blood_group" value="<?php echo $blood_group; ?>">
+                                <input type="hidden" name="date" value="<?php echo $date; ?>">
+                                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-file-pdf"></i> Export
+                                    to
+                                    PDF</button>
+                            </form>
+                        </div>
+                        <div id="excell">
+                            <form method="GET" action="backend/export_excel.php">
+                                <input type="hidden" name="blood_group" value="<?php echo $blood_group; ?>">
+                                <input type="hidden" name="date" value="<?php echo $date; ?>">
+                                <button class="btn btn-success" name="export"> <i class="fa-solid fa-file-excel"></i>
+                                    Export
+                                    to Excel </button>
 
+                            </form>
+                        </div>
+
+                    </div>
                     <div class="table-search">
                         <div class="pagination-options">
                             <label for="rows-per-page">Rows per page:</label>

@@ -2,7 +2,7 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 if(isset($_POST['submit'])){
-    require 'fpdf.php'; // Include FPDF library
+    require '../fpdf/fpdf.php'; // Include FPDF library
 
     require '../smtp/src/Exception.php';
     require '../smtp/src/PHPMailer.php';
@@ -84,9 +84,10 @@ if(isset($_POST['submit'])){
             "allow_self_signed"=>true,
         ));
         $mail->send();
-        echo 'Mail is sent.';
+        header('Location:../certificate.php');
+         exit(); 
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 }
-?>
+?>.

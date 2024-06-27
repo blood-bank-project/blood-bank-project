@@ -58,3 +58,18 @@ function deletePopup() {
 //   const navbar = document.querySelector(".navbar");
 //   navbar.classList.toogle("sticky", scrollY > 0);
 // });
+
+/******* donor profile js********/
+document.getElementById("editButton").addEventListener("click", function () {
+  document.getElementById("profileView").style.display = "none";
+  document.getElementById("profileForm").style.display = "block";
+  document.getElementById("uploadImage").style.display = "block";
+});
+
+document.getElementById("uploadImage").addEventListener("change", function () {
+  const reader = new FileReader();
+  reader.onload = function () {
+    document.getElementById("profileImage").src = reader.result;
+  };
+  reader.readAsDataURL(this.files[0]);
+});

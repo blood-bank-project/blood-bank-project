@@ -21,9 +21,6 @@
                          <a class="nav-link" href="event.php" id="event">Event</a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link" href="certificate.php" id="certificate">Certificate</a>
-                     </li>
-                     <li class="nav-item">
                          <a class="nav-link" href="request.php" id="certificate">Request
                              Blood</a>
                      </li>
@@ -43,7 +40,7 @@
                          &nbsp; ▼
                      </p>
                      <div class="dropdown-content">
-                         <a href="#" id="middle ">Profile</a>
+                         <a href="donorprofile.php" id="middle ">Profile</a>
                          <a href="backend/logout.php" id="buttom">Log out</a>
                      </div>
                  </div>

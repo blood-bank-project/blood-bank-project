@@ -40,6 +40,7 @@
   display: flex;
   justify-content: space-around;
 }
+
 .eventForm {
   position: absolute;
   top: 0;
@@ -114,6 +115,7 @@
   font-size: 1.5rem;
   cursor: pointer;
 }
+
 .pagination {
   margin: 20px 0 5px 0;
   text-align: center;
@@ -148,7 +150,6 @@
   outline: none;
   padding: 5px;
   border: none;
-  background-color: #d8c7c7;
   border-radius: 5px;
 }
 
@@ -234,4 +235,9 @@ td {
   background-color: #fefefe;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.pdf_excel {
+  display: flex;
+  gap: 10px;
 }

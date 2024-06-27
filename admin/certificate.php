@@ -4,6 +4,44 @@ include('includes/sidebar.php');
 include('includes/topbar.php');
 ?>
 <div class="content-wrapper">
+    <div class="container">
+        <h1 class="text-center p-2" style="color:#666;">Top Donor</h1>
+        <?php
+        require_once "backend/connect.php";
+        $sql = "SELECT name, email, count(name) as totalDonation 
+                FROM donation 
+                GROUP BY user_id 
+                ORDER BY totalDonation DESC 
+                LIMIT 1";
+        $result = $conn->query($sql);
+    ?>
+        <table class="table table-striped table-bordered text-center w-40">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>No. of times</td>
+                </tr>
+            </thead>
+            <?php
+        if($result->num_rows > 0){
+            $data = $result->fetch_assoc();
+        ?>
+            <tbody>
+                <tr>
+                    <td><?php echo $data['name']; ?></td>
+                    <td><?php echo $data['email']; ?></td>
+                    <td><?php echo $data['totalDonation']; ?></td>
+                </tr>
+            </tbody>
+        </table>
+        <?php
+        } else {
+            echo "No data found";
+        }
+    ?>
+    </div>
+
     <div class="container-fluid">
         <h1 class="text-center p-2 " style="color:#666;"> Send Certificate</h1>
         <div class="container cetificate">

@@ -12,8 +12,8 @@ require_once "backend/connect.php";
 $records_per_page = isset($_GET['records_per_page']) ? intval($_GET['records_per_page']) : 10;
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 $offset = ($page - 1) * $records_per_page;
-
-$sql = "SELECT * FROM request ORDER BY id DESC LIMIT ?, ?";
+$id = $_SESSION['user_id'];
+$sql = "SELECT * FROM request inner join donor on donor.d_id=request.donor_id where donor.d_id = $id  ORDER BY id DESC LIMIT ?, ?";
 $query = $conn->prepare($sql);
 $query->bind_param('ii', $offset, $records_per_page); 
 $query->execute();
@@ -21,7 +21,7 @@ $result = $query->get_result();
 $rows = $result->fetch_all(MYSQLI_ASSOC);
 
 
-$total_records_query = $conn->query("SELECT COUNT(*) FROM request");
+$total_records_query = $conn->query("SELECT count(*) FROM request inner join donor on donor.d_id=request.donor_id where donor.d_id = $id  GROUP BY request.donor_id");
 $total_records = $total_records_query->fetch_row()[0];
 $total_pages = ceil($total_records / $records_per_page);
 
@@ -54,6 +54,7 @@ $total_pages = ceil($total_records / $records_per_page);
                     <th>File</th>
                     <th>Message</th>
                     <th>Date</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -69,13 +70,17 @@ $total_pages = ceil($total_records / $records_per_page);
                     <td><a href="<?php echo $data['file'] ;?>">Form</a></td>
                     <td><?php echo $data['message'];?></td>
                     <td><?php $date = date('Y-m-d'); echo $date;?></td>
-                    <!-- <div id="confirmationPopup">
-                            <div id="confirmationBox">
-                                <h2>Are you sure you want to delete?</h2>
-                                <button id="confirmDeleteButton">Yes</button>
-                                <button id="cancelDeleteButton">No</button>
-                            </div>
-                        </div> -->
+                    <td>
+                        <?php if($data['status'] === '0' ){
+                             echo  "<span class='bg-warning text-light p-1'>Pending..</span>";
+                            }
+                            else if($data['status'] === '1'){
+                            echo  "<span class='bg-success text-light p-1'>Managed</span>";
+                            }
+                            else if($data['status'] === '-1'){
+                            echo "<span class='bg-danger text-light p-1'>Couldn't manage</span>";
+                             } ?></td>
+                    </td>
                 </tr>
                 <?php endforeach; ?>
                 <?php else: ?>

@@ -19,9 +19,9 @@
 <body>
     <section id="navbar">
         <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <!-- <a class="navbar-brand logo" href="index.php"><img src="assets/images/logo.png" alt="" class="logo"></a> -->
-                <a class="navbar-brand logo" style="color:#fff; font-size:20px;">BloodVault</a>
+            <div class="container-fluid image">
+                <a class="navbar-brand logo" href="index.php"><img src="assets/images/logo.png" alt="" class="logo"></a>
+                <a class="navbar-brand text" style="color:#fff; font-size:20px;">BloodVault</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">

@@ -34,23 +34,20 @@
                          <h2>Quick Links</h2>
                          <ul>
                              <li>
-                                 <a class="nav-link" href="#">Home
+                                 <a class="nav-link" href="index.php">Home
                                  </a>
                              </li>
                              <li>
-                                 <a class="nav-link" href="#about">About Us</a>
+                                 <a class="nav-link" href="donation.php">Donation</a>
                              </li>
                              <li>
-                                 <a class="nav-link" href="#gallery">Gallery</a>
+                                 <a class="nav-link" href="event.php">Event</a>
                              </li>
                              <li>
-                                 <a class="nav-link" href="#process">Process</a>
+                                 <a class="nav-link" href="request.php">Request Blood</a>
                              </li>
                              <li>
-                                 <a class="nav-link" href="#blog">Blog</a>
-                             </li>
-                             <li>
-                                 <a class="nav-link" href="#contact">Contact US</a>
+                                 <a class="nav-link" href="requesthistory.php">Request Status </a>
                              </li>
                          </ul>
                      </div>

@@ -95,7 +95,7 @@ $result = $query->get_result();
 $rows = $result->fetch_all(MYSQLI_ASSOC);
 
 // Count total records
-$total_records_query = $conn->query("SELECT COUNT(id) FROM donation inner join donor on donor.d_id=donation.user_id where donor.d_id = $id group by donation.user_id");
+$total_records_query = $conn->query("SELECT COUNT(id) FROM donation  inner join donor on donor.d_id=donation.user_id where donor.d_id = $id group by donation.user_id");
 $total_records = $total_records_query->fetch_row()[0];
 $total_pages = ceil($total_records / $records_per_page);
 ?>
@@ -164,8 +164,8 @@ $total_pages = ceil($total_records / $records_per_page);
                         <?php
                         if($data['status'] != '1' && $data['status'] != '-1') : ?>
                         <div class=" text-end action">
-                            <li class="dropdown-item "> <a href="backend/?id=<?php echo $data['id']; ?>"> <button
-                                        class="btn btn-info">Edit</button></a>
+                            <li class="dropdown-item "> <a href="editDonation.php?id=<?php echo $data['id']; ?>">
+                                    <button class="btn btn-info">Edit</button></a>
                                 <button class="btn btn-danger" onclick="return deletePopup()">Delete</button>
                         </div>
                         <?php endif; ?>

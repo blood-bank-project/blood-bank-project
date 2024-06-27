@@ -19,9 +19,9 @@
     <section id="navbar">
         <nav class="navbar navbar-expand-lg ">
             <div class="container-fluid image">
-                <a class="navbar-brand logo" href="#"><img src="assets/images/logo.png" alt="" class="logo"></a>
-                <a class="navbar-brand logo" style="color:#fff; font-size:20px;">BloodVault</a>
-                <button style="display: block;" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                <a class="navbar-brand logo" href="index.php"><img src="assets/images/logo.png" alt="" class="logo"></a>
+                <a class="navbar-brand text" style="color:#fff; font-size:20px;">BloodVault</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -228,15 +228,34 @@
         <div class=" row">
             <div class="col work">
                 <h1>What Wo Do?</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, asperiores. Fuga iste fugit ullam
-                    aliquam mollitia dolor quo quos vero suscipit vitae, impedit iure tenetur ipsam voluptates quia non
-                    ducimus?</p>
+                <p>Blood Vault manages all aspects of a blood bank's operations to ensure efficiency, safety, and
+                    reliability. We maintain detailed donor records, including personal information, donation history,
+                    and health status, while overseeing pre-donation screenings to ensure eligibility. The system
+                    meticulously tracks the collection, testing, storage, and expiry of blood and its components,
+                    ensuring optimal inventory levels and adherence to quality standards. We automates routine tasks,
+                    streamlines workflows, and enhances accuracy in managing blood supplies. Additionally, the Blood
+                    Vault coordinates the distribution of blood products to the patients, ensuring timely and safe
+                    delivery. It supports regulatory compliance by maintaining precise records and generating necessary
+                    reports. The system also fosters donor engagement through effective communication, reminders, and
+                    recognition programs. By integrating these functions, the Blood Vault ensures a consistent and safe
+                    supply of blood products, crucial for supporting healthcare providers and meeting patient needs.
+                </p>
             </div>
             <div class="col mission">
                 <h1>Our mission</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quos quas deserunt modi obcaecati nobis
-                    deleniti placeat exercitationem veniam nihil saepe sit, quis animi laboriosam consectetur tempore
-                    officia debitis possimus.</p>
+                <p>
+                    The mission of a Blood Vault is to ensure the safety, quality, and availability of blood, testing,
+                    and quality control measures. By streamlining donor management, blood collection, testing, storage,
+                    and distribution processes, we aim to maximize efficiency and minimize wastage. It seeks to improve
+                    accessibility to blood products for hospitals, clinics, and patients, maintaining a reliable supply
+                    to meet both routine and emergency needs. Additionally, the system fosters positive donor
+                    relationships through effective communication and engagement strategies, encouraging regular
+                    donations. By supporting healthcare providers with a steady supply of life-saving blood products,
+                    our system plays a crucial role in the healthcare infrastructure. It ensures regulatory compliance,
+                    maintains transparency through accurate records, and continuously innovates to enhance operational
+                    performance and outcomes. Ultimately, Blood Vault is dedicated to providing safe, high-quality blood
+                    products, improving operational efficiency, promoting donor engagement, supporting healthcare
+                    systems, ensuring compliance, and fostering innovation.</p>
             </div>
         </div>
     </section>

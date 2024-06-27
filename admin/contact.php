@@ -23,7 +23,7 @@ $total_pages = ceil($total_records / $records_per_page);
 ?>
     <section class="content" id="donor-section">
         <div class="container-fluid">
-            <h1 class="text-center p-2" style="color:#666;">Donors Information</h1>
+            <h1 class="text-center p-2" style="color:#666;">User's message</h1>
             <div class="table-search">
                 <div class="pagination-options">
                     <label for="rows-per-page">Rows per page:</label>

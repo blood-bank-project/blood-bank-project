@@ -175,9 +175,8 @@ body {
   background-color: #fff;
 } */
 #navbar .logo {
-  max-width: 50px;
-  height: auto;
-  width: auto;
+  height: 100px;
+  width: 100px;
 }
 #navbar ul li a {
   color: #fff;
@@ -294,6 +293,56 @@ body {
   font-size: 20px;
 }
 
+.editDonation {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#body10 .form-title {
+  text-align: center;
+  font-size: 1.5rem;
+}
+#body10 .form-container {
+  width: 40%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #d8c7c7;
+  overflow: hidden;
+}
+#body10 .form-group {
+  display: flex;
+}
+#body10 label {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+#body10 input[type="text"],
+input[type="integer"],
+input[type="email"],
+select,
+textarea {
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+#unit {
+  width: 85%;
+}
+#body10 .field {
+  margin-right: 20px;
+}
+select {
+  height: 35px;
+}
+#body10 .field,
+.form-group1,
+.form-group2 {
+  display: flex;
+  flex-direction: column;
+}
+
 #body2 .title1 {
   color: white;
   background-color: #de1f26;
@@ -323,7 +372,6 @@ body {
 #body2 .title1 span {
   font-size: 1rem;
 }
-
 .donationForm {
   position: absolute;
   top: 0;
@@ -762,4 +810,79 @@ footer .footer-copy .socila-link ul li a {
 
 #card .card p {
   margin-bottom: 0;
+}
+
+/***** donor profile css******/
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-picture {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-picture img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-picture input {
+  display: block;
+  margin: 10px auto;
+}
+
+.profile-view p {
+  margin: 10px 0;
+}
+
+.profile-view button,
+.profile-form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.profile-view button:hover,
+.profile-form button:hover {
+  background-color: #0056b3;
+}
+
+.profile-form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.profile-form input,
+.profile-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
