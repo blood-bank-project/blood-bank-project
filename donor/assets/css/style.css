@@ -605,8 +605,8 @@ input[type="file"] {
 #search-input {
   outline: none;
   padding: 5px;
-  border: none;
-  background-color: #d8c7c7;
+  border: 1px solid #bd9d9d;
+  background-color: #fefefe;
   border-radius: 5px;
 }
 

@@ -69,7 +69,7 @@ $total_pages = ceil($total_records / $records_per_page);
                                 <a href="<?php echo $data['file']; ?>" target="_blank">Form</a>
                             </td>
                             <td><?php echo $data['message'];?></td>
-                            <td><?php $date = date('Y-m-d'); echo $date;?></td>
+                            <td><?php echo date('Y-m-d', strtotime($data['date'])); ?></td>
                             <td><?php if($data['status'] === '0' ){
                              echo  "<span class='bg-warning text-light p-1'>Pending..</span>";
                             }

@@ -70,6 +70,9 @@
         </nav>
     </section>
     <!-- login popup -->
+    <?php
+    require_once 'googlelogin.php';
+    ?>
     <div class="login" id="donorloginpopup">
         <div class="form-container">
             <div class="head">
@@ -91,11 +94,13 @@
                     <i class="fa-brands fa-facebook"></i>Facebook
                 </button>
             </a>
-            <a href=""><button class="btn2">
+
+            <a href="<?php echo $client->createAuthUrl() ?>"><button class="btn2">
                     <i class="fa-brands fa-google"></i>Google
                 </button></a>
         </div>
     </div>
+
     <div class="login" id="adminloginpopup">
         <div class="form-container">
             <div class="head">

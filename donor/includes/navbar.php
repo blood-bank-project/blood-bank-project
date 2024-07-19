@@ -40,7 +40,7 @@
                          &nbsp; ▼
                      </p>
                      <div class="dropdown-content">
-                         <a href="donorprofile.php" id="middle ">Profile</a>
+                         <a href="donorprofile.php?id=<?php echo $_SESSION['user_id'] ; ?>" id="middle ">Profile</a>
                          <a href="backend/logout.php" id="buttom">Log out</a>
                      </div>
                  </div>
