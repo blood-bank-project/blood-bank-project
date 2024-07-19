@@ -2,19 +2,24 @@
 require('../fpdf/fpdf.php');
 require_once "connect.php";
 
-// Fetch data based on filters
+// Retrieve filter values
 $blood_group = isset($_GET['blood_group']) ? $_GET['blood_group'] : '';
 $date = isset($_GET['date']) ? $_GET['date'] : '';
 
-$sql = "SELECT * FROM donation where date='$date' AND bloodgroup = '$blood_group' ";
+// Construct SQL query with filters
+$sql = "SELECT * FROM donation WHERE 1=1"; // Start with 1=1 to simplify appending conditions
+
 if (!empty($blood_group)) {
     $sql .= " AND bloodgroup = '$blood_group'";
 }
 if (!empty($date)) {
     $sql .= " AND DATE(date) = '$date'";
 }
+
+// Execute the query
 $result = $conn->query($sql);
 
+// PDF class definition
 class PDF extends FPDF {
     // Page header
     function Header() {
@@ -49,13 +54,14 @@ class PDF extends FPDF {
     }
 }
 
+// Create PDF instance
 $pdf = new PDF();
 $pdf->AddPage();
 
-// Column headings
-$header = array('Id', 'Name', 'Phone', 'Email', 'Address', 'Blood unit', 'Blood group', 'Gender', 'Disease', 'Date');
+// Define column headings
+$header = array('Id', 'Name', 'Phone', 'Email', 'Address', 'Blood Unit', 'Blood Group', 'Gender', 'Disease', 'Date');
 
-// Data loading
+// Prepare data for the table
 $data = [];
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
@@ -74,6 +80,9 @@ if ($result->num_rows > 0) {
     }
 }
 
+// Generate the table in PDF
 $pdf->Table($header, $data);
+
+// Output the PDF
 $pdf->Output();
 ?>
