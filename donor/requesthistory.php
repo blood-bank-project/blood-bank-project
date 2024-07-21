@@ -22,7 +22,17 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
 
 
 $total_records_query = $conn->query("SELECT count(*) FROM request inner join donor on donor.d_id=request.donor_id where donor.d_id = $id  GROUP BY request.donor_id");
-$total_records = $total_records_query->fetch_row()[0];
+if ($total_records_query) {
+    $result = $total_records_query->fetch_row();
+    
+    if ($result) {
+        $total_records = $result[0];
+    } else {
+        $total_records = 0; 
+    }
+} else {
+    echo "Query failed: " . $db_connection->error;
+}
 $total_pages = ceil($total_records / $records_per_page);
 
 ?>

@@ -18,9 +18,9 @@ include('includes/topbar.php');
         <table class="table table-striped table-bordered text-center w-40">
             <thead>
                 <tr>
-                    <td>Name</td>
-                    <td>Email</td>
-                    <td>No. of times</td>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>No. of times</th>
                 </tr>
             </thead>
             <?php

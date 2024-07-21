@@ -1,25 +1,29 @@
 <?php
-include("backend/connect.php"); // Include your database configuration file
+require_once "connect.php";
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $d_id = $_POST['d_id'];
-    $name = $_POST['name'];
+if (isset($_POST['d_id'])) {
+    $id = $_POST['d_id'];
+    $fname = $_POST['fname'];
+    $mname = $_POST['mname'];
+    $lname = $_POST['lname'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
-    $address = $_POST['address'];
+    $province = $_POST['province'];
+    $municipality = $_POST['municipality'];
+    $district = $_POST['district'];
+    $tole = $_POST['tole'];
+    $ward = $_POST['ward'];
 
-    // Split the name into firstname, middlename, lastname
-    $nameParts = explode(' ', $name);
-    $firstname = $nameParts[0];
-    $middlename = isset($nameParts[1]) ? $nameParts[1] : '';
-    $lastname = isset($nameParts[2]) ? $nameParts[2] : '';
+    $sql = "UPDATE donor SET firstname = ?, middlename = ?, lastname = ?, email = ?, phone = ?, province = ?, municipality = ?, district = ?, tole = ?, ward = ? WHERE d_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('ssssssssssi', $fname, $mname, $lname, $email, $phone, $province, $municipality, $district, $tole, $ward, $id);
 
-    $updateQuery = "UPDATE donor SET firstname = '$firstname', middlename = '$middlename', lastname = '$lastname', email = '$email', phone = '$phone', province = '$address' WHERE d_id = $d_id";
-
-    if (mysqli_query($conn, $updateQuery)) {
-        echo 'Profile updated successfully';
+    if ($stmt->execute()) {
+        echo "Donor record updated successfully";
     } else {
-        echo 'Error updating profile: ' . mysqli_error($conn);
+        echo "Error: " . $stmt->error;
     }
+} else {
+    echo "No data provided.";
 }
 ?>

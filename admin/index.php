@@ -131,7 +131,8 @@ $data = mysqli_fetch_array($row);
 
                                 <p>Total Donor</p>
                             </div>
-                            <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
+                            <a href="donor.php" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-6">
@@ -147,7 +148,8 @@ $data = mysqli_fetch_array($row);
 
                                 <p>Total Request</p>
                             </div>
-                            <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
+                            <a href="request.php" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-6">
@@ -163,7 +165,8 @@ $data = mysqli_fetch_array($row);
 
                                 <p>Approved Request</p>
                             </div>
-                            <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
+                            <a href="request.php" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-6">
@@ -181,7 +184,8 @@ $data = mysqli_fetch_array($row);
 
                                 <p>Total Blood Unit(in ml)</p>
                             </div>
-                            <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
+                            <a href="bloodstock.php" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>

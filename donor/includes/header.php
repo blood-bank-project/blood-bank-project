@@ -24,46 +24,46 @@
 </head>
 
 <body>
-<?php
-   require_once '../googlelogin.php';
-   if (isset($_GET['code'])) {
-      $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
-      $client->setAccessToken($token['access_token']);
+<!-- <?php
+  //  require_once '../googlelogin.php';
+  //  if (isset($_GET['code'])) {
+  //     $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
+  //     $client->setAccessToken($token['access_token']);
     
-      // get profile info
-      $google_oauth = new Google_Service_Oauth2($client);
-      $google_account_info = $google_oauth->userinfo->get();
-      $userInfo = [
-        'email' => $google_account_info['email'],
-        'firstName' => $google_account_info['givenName'],
-        'lastName' => $google_account_info['familyName'],
-        'verifiedEmail' => $google_account_info['verifiedEmail'],
-        'token' => $google_account_info['id']
-      ];
+  //     // get profile info
+  //     $google_oauth = new Google_Service_Oauth2($client);
+  //     $google_account_info = $google_oauth->userinfo->get();
+  //     $userInfo = [
+  //       'email' => $google_account_info['email'],
+  //       'firstName' => $google_account_info['givenName'],
+  //       'lastName' => $google_account_info['familyName'],
+  //       'verifiedEmail' => $google_account_info['verifiedEmail'],
+  //       'token' => $google_account_info['id']
+  //     ];
 
-      $sql = "SELECT * FROM donor WHERE email = '{$userInfo['email']}'";
+  //     $sql = "SELECT * FROM donor WHERE email = '{$userInfo['email']}'";
 
-      $result = $conn->query($sql);
-      if(mysqli_num_rows($result) > 0){
-        $info = mysqli_fetch_assoc($result);
-        $token = $userInfo['token'];
-      }
-      else{
-        $sql = "INSERT INTO donor (firstname,lastname,email) VALUES ('{$userInfo['firstName']}','{$userInfo['lastName']}','{$userInfo['email']}')";
-        }
-        $result = $conn->query($sql);
-        if($result){
-            $token = $userInfo['token'];
-        }
-        else{
-            echo "User is not created";
-            die();
-        }
-        $_SESSION['user_token'] = $token;
+  //     $result = $conn->query($sql);
+  //     if(mysqli_num_rows($result) > 0){
+  //       $info = mysqli_fetch_assoc($result);
+  //       $token = $userInfo['token'];
+  //     }
+  //     else{
+  //       $sql = "INSERT INTO donor (firstname,lastname,email) VALUES ('{$userInfo['firstName']}','{$userInfo['lastName']}','{$userInfo['email']}')";
+  //       }
+  //       $result = $conn->query($sql);
+  //       if($result){
+  //           $token = $userInfo['token'];
+  //       }
+  //       else{
+  //           echo "User is not created";
+  //           die();
+  //       }
+  //       $_SESSION['user_token'] = $token;
   
-        if(!isset($_SESSION['user_token'])){
-          header("Location: ../index.php");
-          die();
-        }
-      }
- ?>
+  //       if(!isset($_SESSION['user_token'])){
+  //         header("Location: ../index.php");
+  //         die();
+  //       }
+  //     }
+ ?> -->

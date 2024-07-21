@@ -11,6 +11,9 @@
           <li class="nav-item d-none d-sm-inline-block">
               <a href="contact.php" class="nav-link">Contact</a>
           </li>
+          <li class="nav-item d-none d-sm-inline-block">
+              <a href="addadmin.php" class="nav-link">Add Admin</a>
+          </li>
       </ul>
 
       <!-- Right navbar links -->

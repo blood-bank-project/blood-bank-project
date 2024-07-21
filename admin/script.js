@@ -165,15 +165,15 @@ function deleteEvent(id) {
   };
 }
 
-//******  delete hotline ********//
-function deleteHotline(id) {
-  let confirmationPopup = document.getElementById("deleteHotlinePopup");
-  let confirmhotlineDelete = document.getElementById("confirmhotlineDelete");
+//******  delete admin ********//
+function deleteAdmin(id) {
+  let confirmationPopup = document.getElementById("confirmationPopup");
+  let confirmDelete = document.getElementById("confirmDelete");
   confirmationPopup.classList.add("open-popup");
-  confirmhotlineDelete.onclick = function () {
-    window.location.href = "backend/deletehotline.php?id=" + id;
+  confirmDelete.onclick = function () {
+    window.location.href = "backend/deleteAdmin.php?id=" + id;
   };
-  document.getElementById("cancelhotlineDelete").onclick = function () {
+  document.getElementById("cancelDelete").onclick = function () {
     confirmationPopup.classList.remove("open-popup");
   };
 }

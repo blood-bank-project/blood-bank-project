@@ -10,19 +10,16 @@ include('includes/topbar.php');
         <div class="container">
             <?php
             require_once "backend/connect.php";
-            // Initialize filter variables
+
             $blood_group = isset($_GET['blood_group']) ? $_GET['blood_group'] : '';
             $date = isset($_GET['date']) ? $_GET['date'] : '';
 
-            // Set pagination variables
             $records_per_page = isset($_GET['records_per_page']) ? intval($_GET['records_per_page']) : 10;
             $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
             $offset = ($page - 1) * $records_per_page;
 
-            // Prepare SQL query with filters
-            $sql = "SELECT * FROM donation WHERE 1=1"; // Use 1=1 to simplify adding AND conditions
+            $sql = "SELECT * FROM donation WHERE 1=1"; 
 
-            // Add filter conditions
             if (!empty($blood_group)) {
                 $blood_group = $conn->real_escape_string($blood_group);
                 $sql .= " AND bloodgroup = '$blood_group'";
@@ -36,7 +33,6 @@ include('includes/topbar.php');
             $result = $conn->query($sql);
             $rows = $result->fetch_all(MYSQLI_ASSOC);
 
-            // Count total records for pagination
             $count_sql = "SELECT COUNT(*) FROM donation WHERE 1=1";
             if (!empty($blood_group)) {
                 $count_sql .= " AND bloodgroup = '$blood_group'";
@@ -171,7 +167,7 @@ include('includes/topbar.php');
         function changeRows(value) {
             const urlParams = new URLSearchParams(window.location.search);
             urlParams.set('records_per_page', value);
-            urlParams.set('page', 1); // Reset to the first page
+            urlParams.set('page', 1);
             window.location.search = urlParams.toString();
         }
         </script>

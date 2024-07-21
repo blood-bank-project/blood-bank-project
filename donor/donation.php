@@ -96,7 +96,18 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
 
 // Count total records
 $total_records_query = $conn->query("SELECT COUNT(id) FROM donation  inner join donor on donor.d_id=donation.user_id where donor.d_id = $id group by donation.user_id");
-$total_records = $total_records_query->fetch_row()[0];
+if ($total_records_query) {
+    $result = $total_records_query->fetch_row();
+    
+    if ($result) {
+        $total_records = $result[0];
+    } else {
+        $total_records = 0; // or handle appropriately
+    }
+} else {
+    // Handle the case where the query failed
+    echo "Query failed: " . $db_connection->error;
+}
 $total_pages = ceil($total_records / $records_per_page);
 ?>
 <section id="body3">
