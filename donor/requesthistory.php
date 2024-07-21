@@ -81,13 +81,13 @@ $total_pages = ceil($total_records / $records_per_page);
                     <td><?php echo $data['message'];?></td>
                     <td><?php $date = date('Y-m-d'); echo $date;?></td>
                     <td>
-                        <?php if($data['status'] === 0 ){
+                        <?php if($data['status'] === '0' ){
                              echo  "<span class='bg-warning text-light p-1'>Pending..</span>";
                             }
-                            else if($data['status'] === 1){
+                            else if($data['status'] === '1'){
                             echo  "<span class='bg-success text-light p-1'>Managed</span>";
                             }
-                            else if($data['status'] === -1){
+                            else if($data['status'] === '-1'){
                             echo "<span class='bg-danger text-light p-1'>Couldn't manage</span>";
                              } ?></td>
                     </td>

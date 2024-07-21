@@ -24,46 +24,72 @@
 </head>
 
 <body>
-<!-- <?php
-  //  require_once '../googlelogin.php';
-  //  if (isset($_GET['code'])) {
-  //     $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
-  //     $client->setAccessToken($token['access_token']);
+    <?php
+require_once '../googlelogin.php';
+ 
+session_start();
+if (isset($_GET['code'])) {
+    $authCode = $_GET['code'];
     
-  //     // get profile info
-  //     $google_oauth = new Google_Service_Oauth2($client);
-  //     $google_account_info = $google_oauth->userinfo->get();
-  //     $userInfo = [
-  //       'email' => $google_account_info['email'],
-  //       'firstName' => $google_account_info['givenName'],
-  //       'lastName' => $google_account_info['familyName'],
-  //       'verifiedEmail' => $google_account_info['verifiedEmail'],
-  //       'token' => $google_account_info['id']
-  //     ];
+    // Fetch the access token using the authorization code
+    $token = $client->fetchAccessTokenWithAuthCode($authCode);
 
-  //     $sql = "SELECT * FROM donor WHERE email = '{$userInfo['email']}'";
 
-  //     $result = $conn->query($sql);
-  //     if(mysqli_num_rows($result) > 0){
-  //       $info = mysqli_fetch_assoc($result);
-  //       $token = $userInfo['token'];
-  //     }
-  //     else{
-  //       $sql = "INSERT INTO donor (firstname,lastname,email) VALUES ('{$userInfo['firstName']}','{$userInfo['lastName']}','{$userInfo['email']}')";
-  //       }
-  //       $result = $conn->query($sql);
-  //       if($result){
-  //           $token = $userInfo['token'];
-  //       }
-  //       else{
-  //           echo "User is not created";
-  //           die();
-  //       }
-  //       $_SESSION['user_token'] = $token;
-  
-  //       if(!isset($_SESSION['user_token'])){
-  //         header("Location: ../index.php");
-  //         die();
-  //       }
-  //     }
- ?> -->
+    if (isset($token['error'])) {
+        echo 'Error fetching access token: ' . htmlspecialchars($token['error']);
+        die();
+    }
+
+    if (!isset($token['access_token'])) {
+        echo 'Access token not found in response.';
+        die();
+    }
+
+    $client->setAccessToken($token['access_token']);
+   
+
+    // get profile info
+    $google_oauth = new Google_Service_Oauth2($client);
+    $google_account_info = $google_oauth->userinfo->get();
+    $userInfo = [
+        'email' => $google_account_info['email'],
+        'firstName' => $google_account_info['givenName'],
+        'lastName' => $google_account_info['familyName'],
+        'verifiedEmail' => $google_account_info['verifiedEmail'],
+        'token' => $google_account_info['id']
+    ];
+
+    // Check if the user already exists in the database
+    $sql = "SELECT * FROM donor WHERE email = '{$userInfo['email']}'";
+    $result = $conn->query($sql);
+    if ($result && mysqli_num_rows($result) > 0) {
+        $userinfo = mysqli_fetch_assoc($result);
+    } else {
+        // Insert the new user into the database
+        $sql = "INSERT INTO donor (firstname, lastname, email, token) VALUES ('{$userInfo['firstName']}', '{$userInfo['lastName']}', '{$userInfo['email']}', '{$userInfo['token']}')";
+        $result = $conn->query($sql);
+        if ($result) {
+            // Fetch the newly inserted user's data
+            $sql = "SELECT * FROM donor WHERE email = '{$userInfo['email']}'";
+            $result = $conn->query($sql);
+            if ($result && mysqli_num_rows($result) > 0) {
+                $userinfo = mysqli_fetch_assoc($result);
+            } else {
+                echo "Failed to retrieve user info after insertion.";
+                die();
+            }
+        } else {
+            echo "User is not created";
+            die();
+        }
+    }
+
+    // Set session variables
+    $_SESSION['loginstatus'] = 'Active';
+    $_SESSION['username'] = $userinfo['firstname'];
+    $_SESSION['lastname'] = $userinfo['lastname'];
+    $_SESSION['gender'] = $userinfo['gender'];
+    $_SESSION['user_id'] = $userinfo['d_id'];
+    $_SESSION['user_token'] = $userinfo['token'];
+}
+?>

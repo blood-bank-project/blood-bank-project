@@ -98,9 +98,19 @@
                     <i class="fa-brands fa-facebook"></i>Facebook
                 </button>
             </a>
-            <a href=""><button class="btn2">
+            <?php
+            require_once 'googlelogin.php';
+            $authUrl = $client->createAuthUrl();
+            if ($authUrl) {
+            ?>
+            <a href="<?php echo htmlspecialchars($authUrl); ?>"><button class="btn2">
                     <i class="fa-brands fa-google"></i>Google
                 </button></a>
+            <?php
+            } else {
+                echo "Failed to create authentication URL.";
+            }
+            ?>
         </div>
     </div>
     <div class="login" id="adminloginpopup">

@@ -270,7 +270,11 @@ body {
   background-color: #de1f26;
   color: #fff;
 }
-#body1 .donor-detail {
+#body1 a{
+  text-decoration: none;
+  color :#000;
+}
+ #body1 .donor-detail {
   height: 150px;
   width: 23%;
   margin: 10px;

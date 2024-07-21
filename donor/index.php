@@ -55,47 +55,53 @@ $data = mysqli_fetch_array($row);
             <hr />
             <div class="row ">
                 <?php
-                     require_once "backend/connect.php";
-                     $id = $_SESSION['user_id'];
-$sql = "SELECT count(id) as totaldonation FROM donation inner join donor on donor.d_id=donation.user_id where donor.d_id = $id group by donation.user_id ";
-$row = $conn->query($sql);
-$data = mysqli_fetch_array($row);
-?>
+                    require_once "backend/connect.php";
+                    $id = $_SESSION['user_id'];
+                    $sql = "SELECT count(id) as totaldonation FROM donation inner join donor on donor.d_id=donation.user_id where donor.d_id = $id group by donation.user_id ";
+                    $row = $conn->query($sql);
+                    $data = mysqli_fetch_array($row);
+                    ?>
                 <div class="col-1 donor-detail">
-                    <h2><?php echo ($row != null && isset($data['totaldonation'])) ? $data['totaldonation'] : 0; ?></h2>
+                    <h2><?php echo ($row != null && isset($data['totaldonation'])) ? $data['totaldonation'] : 0; ?>
+                    </h2>
                     <p>Total Donation</p>
                 </div>
+
+                <?php
+                    require_once "backend/connect.php";
+                    $id = $_SESSION['user_id'];
+                    $sql = "SELECT count(id) as totalpending FROM donation inner join donor on donor.d_id=donation.user_id where donor.d_id = $id and status='0' group by donation.user_id ";
+                    $row = $conn->query($sql);
+                    $data = mysqli_fetch_array($row);
+                    ?>
+
                 <div class="col-1 donor-detail">
-                    <?php
-                     require_once "backend/connect.php";
-                      $id = $_SESSION['user_id'];
-$sql = "SELECT count(id) as totalpending FROM donation inner join donor on donor.d_id=donation.user_id where donor.d_id = $id and status='0' group by donation.user_id ";
-$row = $conn->query($sql);
-$data = mysqli_fetch_array($row);
-?>
                     <h2><?php echo ($row != null && isset($data['totalpending'])) ? $data['totalpending'] : 0; ?></h2>
                     <p>Pending Request</p>
-
                 </div>
+
+
+                <?php
+            require_once "backend/connect.php";
+            $id = $_SESSION['user_id'];
+            $sql ="SELECT count(id) as totalaccept FROM donation inner join donor on donor.d_id=donation.user_id where donor.d_id = $id and status='1' group by donation.user_id ";
+            $row = $conn->query($sql);
+            $data = mysqli_fetch_array($row);
+            ?>
                 <div class="col-1 donor-detail">
-                    <?php
-                     require_once "backend/connect.php";
-                      $id = $_SESSION['user_id'];
-$sql ="SELECT count(id) as totalaccept FROM donation inner join donor on donor.d_id=donation.user_id where donor.d_id = $id and status='1' group by donation.user_id ";
-$row = $conn->query($sql);
-$data = mysqli_fetch_array($row);
-?>
                     <h2><?php echo ($row != null && isset($data['totalaccept'])) ? $data['totalaccept'] : 0; ?></h2>
                     <p>Approved Request</p>
                 </div>
+
+
+                <?php
+            require_once "backend/connect.php";
+            $id = $_SESSION['user_id'];
+            $sql = "SELECT count(id) as totalreject FROM donation inner join donor on donor.d_id=donation.user_id where donor.d_id = $id and status='-1' group by donation.user_id ";
+            $row = $conn->query($sql);
+            $data = mysqli_fetch_array($row);
+            ?>
                 <div class="col-1 donor-detail">
-                    <?php
-                     require_once "backend/connect.php";
-                      $id = $_SESSION['user_id'];
-$sql = "SELECT count(id) as totalreject FROM donation inner join donor on donor.d_id=donation.user_id where donor.d_id = $id and status='-1' group by donation.user_id ";
-$row = $conn->query($sql);
-$data = mysqli_fetch_array($row);
-?>
                     <h2><?php echo ($row != null && isset($data['totalreject'])) ? $data['totalreject'] : 0; ?></h2>
                     <p>Rejected Request
                 </div>
